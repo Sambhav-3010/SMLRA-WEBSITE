@@ -16,20 +16,22 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="absolute -top-4 -left-4 text-blue-400/20">
+          <div className="absolute -top-4 -right-4 text-blue-400/20">
             <Quote className="h-16 w-16" />
+          </div>
+          <div className="absolute -top-4 -left-4 text-blue-400/20">
+            <Quote className="h-16 w-16 scale-x-[-1]" />
           </div>
 
           <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-light text-slate-200 leading-relaxed italic">
-            "The best AI models aren't built to impress — they're built to{" "}
-            <span className="text-gradient font-semibold">learn</span>,{" "}
-            <span className="text-gradient font-semibold">adapt</span>, and{" "}
-            <span className="text-gradient font-semibold">solve real problems</span>."
+            "Where{" "}
+            <span className="text-gradient font-semibold">dedication</span>{" "}
+            <span className="">meets</span>{" "}
+            <span className="text-gradient font-semibold">research...</span>"
           </blockquote>
 
           <div className="mt-8 text-slate-400">
-            <p className="text-lg font-mono">— SMLRA Research Philosophy</p>
-            <p className="text-sm mt-2">Training the next generation of intelligent systems</p>
+            <p className="text-lg font-mono">— Somaiya Machine Learning Research Association</p>
           </div>
         </motion.div>
       </div>

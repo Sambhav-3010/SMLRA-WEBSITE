@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Brain } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "/", ariaLabel: "Go to homepage" },
@@ -64,17 +65,17 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-950 rounded-lg"
-            aria-label="SMLRA - Somaya Machine Learning Research Association"
+            aria-label="SMLRA - Somaiya Machine Learning Research Association"
           >
             <motion.div whileHover={{ rotate: 360, scale: 1.1 }} transition={{ duration: 0.6 }} className="relative">
-              <Brain className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+              <Image height="20" width="20" src={"SMLRA.png"} alt="SMLRA" className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
               <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:bg-blue-300/30 transition-all duration-300"></div>
             </motion.div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gradient font-display group-hover:scale-105 transition-transform duration-300">
+              <span className="text-2xl font-bold text-gradient font-display">
                 SMLRA
               </span>
-              <span className="text-xs text-slate-400 font-mono -mt-1">AI Research Lab</span>
+              <span className="text-xs text-slate-400 font- -mt-1">Official AI/ML Council of KJSSE</span>
             </div>
           </Link>
 

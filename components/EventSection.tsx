@@ -30,7 +30,7 @@ const achievements = [
   },
 ]
 
-export default function AchievementsSection() {
+export default function EventSection() {
   return (
     <section className="py-20 bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,11 +42,9 @@ export default function AchievementsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Our <span className="text-gradient">Impact</span>
+            Our <span className="text-gradient">Events</span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Numbers that reflect our commitment to excellence and innovation in AI/ML
-          </p>
+          <p>Crousals for all past events with a cool card</p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

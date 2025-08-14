@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const teamMembers = [
   {
@@ -133,18 +134,18 @@ export default function TeamPage() {
                   <p className="text-slate-300 text-sm mb-4 leading-relaxed">{member.bio}</p>
 
                   <div className="flex space-x-3">
-                    <a href={member.social.github} className="text-slate-400 hover:text-blue-400 transition-colors">
+                    <Link href={member.social.github} className="text-slate-400 hover:text-blue-400 transition-colors">
                       <Github className="h-5 w-5" />
-                    </a>
-                    <a href={member.social.linkedin} className="text-slate-400 hover:text-blue-400 transition-colors">
+                    </Link>
+                    <Link href={member.social.linkedin} className="text-slate-400 hover:text-blue-400 transition-colors">
                       <Linkedin className="h-5 w-5" />
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href={`mailto:${member.social.email}`}
                       className="text-slate-400 hover:text-blue-400 transition-colors"
                     >
                       <Mail className="h-5 w-5" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

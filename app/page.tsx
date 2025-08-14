@@ -1,10 +1,9 @@
 import HeroSection from "@/components/HeroSection"
 import FeaturedSection from "@/components/FeaturedSection"
-import AchievementsSection from "@/components/AchievementsSection"
+import EventSection from "@/components/EventSection"
 import QuoteSection from "@/components/QuoteSection"
 import AIResearchAreas from "@/components/AIResearchAreas"
 import TechStack from "@/components/TechStack"
-import LiveMetrics from "@/components/LiveMetrics"
 import InteractiveNeuralNetwork from "@/components/InteractiveNeuralNetwork"
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
       <main id="main-content">
         <QuoteSection />
         <AIResearchAreas />
-        <section className="py-20 bg-slate-900/30" aria-labelledby="neural-network-demo">
+        {/* <section className="py-20 bg-slate-900/30" aria-labelledby="neural-network-demo">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <header className="text-center mb-12">
               <h2 id="neural-network-demo" className="text-3xl sm:text-4xl font-bold font-display mb-4">
@@ -26,11 +25,10 @@ export default function Home() {
             </header>
             <InteractiveNeuralNetwork />
           </div>
-        </section>
-        <LiveMetrics />
+        </section> */}
+        <EventSection />
         <TechStack />
         <FeaturedSection />
-        <AchievementsSection />
       </main>
     </>
   )

@@ -66,28 +66,6 @@ export default function TechStack() {
             </motion.div>
           ))}
         </div>
-
-        {/* Performance Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient font-mono mb-2">99.9%</div>
-            <div className="text-slate-400">Model Uptime</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient font-mono mb-2">&lt; 50ms</div>
-            <div className="text-slate-400">Inference Latency</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient font-mono mb-2">10TB+</div>
-            <div className="text-slate-400">Data Processed</div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -1,11 +1,21 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Github, Linkedin, Instagram, Youtube, Mail, MapPin, Brain } from "lucide-react"
+import Link from "next/link";
+import {
+  Linkedin,
+  Instagram,
+  Youtube,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900/50 border-t border-slate-800 relative overflow-hidden" role="contentinfo">
+    <footer
+      className="bg-slate-900/50 border-t border-slate-800 relative overflow-hidden"
+      role="contentinfo"
+    >
       <div className="absolute inset-0 neural-network-bg opacity-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
@@ -13,25 +23,37 @@ export default function Footer() {
           {/* SMLRA Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <Brain className="h-8 w-8 text-blue-400" />
+              <Image src="/smlra.png" alt="SMLRA Logo" width={40} height={40} />
               <div>
-                <h3 className="text-2xl font-bold text-gradient font-display">SMLRA</h3>
-                <p className="text-xs text-slate-400 font-mono">AI Research Lab</p>
+                <h3 className="text-2xl font-bold text-gradient font-display">
+                  SMLRA
+                </h3>
+                <p className="text-xs text-slate-400 font-mono">
+                  AI/ML Council of KJSSE
+                </p>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Somaya Machine Learning Research Association - Pioneering the future of artificial intelligence through
-              innovative research, cutting-edge models, and collaborative learning.
+              Somaiya Machine Learning Research Association - Pioneering the
+              future of artificial intelligence through innovative research,
+              cutting-edge models, and collaborative learning.
             </p>
             <div className="flex items-start space-x-3 text-slate-400 text-sm">
-              <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-              <address className="not-italic">
-                Somaya College of Engineering
-                <br />
-                Department of Computer Science
-                <br />
-                Mumbai, Maharashtra, India
-              </address>
+              <Link
+                href={`https://maps.app.goo.gl/guR36dadWsfPjjBn9`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-blue-500"
+              >
+                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <address className="not-italic">
+                  Somaiya College of Engineering
+                  <br />
+                  Department of Computer Science
+                  <br />
+                  Mumbai, Maharashtra, India
+                </address>
+              </Link>
             </div>
           </div>
 
@@ -101,45 +123,50 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold font-display">Connect</h4>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#"
-                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
-                aria-label="Follow us on GitHub"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
+              <Link
+                href="https://www.linkedin.com/company/smlra-kjsce/posts/?feedView=all"
                 className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
                 aria-label="Connect on LinkedIn"
+                target="_blank"
               >
                 <Linkedin className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://www.instagram.com/smlra_kjsce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
                 aria-label="Follow on Instagram"
+                target="_blank"
               >
                 <Instagram className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://www.youtube.com/@smlra-kjsce6909"
                 className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
                 aria-label="Subscribe to YouTube"
+                target="_blank"
               >
                 <Youtube className="h-6 w-6" />
-              </a>
-              <a
-                href="mailto:contact@smlra.somaya.edu"
+              </Link>
+              <Link
+                href="mailto:smlra-kjsce@somaiya.edu"
                 className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
                 aria-label="Send us an email"
+                target="_blank"
               >
                 <Mail className="h-6 w-6" />
-              </a>
+              </Link>
             </div>
-            <div className="text-sm text-slate-400 space-y-2">
-              <p className="font-mono">contact@smlra.somaya.edu</p>
-              <p className="font-mono">+91 (22) 1234-5678</p>
+            <div className="text-sm text-slate-400 space-y-4">
+              <p className="font-mono">smlra-kjsce@somaiya.edu</p>
+              <div className="space-y-1">
+                <p className="font-mono text-[16px] font-bold">Council Lead</p>
+                <p className="font-mono">Vibhu: +91 9877747148</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-mono text-[16px] font-bold">Council Co Lead</p>
+                <p className="font-mono">Sambhav: +91 7007231054</p>
+                <p className="font-mono">Aryan: +91 9004136721</p>
+              </div>
             </div>
           </div>
         </div>
@@ -148,13 +175,22 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-slate-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-slate-400 text-sm">
-              <p>&copy; 2024 SMLRA - Somaya Machine Learning Research Association. All rights reserved.</p>
+              <p>
+                &copy; 2025 SMLRA - Somaiya Machine Learning Research
+                Association. All rights reserved.
+              </p>
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <Link href="/privacy" className="text-slate-400 hover:text-blue-400 transition-colors focus-visible">
+              <Link
+                href="/privacy"
+                className="text-slate-400 hover:text-blue-400 transition-colors focus-visible"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-slate-400 hover:text-blue-400 transition-colors focus-visible">
+              <Link
+                href="/terms"
+                className="text-slate-400 hover:text-blue-400 transition-colors focus-visible"
+              >
                 Terms of Service
               </Link>
               <Link
@@ -165,13 +201,9 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="mt-4 text-center">
-            <p className="text-xs text-slate-500 font-mono">
-              Built with Next.js • Powered by AI • Made with ❤️ by SMLRA Team
-            </p>
-          </div>
+          <div className="mt-4 text-center"></div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,16 +1,23 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google"
-import "./globals.css"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
-  title: "SMLRA - Somaya Machine Learning Research Association | AI Research Lab",
+  title:
+    "SMLRA - Somaya Machine Learning Research Association | AI Research Lab",
   description:
     "Leading AI/ML research lab at Somaya College of Engineering. Advancing neural networks, deep learning, computer vision, and NLP through cutting-edge research and innovation.",
   keywords: [
@@ -51,18 +58,16 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SMLRA - Leading AI/ML Research Lab",
-    description: "Advancing AI/ML research through neural networks, deep learning, and innovative solutions.",
+    description:
+      "Advancing AI/ML research through neural networks, deep learning, and innovative solutions.",
     images: ["/twitter-image.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#3b82f6",
-    generator: 'v0.dev'
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -75,12 +80,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white antialiased`}
       >
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50"
-        >
-          Skip to main content
-        </a>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main id="main-content" className="flex-1">
@@ -90,5 +89,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  )
+  );
 }
