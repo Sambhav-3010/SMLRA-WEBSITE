@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-green-400 via-emerald-400 to-green-600 bg-clip-text text-transparent;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .glow-effect-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+
+  .glow-effect-purple {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20;
+  }
+
+  .card-hover-intense {
+    @apply transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-2;
+  }
+
+  /* Advanced Neural Network Background */
+  .neural-network-bg {
+    background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 60% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+    background-size: 400px 400px, 350px 350px, 300px 300px, 450px 450px;
+    animation: neural-float 25s ease-in-out infinite;
+  }
+
+  @keyframes neural-float {
+    0%,
+    100% {
+      background-position: 0% 0%, 100% 100%, 50% 50%, 75% 25%;
+    }
+    25% {
+      background-position: 25% 25%, 75% 75%, 25% 75%, 50% 50%;
+    }
+    50% {
+      background-position: 50% 50%, 50% 50%, 75% 25%, 25% 75%;
+    }
+    75% {
+      background-position: 75% 25%, 25% 75%, 50% 50%, 75% 25%;
+    }
+  }
+
+  /* Data Flow Animation */
+  .data-flow {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.1) 25%,
+      rgba(34, 197, 94, 0.1) 50%,
+      rgba(168, 85, 247, 0.1) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: data-stream 8s linear infinite;
+  }
+
+  @keyframes data-stream {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Advanced Circuit Pattern */
+  .circuit-advanced {
+    background-image: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px, 30px 30px, 60px 60px, 60px 60px;
+    position: relative;
+  }
+
+  .circuit-advanced::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.4) 2px, transparent 2px),
+      radial-gradient(circle at 85% 85%, rgba(34, 197, 94, 0.4) 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.4) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 30px 30px;
+    animation: circuit-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes circuit-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Neural Node Animation */
+  .neural-node {
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 1) 0%, rgba(59, 130, 246, 0.3) 70%, transparent 100%);
+    border-radius: 50%;
+    position: relative;
+    animation: neural-pulse 3s ease-in-out infinite;
+  }
+
+  .neural-node::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    animation: neural-ripple 3s ease-in-out infinite;
+  }
+
+  @keyframes neural-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+
+  @keyframes neural-ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Matrix Digital Rain */
+  .matrix-rain {
+    background: linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.03) 50%, transparent 100%);
+    background-size: 2px 100px;
+    animation: matrix-fall 15s linear infinite;
+  }
+
+  @keyframes matrix-fall {
+    0% {
+      background-position: 0% -100%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  /* Holographic Effect */
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      rgba(59, 130, 246, 0.1) 0%,
+      rgba(34, 197, 94, 0.1) 25%,
+      rgba(168, 85, 247, 0.1) 50%,
+      rgba(236, 72, 153, 0.1) 75%,
+      rgba(59, 130, 246, 0.1) 100%
+    );
+    background-size: 400% 400%;
+    animation: holographic-shift 10s ease-in-out infinite;
+  }
+
+  @keyframes holographic-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Parallax Layers */
+  .parallax-slow {
+    transform: translateZ(0);
+    animation: parallax-float 20s ease-in-out infinite;
+  }
+
+  .parallax-medium {
+    transform: translateZ(0);
+    animation: parallax-float 15s ease-in-out infinite reverse;
+  }
+
+  .parallax-fast {
+    transform: translateZ(0);
+    animation: parallax-float 10s ease-in-out infinite;
+  }
+
+  @keyframes parallax-float {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(5px) translateX(-3px);
+    }
+    75% {
+      transform: translateY(-5px) translateX(8px);
+    }
+  }
+
+  /* Code Syntax Highlighting Enhanced */
+  .code-block-enhanced {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-block-enhanced::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+    animation: code-scan 3s ease-in-out infinite;
+  }
+
+  @keyframes code-scan {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .code-keyword {
+    color: #f472b6;
+    font-weight: 600;
+  }
+  .code-string {
+    color: #34d399;
+  }
+  .code-comment {
+    color: #64748b;
+    font-style: italic;
+  }
+  .code-function {
+    color: #60a5fa;
+    font-weight: 500;
+  }
+  .code-number {
+    color: #fbbf24;
+  }
+  .code-operator {
+    color: #e879f9;
+  }
+  .code-variable {
+    color: #a78bfa;
+  }
+
+  /* Interactive Hover States */
+  .interactive-card {
+    @apply transition-all duration-500 cursor-pointer;
+    transform-style: preserve-3d;
+  }
+
+  .interactive-card:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  }
+
+  /* Grid Background */
+  .grid-bg {
+    background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #06b6d4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563eb, #0891b2);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth animations for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gradient {
+    @apply text-blue-300;
+  }
+
+  .card-hover {
+    @apply border-2 border-blue-400;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
