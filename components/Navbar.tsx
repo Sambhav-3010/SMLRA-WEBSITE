@@ -69,7 +69,7 @@ export default function Navbar() {
           >
             <motion.div whileHover={{ rotate: 360, scale: 1.1 }} transition={{ duration: 0.6 }} className="relative">
               <Image height="20" width="20" src={"SMLRA.png"} alt="SMLRA" className="h-10 w-10 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:bg-blue-300/30 transition-all duration-300"></div>
+              <div  className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg group-hover:bg-blue-300/30 transition-all duration-300"></div>
             </motion.div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-gradient font-display">

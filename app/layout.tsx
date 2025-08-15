@@ -74,7 +74,6 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://smlra.somaya.edu" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body
