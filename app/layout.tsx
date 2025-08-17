@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title:
-    "SMLRA - Somaya Machine Learning Research Association | AI Research Lab",
+    "SMLRA",
   description:
     "Leading AI/ML research lab at Somaya College of Engineering. Advancing neural networks, deep learning, computer vision, and NLP through cutting-edge research and innovation.",
   keywords: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMLRA - Leading AI/ML Research Lab",
+    title: "SMLRA",
     description:
       "Advancing AI/ML research through neural networks, deep learning, and innovative solutions.",
     images: ["/twitter-image.jpg"],
@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="canonical" href="https://smlra.somaya.edu" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={"SMLRA.png"} />
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body
