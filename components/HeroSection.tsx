@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
+import CNNBackground from "./NeuralBackground";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -28,15 +29,29 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-
+      <div className="-z-1000 opacity-25 absolute inset-0 h-[">
+        <CNNBackground />
+      </div>
       {/* Floating AI Icons with Parallax */}
       <div className="absolute inset-0 parallax-medium">
-        {[Brain, Cpu, Database, Code, Zap, GitBranch].map((Icon, i) => (
+        {[
+          Brain,
+          Cpu,
+          Database,
+          Code,
+          Zap,
+          GitBranch,
+          Brain,
+          Cpu,
+          Database,
+          Code,
+          GitBranch,
+        ].map((Icon, i) => (
           <motion.div
             key={`icon-${i}`}
-            className="absolute text-blue-400/20"
+            className="absolute text-blue-600"
             style={{
-              left: `${15 + i * 15}%`,
+              left: `${7 + i * 8}%`,
               top: `${20 + (i % 3) * 25}%`,
             }}
             animate={{

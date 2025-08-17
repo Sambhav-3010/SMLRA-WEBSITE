@@ -1,10 +1,10 @@
-import HeroSection from "@/components/HeroSection"
-import FeaturedSection from "@/components/FeaturedSection"
-import EventSection from "@/components/EventSection"
-import QuoteSection from "@/components/QuoteSection"
-import AIResearchAreas from "@/components/AIResearchAreas"
-import TechStack from "@/components/TechStack"
-import InteractiveNeuralNetwork from "@/components/InteractiveNeuralNetwork"
+import HeroSection from "@/components/HeroSection";
+import FeaturedSection from "@/components/FeaturedSection";
+import EventSection from "@/components/EventSection";
+import QuoteSection from "@/components/QuoteSection";
+import AIResearchAreas from "@/components/AIResearchAreas";
+import TechStack from "@/components/TechStack";
+import InteractiveNeuralNetwork from "@/components/InteractiveNeuralNetwork";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
       <main id="main-content">
         <QuoteSection />
         <AIResearchAreas />
+        {/* Uncomment the section below to enable the interactive neural network demo */}
         {/* <section className="py-20 bg-slate-900/30" aria-labelledby="neural-network-demo">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <header className="text-center mb-12">
@@ -31,5 +32,5 @@ export default function Home() {
         <FeaturedSection />
       </main>
     </>
-  )
+  );
 }
