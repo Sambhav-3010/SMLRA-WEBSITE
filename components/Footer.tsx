@@ -23,7 +23,7 @@ export default function Footer() {
           {/* SMLRA Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <Image src="/smlra.png" alt="SMLRA Logo" width={40} height={40} />
+              <Image src={"SMLRA.png"}alt="SMLRA Logo" width={40} height={40} />
               <div>
                 <h3 className="text-2xl font-bold text-gradient font-display">
                   SMLRA
