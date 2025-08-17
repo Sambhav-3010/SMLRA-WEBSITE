@@ -46,7 +46,7 @@ export default function AboutPage() {
               About <span className="text-gradient">SMLRA</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              The Somaya Machine Learning Research Association is a vibrant community of researchers, students, and
+              The Somaiya Machine Learning Research Association is a vibrant community of researchers, students, and
               innovators dedicated to advancing the frontiers of artificial intelligence and machine learning.
             </p>
           </motion.div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   impact thousands of users daily.
                 </p>
                 <p>
-                  Today, SMLRA stands as a premier AI research facility at Somaya College of Engineering, where we push
+                  Today, SMLRA stands as a premier AI research facility at Somaiya College of Engineering, where we push
                   the boundaries of what's possible with artificial intelligence and machine learning.
                 </p>
               </div>

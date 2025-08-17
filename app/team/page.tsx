@@ -15,7 +15,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "sarah.chen@somaya.edu",
+      email: "sarah.chen@somaiya.edu",
     },
   },
   {
@@ -27,7 +27,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "arjun.patel@student.somaya.edu",
+      email: "arjun.patel@student.somaiya.edu",
     },
   },
   {
@@ -39,7 +39,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "priya.sharma@student.somaya.edu",
+      email: "priya.sharma@student.somaiya.edu",
     },
   },
   {
@@ -51,7 +51,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "rahul.kumar@student.somaya.edu",
+      email: "rahul.kumar@student.somaiya.edu",
     },
   },
   {
@@ -63,7 +63,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "ananya.singh@student.somaya.edu",
+      email: "ananya.singh@student.somaiya.edu",
     },
   },
   {
@@ -75,7 +75,7 @@ const teamMembers = [
     social: {
       github: "#",
       linkedin: "#",
-      email: "vikram.reddy@student.somaya.edu",
+      email: "vikram.reddy@student.somaiya.edu",
     },
   },
 ]

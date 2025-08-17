@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title:
     "SMLRA",
   description:
-    "Leading AI/ML research lab at Somaya College of Engineering. Advancing neural networks, deep learning, computer vision, and NLP through cutting-edge research and innovation.",
+    "Leading AI/ML research lab at Somaiya College of Engineering. Advancing neural networks, deep learning, computer vision, and NLP through cutting-edge research and innovation.",
   keywords: [
     "machine learning",
     "artificial intelligence",
@@ -28,21 +28,21 @@ export const metadata: Metadata = {
     "computer vision",
     "NLP",
     "AI research",
-    "Somaya College",
+    "Somaiya College",
     "research lab",
     "data science",
     "PyTorch",
     "TensorFlow",
   ],
   authors: [{ name: "SMLRA Team" }],
-  creator: "Somaya Machine Learning Research Association",
-  publisher: "Somaya College of Engineering",
+  creator: "Somaiya Machine Learning Research Association",
+  publisher: "Somaiya College of Engineering",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://smlra.somaya.edu",
-    siteName: "SMLRA - Somaya Machine Learning Research Association",
+    url: "https://smlra.somaiya.edu",
+    siteName: "SMLRA - Somaiya Machine Learning Research Association",
     title: "SMLRA - Leading AI/ML Research Lab",
     description:
       "Advancing the frontiers of artificial intelligence and machine learning through innovative research, cutting-edge models, and collaborative learning.",
@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="canonical" href="https://smlra.somaya.edu" />
+        <link rel="canonical" href="https://smlra.somaiya.edu" />
         <link rel="icon" href={"SMLRA.png"} />
         <meta name="format-detection" content="telephone=no" />
       </head>

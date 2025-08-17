@@ -12,7 +12,7 @@ const events = [
       "A comprehensive workshop covering the basics of deep learning, neural networks, and practical implementation using PyTorch.",
     date: "2024-02-15",
     time: "10:00 AM - 4:00 PM",
-    location: "Somaya College Auditorium",
+    location: "Somaiya College Auditorium",
     capacity: 100,
     registered: 85,
     image: "/placeholder.svg?height=300&width=500",
