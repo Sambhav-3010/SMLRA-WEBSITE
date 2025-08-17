@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import CNNBackground from "./NeuralBackground";
 
-export default function HeroSection() {
+export default function HeroSection({isMobile}: { isMobile: boolean }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -23,7 +23,7 @@ export default function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  
 
   return (
     <section

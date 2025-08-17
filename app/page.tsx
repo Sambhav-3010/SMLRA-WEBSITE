@@ -7,9 +7,10 @@ import TechStack from "@/components/TechStack";
 import InteractiveNeuralNetwork from "@/components/InteractiveNeuralNetwork";
 
 export default function Home() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
   return (
     <>
-      <HeroSection />
+      <HeroSection isMobile={isMobile} />
       <main id="main-content">
         <QuoteSection />
         <AIResearchAreas />
