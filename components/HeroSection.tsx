@@ -23,6 +23,7 @@ export default function HeroSection() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   return (
     <section
@@ -34,24 +35,27 @@ export default function HeroSection() {
       </div>
       {/* Floating AI Icons with Parallax */}
       <div className="absolute inset-0 parallax-medium">
-        {[
-          Brain,
-          Cpu,
-          Database,
-          Code,
-          Zap,
-          GitBranch,
-          Brain,
-          Cpu,
-          Database,
-          Code,
-          GitBranch,
-        ].map((Icon, i) => (
+        {(isMobile
+          ? [Brain, Code, Database, Cpu, Zap]
+          : [
+              Brain,
+              Cpu,
+              Database,
+              Code,
+              Zap,
+              GitBranch,
+              Brain,
+              Cpu,
+              Database,
+              Code,
+              GitBranch,
+            ]
+        ).map((Icon, i) => (
           <motion.div
             key={`icon-${i}`}
             className="absolute text-blue-600"
             style={{
-              left: `${7 + i * 8}%`,
+              ...(isMobile ? { left: `${7 + i * 24}%` } : { right: `${7 + i * 8}%` }),
               top: `${20 + (i % 3) * 25}%`,
             }}
             animate={{

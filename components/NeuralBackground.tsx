@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function CNNBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile()
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -20,7 +20,8 @@ export default function CNNBackground() {
       0.1,
       1000
     );
-    isMobile ? camera.position.set(0, 0, 20) : camera.position.set(0, 0, 12);
+    console.log("isMobile", isMobile)
+    isMobile ? camera.position.set(0, 0, 10) : camera.position.set(0, 0, 12);
     camera.lookAt(0, 0, 0);
 
     // Renderer
