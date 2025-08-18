@@ -22,15 +22,15 @@
       ]
     }
   ],
-  "current": [],
+  "currentTeam": [],
   "pastCouncils": [
     {
-      "year": "Council for 2023-24",
+      "year": "Council for 2024-25",
       "members": [
         {
           "name": "Himanshu Patil",
           "role": "Council Mentor",
-          "imageUrl": "NEXT_HIMANSHU_PATIL_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ipakyotkjvij0lpyorgx",
           "githubUrl": "https://github.com/agntgalahad",
           "linkedinUrl": "https://www.linkedin.com/in/himanshupatil829/",
           "instagramUrl": "https://www.instagram.com/hima_2457/"
@@ -38,7 +38,7 @@
         {
           "name": "Kedar Kulkarni",
           "role": "Council Mentor",
-          "imageUrl": "NEXT_KEDAR_KULKARNI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/yztg3gs9vcyxxhryewdy",
           "githubUrl": "https://github.com/Bad-Astronomer",
           "linkedinUrl": "https://www.linkedin.com/in/kedar-kulkarni-87b033250/",
           "instagramUrl": "https://www.instagram.com/bad_astronomer/"
@@ -46,7 +46,7 @@
         {
           "name": "Alekya Arra",
           "role": "Council Mentor",
-          "imageUrl": "NEXT_ALEKYA_ARRA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/bobp1ox3dp5nlfhlikuw",
           "githubUrl": "https://github.com/alekyaarra",
           "linkedinUrl": "https://www.linkedin.com/in/alekya-arra-b3528b233/",
           "instagramUrl": "https://www.instagram.com/alekyaarra/"
@@ -54,7 +54,7 @@
         {
           "name": "Mishtee Gandhi",
           "role": "Council Mentor",
-          "imageUrl": "NEXT_MISHTEE_GANDHI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/up0kws62sx2bvfrz83j4",
           "githubUrl": "https://github.com/mishteegandhi",
           "linkedinUrl": "https://www.linkedin.com/in/mishtee-gandhi/",
           "instagramUrl": "https://instagram.com/gandhimishtee?igshid=ZDdkNTZiNTM="
@@ -62,7 +62,7 @@
         {
           "name": "Jiya Bhagat",
           "role": "Council Mentor",
-          "imageUrl": "NEXT_JIYA_BHAGAT_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jo2qavc6jf7jemql5vhl",
           "githubUrl": "https://github.com/juniperus01",
           "linkedinUrl": "https://www.linkedin.com/in/jiyabhagat",
           "instagramUrl": "https://www.instagram.com/__jiya_bhagat__"
@@ -70,7 +70,7 @@
         {
           "name": "Hriday Shah",
           "role": "Lead",
-          "imageUrl": "NEXT_HRIDAY_SHAH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/skpsa4hlcmj8oc5ghhjy",
           "githubUrl": "https://github.com/hridayshah7",
           "linkedinUrl": "https://www.linkedin.com/in/hriday-shah-ab16b1255/",
           "instagramUrl": "https://www.instagram.com/hriday_shah_7/"
@@ -78,7 +78,7 @@
         {
           "name": "Ritisa Behera",
           "role": "Lead",
-          "imageUrl": "NEXT_RITISA_BEHERA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/r2qpwvnif5x5hejtltvu",
           "githubUrl": "https://github.com/itisar-345",
           "linkedinUrl": "https://www.linkedin.com/in/ritisa-behera-43819b258/",
           "instagramUrl": "https://www.instagram.com/ritisa_piu_/"
@@ -86,7 +86,7 @@
         {
           "name": "Vibhu Gupta",
           "role": "Co-Lead",
-          "imageUrl": "NEXT_VIBHU_GUPTA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ujrrej9b5mvfkundjub0",
           "githubUrl": "https://github.com/vibhu1508",
           "linkedinUrl": "https://www.linkedin.com/in/vibhugupta1508/",
           "instagramUrl": "https://www.instagram.com/guptavibhu1609"
@@ -94,7 +94,7 @@
         {
           "name": "Mihir Phalke",
           "role": "Research Associate",
-          "imageUrl": "NEXT_MIHIR_PHALKE_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/aeg30kmin0opwpaiqx1a",
           "githubUrl": "https://github.com/mihirphalke1",
           "linkedinUrl": "https://www.linkedin.com/in/mihirphalke/",
           "instagramUrl": "#"
@@ -102,7 +102,7 @@
         {
           "name": "Sanchit Narayan",
           "role": "Research Associate",
-          "imageUrl": "NEXT_SANCHIT_NARAYAN_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/vkbcfpstiwplb9vndda1",
           "githubUrl": "https://github.com/Sanchit-Narayan",
           "linkedinUrl": "https://www.linkedin.com/in/sanchit-narayan-747192284/",
           "instagramUrl": "https://www.instagram.com/narayansanchit/"
@@ -110,7 +110,7 @@
         {
           "name": "Arpit Mishra",
           "role": "Research Associate",
-          "imageUrl": "NEXT_ARPIT_MISHRA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/lshihxnvpl6kycmyzyld",
           "githubUrl": "https://github.com/ArpitMishra17",
           "linkedinUrl": "https://linkedin.com/in/arpit-mishra-7a1823277",
           "instagramUrl": "https://instagram.com/arpitmishra.17"
@@ -118,7 +118,7 @@
         {
           "name": "Saundarya Subramaniam",
           "role": "Research Associate",
-          "imageUrl": "NEXT_SAUNDARYA_SUBRAMANIAM_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/gki8prpva2srolvwide8",
           "githubUrl": "https://github.com/saun09",
           "linkedinUrl": "https://www.linkedin.com/in/saundarya-subramaniam-a43a2b27a/",
           "instagramUrl": "https://www.instagram.com/depresaun_"
@@ -126,7 +126,7 @@
         {
           "name": "Raina Dsouza",
           "role": "Research Associate",
-          "imageUrl": "NEXT_RAINA_DSOUZA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/x9dfnqauab8igs6vhqm6",
           "githubUrl": "https://gitlab.com/rainadsouza51",
           "linkedinUrl": "https://www.linkedin.com/in/rainingrina/",
           "instagramUrl": "https://www.instagram.com/rainingrinaaa/"
@@ -142,7 +142,7 @@
         {
           "name": "Anushka Thakur",
           "role": "Research Team",
-          "imageUrl": "NEXT_ANUSHKA_THAKUR_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/kfnankwz2xa0lhdz94wr",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/anushkaathakurr/",
           "instagramUrl": "https://www.instagram.com/anushkaathakurr/"
@@ -150,7 +150,7 @@
         {
           "name": "Vedant Shinde",
           "role": "Tech Team",
-          "imageUrl": "NEXT_VEDANT_SHINDE_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/cjyrlp1pycn0whap2gsl",
           "githubUrl": "https://github.com/vedant-0102",
           "linkedinUrl": "https://www.linkedin.com/in/vedant0102/",
           "instagramUrl": "#"
@@ -158,7 +158,7 @@
         {
           "name": "Om Bhanushali",
           "role": "Tech Team",
-          "imageUrl": "NEXT_OM_BHANUSHALI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jo6lwkbaeyx34q5m1kld",
           "githubUrl": "https://github.com/ombhanushaliii",
           "linkedinUrl": "https://www.linkedin.com/in/ombhanushaliii/",
           "instagramUrl": "https://www.instagram.com/ombhanushaliii/"
@@ -166,7 +166,7 @@
         {
           "name": "Rahul Kadam",
           "role": "Tech Team",
-          "imageUrl": "NEXT_RAHUL_KADAM_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/aaymztmtioeoauo3gu43",
           "githubUrl": "https://github.com/rahulk1264",
           "linkedinUrl": "https://www.linkedin.com/in/rahul-kadam-1b9018321/",
           "instagramUrl": "#"
@@ -174,7 +174,7 @@
         {
           "name": "Vibhor Bagga",
           "role": "Tech Team",
-          "imageUrl": "NEXT_VIBHOR_BAGGA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/oltczmfe0njcbilninm8",
           "githubUrl": "https://github.com/vibhor0599bagga",
           "linkedinUrl": "https://www.linkedin.com/in/vibhorbagga/",
           "instagramUrl": "#"
@@ -182,7 +182,7 @@
         {
           "name": "Vishesh Arora",
           "role": "Tech Team",
-          "imageUrl": "NEXT_VISHESH_ARORA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/nv2hubit9s05e6peqt5f",
           "githubUrl": "https://github.com/Vish-2101",
           "linkedinUrl": "https://www.linkedin.com/in/vishesh-arora-aba05a296/",
           "instagramUrl": "https://www.instagram.com/vishesharora_2101/"
@@ -190,7 +190,7 @@
         {
           "name": "Sagar Jadhav",
           "role": "Tech Team",
-          "imageUrl": "NEXT_SAGAR_JADHAV_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/h8nltrzeuinumyikemae",
           "githubUrl": "https://github.com/Sagar-jd-16",
           "linkedinUrl": "https://www.linkedin.com/in/sagar-jadhav-a64209311/",
           "instagramUrl": "https://www.instagram.com/sagar.jd16/"
@@ -198,7 +198,7 @@
         {
           "name": "Gaurav Matolia",
           "role": "Symposium Team",
-          "imageUrl": "NEXT_GAURAV_MATOLIA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/dntp1yzmqtwbkbctzzmm",
           "githubUrl": "https://github.com/gauravmatolia",
           "linkedinUrl": "https://www.linkedin.com/in/gaurav-matolia-8951b02b5/",
           "instagramUrl": "https://www.instagram.com/gauravmatolia2497/"
@@ -206,7 +206,7 @@
         {
           "name": "Sambhav Mani Tripathi",
           "role": "Symposium Team",
-          "imageUrl": "NEXT_SAMBHAV_MANI_TRIPATHI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/o7a5gq5df5ztjh6zm9qo",
           "githubUrl": "https://github.com/Sambhav-3010",
           "linkedinUrl": "https://www.linkedin.com/in/sambhav-mani-tripathi/",
           "instagramUrl": "https://www.instagram.com/hey.sambhav30"
@@ -214,7 +214,7 @@
         {
           "name": "Aryan Raut",
           "role": "Symposium Team",
-          "imageUrl": "NEXT_ARYAN_RAUT_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/uukfk5wow9wnnqrfnkbs",
           "githubUrl": "https://github.com/nexusaryanislive",
           "linkedinUrl": "https://www.linkedin.com/in/sambhav-mani-tripathi/",
           "instagramUrl": "#"
@@ -230,7 +230,7 @@
         {
           "name": "Avanika Kulkarni",
           "role": "Creative Team",
-          "imageUrl": "NEXT_AVANIKA_KULKARNI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/lfpundspq7vq68kcygdj",
           "githubUrl": "#",
           "linkedinUrl": "#",
           "instagramUrl": "#"
@@ -246,7 +246,7 @@
         {
           "name": "Abdullah Qureshi",
           "role": "Marketing Team",
-          "imageUrl": "NEXT_ABDULLAH_QURESHI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ghhg2d20pdkzrkwtpab8",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/abdullah-qureshi-2792842a9/",
           "instagramUrl": "https://www.instagram.com/abdullah._qureshi_"
@@ -254,7 +254,7 @@
         {
           "name": "Dhruvil Dedhia",
           "role": "FY Representative",
-          "imageUrl": "NEXT_DHRUVIL_DEDHIA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/nfjpzsphre7czhjc1uoy",
           "githubUrl": "https://github.com/dhruvildedhia",
           "linkedinUrl": "http://www.linkedin.com/in/dhruvil-dedhia-199125308",
           "instagramUrl": "https://www.instagram.com/dhruvildedhia/"
@@ -262,7 +262,7 @@
         {
           "name": "Pranav Srikrishnan",
           "role": "FY Representative",
-          "imageUrl": "NEXT_PRANAV_SRIKRISHNAN_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/hhagvpw2pqgtzrfsbvki",
           "githubUrl": "https://github.com/Pranavsk74",
           "linkedinUrl": "https://www.linkedin.com/in/pranav-srikrishnan-a6b670306/",
           "instagramUrl": "https://www.instagram.com/pranav_sk74"
@@ -270,7 +270,7 @@
         {
           "name": "Taha Aurangabadwala",
           "role": "FY Representative",
-          "imageUrl": "NEXT_TAHA_AURANGABADWALA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/j6sksvjs4lgbxnj7lixg",
           "githubUrl": "https://github.com/TheTroxYT",
           "linkedinUrl": "https://www.linkedin.com/in/taha-aurangabadwala-01641a349",
           "instagramUrl": "https://www.instagram.com/taha_aura"
@@ -278,7 +278,7 @@
         {
           "name": "Eshita Patil",
           "role": "FY Representative",
-          "imageUrl": "NEXT_ESHITA_PATIL_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/zecrk5g8ttz2z4mild7g",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/eshita-patil-137532333/",
           "instagramUrl": "https://www.instagram.com/eshita.patil/"
@@ -286,7 +286,7 @@
         {
           "name": "Moiz Arsiwala",
           "role": "FY Representative",
-          "imageUrl": "NEXT_MOIZ_ARSIWALA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/qor7lo7qnqtemc5bwgcu",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/arsiwala-moiz24/",
           "instagramUrl": "https://www.instagram.com/not_moiz786"
@@ -294,7 +294,7 @@
         {
           "name": "Vedant Muchlambe",
           "role": "FY Representative",
-          "imageUrl": "NEXT_VEDANT_MUCHLAMBE_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/c7usjgmc8qnkqesftot6",
           "githubUrl": "https://github.com/QUAGZA",
           "linkedinUrl": "https://www.linkedin.com/in/vedant-muchlambe/",
           "instagramUrl": "https://www.instagram.com/m_vedant21/"
@@ -302,7 +302,7 @@
         {
           "name": "Satvik Damdhar",
           "role": "FY Representative",
-          "imageUrl": "NEXT_SATVIK_DAMDHAR_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/zah1jd2fzpzoz91bc66a",
           "githubUrl": "https://github.com/Satvikdamdhar",
           "linkedinUrl": "https://www.linkedin.com/in/satvik-damdhar-4a794031b/",
           "instagramUrl": "#"
@@ -310,7 +310,7 @@
         {
           "name": "Dvij Mistry",
           "role": "FY Representative",
-          "imageUrl": "NEXT_DVIJ_MISTRY_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/kbirtwieoeiwybmy1wsy",
           "githubUrl": "https://github.com/DvijM",
           "linkedinUrl": "https://www.linkedin.com/in/dvij-m",
           "instagramUrl": "https://www.instagram.com/therealdvijmestry/"
@@ -318,7 +318,7 @@
         {
           "name": "Shantanav Mukherjee",
           "role": "FY Representative",
-          "imageUrl": "NEXT_SHANTANAV_MUKHERJEE_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/kbm2fwojbl9qurgmkmh4",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/shantanav-mukherjee",
           "instagramUrl": "#"
@@ -326,7 +326,7 @@
         {
           "name": "Eshita V",
           "role": "FY Representative",
-          "imageUrl": "NEXT_ESHITA_V_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/fhcm0vepzrdtcrxqmkgh",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/eshita-choudhary-b108b9320/",
           "instagramUrl": "https://www.instagram.com/eshhhita_151206/"
@@ -339,7 +339,7 @@
         {
           "name": "Jenson Joseph",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_JENSON_JOSEPH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/dp7t9ihavo4tj7j3q2sm",
           "githubUrl": "https://github.com/JJsupercoder",
           "linkedinUrl": "https://www.linkedin.com/in/jenson-joseph-248479219/",
           "instagramUrl": "#"
@@ -347,7 +347,7 @@
         {
           "name": "Shubham Varma",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_SHUBHAM_VARMA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
           "linkedinUrl": "https://www.instagram.com/shubham17varma/",
           "instagramUrl": "#"
@@ -355,7 +355,7 @@
         {
           "name": "Himanshu Patil",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_HIMANSHU_PATIL_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ipakyotkjvij0lpyorgx",
           "githubUrl": "https://github.com/agntgalahad",
           "linkedinUrl": "https://www.linkedin.com/in/himanshupatil829/",
           "instagramUrl": "https://www.instagram.com/hima_2457/"
@@ -363,7 +363,7 @@
         {
           "name": "Kedar Kulkarni",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_KEDAR_KULKARNI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/yztg3gs9vcyxxhryewdy",
           "githubUrl": "https://github.com/Bad-Astronomer",
           "linkedinUrl": "https://www.linkedin.com/in/kedar-kulkarni-87b033250/",
           "instagramUrl": "https://www.instagram.com/bad_astronomer/"
@@ -371,7 +371,7 @@
         {
           "name": "Alekya Arra",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_ALEKYA_ARRA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/bobp1ox3dp5nlfhlikuw",
           "githubUrl": "https://github.com/alekyaarra",
           "linkedinUrl": "https://www.linkedin.com/in/alekya-arra-b3528b233/",
           "instagramUrl": "https://www.instagram.com/alekyaarra/"
@@ -379,7 +379,7 @@
         {
           "name": "Mishtee Gandhi",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_MISHTEE_GANDHI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/up0kws62sx2bvfrz83j4",
           "githubUrl": "https://github.com/mishteegandhi",
           "linkedinUrl": "https://www.linkedin.com/in/mishtee-gandhi/",
           "instagramUrl": "https://instagram.com/gandhimishtee?igshid=ZDdkNTZiNTM="
@@ -387,7 +387,7 @@
         {
           "name": "Jiya Bhagat",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_JIYA_BHAGAT_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jo2qavc6jf7jemql5vhl",
           "githubUrl": "https://github.com/juniperus01",
           "linkedinUrl": "https://www.linkedin.com/in/jiyabhagat",
           "instagramUrl": "https://www.instagram.com/__jiya_bhagat__"
@@ -395,7 +395,7 @@
         {
           "name": "Hriday Shah",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_HRIDAY_SHAH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/skpsa4hlcmj8oc5ghhjy",
           "githubUrl": "https://github.com/hridayshah7",
           "linkedinUrl": "https://www.linkedin.com/in/hriday-shah-ab16b1255/",
           "instagramUrl": "https://www.instagram.com/hriday_shah_7/"
@@ -403,7 +403,7 @@
         {
           "name": "Ritisa Behera",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_RITISA_BEHERA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/r2qpwvnif5x5hejtltvu",
           "githubUrl": "https://github.com/itisar-345",
           "linkedinUrl": "https://www.linkedin.com/in/ritisa-behera-43819b258/",
           "instagramUrl": "https://www.instagram.com/ritisa_piu_/"
@@ -411,7 +411,7 @@
         {
           "name": "Aryan Sehgal",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_ARYAN_SEHGAL_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/cxfk7xvl3n3cid8cft1k",
           "githubUrl": "#",
           "linkedinUrl": "#",
           "instagramUrl": "#"
@@ -419,7 +419,7 @@
         {
           "name": "Anushka Thakur",
           "role": "AI Enthusiast",
-          "imageUrl": "NEXT_ANUSHKA_THAKUR_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/kfnankwz2xa0lhdz94wr",
           "githubUrl": "#",
           "linkedinUrl": "https://www.linkedin.com/in/anushkaathakurr/",
           "instagramUrl": "https://www.instagram.com/anushkaathakurr/"
@@ -427,7 +427,7 @@
         {
           "name": "Vibhu Gupta",
           "role": "AI Enthusiast",
-          "imageUrl": "NEXT_VIBHU_GUPTA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ujrrej9b5mvfkundjub0",
           "githubUrl": "https://github.com/vibhu1508",
           "linkedinUrl": "https://www.linkedin.com/in/vibhugupta1508/",
           "instagramUrl": "https://www.instagram.com/guptavibhu1609"
@@ -440,7 +440,7 @@
         {
           "name": "Jatin Nainani",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_JATIN_NAINANI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/tlgt2siclargfctjwvzb",
           "githubUrl": "https://github.com/NainaniJatinZ",
           "linkedinUrl": "https://www.linkedin.com/in/jatin-nainani-a6b2331b3/",
           "instagramUrl": "https://www.instagram.com/jatinnainani56/"
@@ -448,7 +448,7 @@
         {
           "name": "Riya Gori",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_RIYA_GORI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/z9lfcbut6ntgyknxgc85",
           "githubUrl": "https://github.com/riyagori1203",
           "linkedinUrl": "#",
           "instagramUrl": "https://www.instagram.com/riya_gori/"
@@ -456,7 +456,7 @@
         {
           "name": "Burhanuddin Rangwala",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_BURHANUDDIN_RANGWALA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/tos92mvgvpitvzorabif",
           "githubUrl": "https://github.com/bamblebam",
           "linkedinUrl": "https://www.linkedin.com/in/burhanuddin-rangwala-33a07a1a0/",
           "instagramUrl": "#"
@@ -464,7 +464,7 @@
         {
           "name": "Jenson Joseph",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_JENSON_JOSEPH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/dp7t9ihavo4tj7j3q2sm",
           "githubUrl": "https://github.com/JJsupercoder",
           "linkedinUrl": "https://www.linkedin.com/in/jenson-joseph-248479219/",
           "instagramUrl": "#"
@@ -472,7 +472,7 @@
         {
           "name": "Shubham Varma",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_SHUBHAM_VARMA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
           "linkedinUrl": "https://www.instagram.com/shubham17varma/",
           "instagramUrl": "#"
@@ -480,7 +480,7 @@
         {
           "name": "Himanshu Patil",
           "role": "AI Mentor",
-          "imageUrl": "NEXT_HIMANSHU_PATIL_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/ipakyotkjvij0lpyorgx",
           "githubUrl": "https://github.com/agntgalahad",
           "linkedinUrl": "https://www.linkedin.com/in/himanshupatil829/",
           "instagramUrl": "https://www.instagram.com/hima_2457/"
@@ -488,7 +488,7 @@
         {
           "name": "Kedar Kulkarni",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_KEDAR_KULKARNI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/yztg3gs9vcyxxhryewdy",
           "githubUrl": "https://github.com/Bad-Astronomer",
           "linkedinUrl": "https://www.linkedin.com/in/kedar-kulkarni-87b033250/",
           "instagramUrl": "https://www.instagram.com/bad_astronomer/"
@@ -496,7 +496,7 @@
         {
           "name": "Alekya Arra",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_ALEKYA_ARRA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/bobp1ox3dp5nlfhlikuw",
           "githubUrl": "https://github.com/alekyaarra",
           "linkedinUrl": "https://www.linkedin.com/in/alekya-arra-b3528b233/",
           "instagramUrl": "https://www.instagram.com/alekyaarra/"
@@ -504,7 +504,7 @@
         {
           "name": "Mishtee Gandhi",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_MISHTEE_GANDHI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/up0kws62sx2bvfrz83j4",
           "githubUrl": "https://github.com/mishteegandhi",
           "linkedinUrl": "https://www.linkedin.com/in/mishtee-gandhi/",
           "instagramUrl": "https://instagram.com/gandhimishtee?igshid=ZDdkNTZiNTM="
@@ -512,7 +512,7 @@
         {
           "name": "Jiya Bhagat",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_JIYA_BHAGAT_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jo2qavc6jf7jemql5vhl",
           "githubUrl": "https://github.com/juniperus01",
           "linkedinUrl": "https://www.linkedin.com/in/jiyabhagat",
           "instagramUrl": "https://www.instagram.com/__jiya_bhagat__"
@@ -525,7 +525,7 @@
         {
           "name": "Mayank Chowdhary",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_MAYANK_CHOWDHARY_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/wlprdnhxua0fhrvupil7",
           "githubUrl": "https://github.com/m607stars",
           "linkedinUrl": "https://www.linkedin.com/in/mayankchowdhary/",
           "instagramUrl": "https://www.instagram.com/mayank06302618/"
@@ -533,7 +533,7 @@
         {
           "name": "Rahil Parikh",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_RAHIL_PARIKH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/xju3s4haqhq7zqvbvvyw",
           "githubUrl": "https://github.com/Rahil-Parikh",
           "linkedinUrl": "https://www.linkedin.com/in/rahilparikh007/",
           "instagramUrl": "#"
@@ -541,7 +541,7 @@
         {
           "name": "Jatin Nainani",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_JATIN_NAINANI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/tlgt2siclargfctjwvzb",
           "githubUrl": "https://github.com/NainaniJatinZ",
           "linkedinUrl": "https://www.linkedin.com/in/jatin-nainani-a6b2331b3/",
           "instagramUrl": "https://www.instagram.com/jatinnainani56/"
@@ -549,7 +549,7 @@
         {
           "name": "Riya Gori",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_RIYA_GORI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/z9lfcbut6ntgyknxgc85",
           "githubUrl": "https://github.com/riyagori1203",
           "linkedinUrl": "#",
           "instagramUrl": "https://www.instagram.com/riya_gori/"
@@ -557,7 +557,7 @@
         {
           "name": "Burhanuddin Rangwala",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_BURHANUDDIN_RANGWALA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/tos92mvgvpitvzorabif",
           "githubUrl": "https://github.com/bamblebam",
           "linkedinUrl": "https://www.linkedin.com/in/burhanuddin-rangwala-33a07a1a0/",
           "instagramUrl": "#"
@@ -565,7 +565,7 @@
         {
           "name": "Jenson Joseph",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_JENSON_JOSEPH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/dp7t9ihavo4tj7j3q2sm",
           "githubUrl": "https://github.com/JJsupercoder",
           "linkedinUrl": "https://www.linkedin.com/in/jenson-joseph-248479219/",
           "instagramUrl": "#"
@@ -573,7 +573,7 @@
         {
           "name": "Shubham Varma",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_SHUBHAM_VARMA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
           "linkedinUrl": "https://www.instagram.com/shubham17varma/",
           "instagramUrl": "#"
@@ -586,7 +586,7 @@
         {
           "name": "Arghyadeep Das",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_ARGHYADEEP_DAS_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/q8hcf42nksvydyxzeinv",
           "githubUrl": "https://github.com/arghyadeep99",
           "linkedinUrl": "https://www.linkedin.com/in/arghyadeep-das/",
           "instagramUrl": "https://www.instagram.com/third_root_of_quadratic_eqn/#"
@@ -594,7 +594,7 @@
         {
           "name": "Mayank Chowdhary",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_MAYANK_CHOWDHARY_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/wlprdnhxua0fhrvupil7",
           "githubUrl": "https://github.com/m607stars",
           "linkedinUrl": "https://www.linkedin.com/in/mayankchowdhary/",
           "instagramUrl": "https://www.instagram.com/mayank06302618/"
@@ -602,7 +602,7 @@
         {
           "name": "Rahil Parikh",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_RAHIL_PARIKH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/xju3s4haqhq7zqvbvvyw",
           "githubUrl": "https://github.com/Rahil-Parikh",
           "linkedinUrl": "https://www.linkedin.com/in/rahilparikh007/",
           "instagramUrl": "#"
@@ -610,7 +610,7 @@
         {
           "name": "Tejas Khanolkar",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_TEJAS_KHANOLKAR_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/bpyeinzstnblchza6wm5",
           "githubUrl": "https://github.com/tejas2008",
           "linkedinUrl": "https://www.linkedin.com/in/tejas-khanolkar-a04733192/",
           "instagramUrl": "https://www.instagram.com/tejas.00/"
@@ -618,7 +618,7 @@
         {
           "name": "Aayush Chheda",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_AAYUSH_CHHEDA_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/pnvnjdbtym868oj4fpxi",
           "githubUrl": "https://github.com/Aayush-Chheda",
           "linkedinUrl": "https://www.linkedin.com/in/aayush-chheda-6049461a9/",
           "instagramUrl": "#"
@@ -631,7 +631,7 @@
         {
           "name": "Jasdeep Singh Grover",
           "role": "Lead Mentor",
-          "imageUrl": "NEXT_JASDEEP_SINGH_GROVER_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jh7yy9zeagtgkrqnnkhn",
           "githubUrl": "https://github.com/jasdeep100",
           "linkedinUrl": "https://www.linkedin.com/in/jasdeep-singh-grover-80a6b4149/",
           "instagramUrl": "#"
@@ -639,7 +639,7 @@
         {
           "name": "Arghyadeep Das",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_ARGHYADEEP_DAS_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/q8hcf42nksvydyxzeinv",
           "githubUrl": "https://github.com/arghyadeep99",
           "linkedinUrl": "https://www.linkedin.com/in/arghyadeep-das/",
           "instagramUrl": "https://www.instagram.com/third_root_of_quadratic_eqn/#"
@@ -647,7 +647,7 @@
         {
           "name": "Nikhil Bhardwaj",
           "role": "Community Mentor",
-          "imageUrl": "NEXT_NIKHIL_BHARDWAJ_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/lg09opsmhmvxjnlk9utz",
           "githubUrl": "https://github.com/nik9hil",
           "linkedinUrl": "https://www.linkedin.com/in/nik9hil/",
           "instagramUrl": "https://www.instagram.com/pahari.momo/#"
@@ -655,7 +655,7 @@
         {
           "name": "Mayank Chowdhary",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_MAYANK_CHOWDHARY_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/wlprdnhxua0fhrvupil7",
           "githubUrl": "https://github.com/m607stars",
           "linkedinUrl": "https://www.linkedin.com/in/mayankchowdhary/",
           "instagramUrl": "https://www.instagram.com/mayank06302618/"
@@ -663,7 +663,7 @@
         {
           "name": "Rahil Parikh",
           "role": "AI Promoter",
-          "imageUrl": "NEXT_RAHIL_PARIKH_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/xju3s4haqhq7zqvbvvyw",
           "githubUrl": "https://github.com/Rahil-Parikh",
           "linkedinUrl": "https://www.linkedin.com/in/rahilparikh007/",
           "instagramUrl": "#"
@@ -676,7 +676,7 @@
         {
           "name": "Jasdeep Singh Grover",
           "role": "Founding Member",
-          "imageUrl": "NEXT_JASDEEP_SINGH_GROVER_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/jh7yy9zeagtgkrqnnkhn",
           "githubUrl": "https://github.com/jasdeep100",
           "linkedinUrl": "https://www.linkedin.com/in/jasdeep-singh-grover-80a6b4149/",
           "instagramUrl": "#"
@@ -684,7 +684,7 @@
         {
           "name": "Satyajit Kamble",
           "role": "Founding Member",
-          "imageUrl": "NEXT_SATYAJIT_KAMBLE_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/posungvtykp6ltpgo5u6",
           "githubUrl": "https://github.com/satyaSK",
           "linkedinUrl": "https://www.linkedin.com/in/satyajitsk/",
           "instagramUrl": "https://www.instagram.com/satya_2797/"
@@ -692,7 +692,7 @@
         {
           "name": "Sarfaraz Iraqui",
           "role": "Founding Member",
-          "imageUrl": "NEXT_SARFARAZ_IRAQUI_IMG",
+          "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/bu84q65jwdjlooxb9rmb",
           "githubUrl": "https://github.com/sziraqui",
           "linkedinUrl": "https://www.linkedin.com/in/sziraqui/",
           "instagramUrl": "https://www.instagram.com/sziraqui/"
