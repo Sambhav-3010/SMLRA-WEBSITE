@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title:
-    "SMLRA",
+  metadataBase: new URL("https://smlra.somaiya.edu"), // 👈 add this line
+  title: "SMLRA",
   description:
     "Leading AI/ML research lab at Somaiya College of Engineering. Advancing neural networks, deep learning, computer vision, and NLP through cutting-edge research and innovation.",
   keywords: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Advancing the frontiers of artificial intelligence and machine learning through innovative research, cutting-edge models, and collaborative learning.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpg", // relative is fine now, resolved against metadataBase
         width: 1200,
         height: 630,
         alt: "SMLRA - AI Research Lab",

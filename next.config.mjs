@@ -7,9 +7,19 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['placeholder.svg'],
+    domains: ["placeholder.svg"],
     unoptimized: true,
   },
-}
+  async headers() {
+    return [
+      {
+        source: "/team",
+        headers: [
+          { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+    ];
+  },
+};
 
-export default nextConfig
+export default nextConfig;
