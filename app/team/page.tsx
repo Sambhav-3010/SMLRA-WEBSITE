@@ -133,8 +133,6 @@ export default function TeamPage() {
   const faculty = allTeamsData.faculty;
   const currentTeam = allTeamsData.currentTeam;
   const pastCouncils = allTeamsData.pastCouncils;
-
-  console.log(pastCouncils);
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
