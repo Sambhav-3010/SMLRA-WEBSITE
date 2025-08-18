@@ -1,90 +1,20 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-
-const teamMembers = [
-  {
-    name: "Dr. Sarah Chen",
-    role: "Faculty Advisor",
-    department: "Computer Science",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Leading researcher in deep learning and neural networks with 10+ years of experience.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "sarah.chen@somaiya.edu",
-    },
-  },
-  {
-    name: "Arjun Patel",
-    role: "President",
-    department: "AI/ML Engineering",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Passionate about computer vision and its applications in healthcare.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "arjun.patel@student.somaiya.edu",
-    },
-  },
-  {
-    name: "Priya Sharma",
-    role: "Vice President",
-    department: "Data Science",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Specializes in natural language processing and sentiment analysis.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "priya.sharma@student.somaiya.edu",
-    },
-  },
-  {
-    name: "Rahul Kumar",
-    role: "Technical Lead",
-    department: "Machine Learning",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Expert in reinforcement learning and autonomous systems.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "rahul.kumar@student.somaiya.edu",
-    },
-  },
-  {
-    name: "Ananya Singh",
-    role: "Research Coordinator",
-    department: "AI Ethics",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Focuses on ethical AI development and bias mitigation in ML models.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "ananya.singh@student.somaiya.edu",
-    },
-  },
-  {
-    name: "Vikram Reddy",
-    role: "Events Manager",
-    department: "Computer Vision",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Organizes workshops and hackathons, specializes in image processing.",
-    social: {
-      github: "#",
-      linkedin: "#",
-      email: "vikram.reddy@student.somaiya.edu",
-    },
-  },
-]
+import { motion } from "framer-motion";
+import { Book, Mail } from "lucide-react";
+// Linkedin icon is deprecated, use a placeholder SVG or import from simple-icons if available
+import Image from "next/image";
+import Link from "next/link";
+import allTeamsData from "@/lib/data/teams.json";
+import Card from "@/components/Card";
 
 export default function TeamPage() {
+  const faculty = allTeamsData.faculty;
+  console.log(faculty);
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="mt-4 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -93,66 +23,90 @@ export default function TeamPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Our <span className="text-gradient">Team</span>
-            </h1>
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Meet the brilliant minds behind SMLRA's success. Our diverse team of researchers, students, and faculty
-              members work together to push the boundaries of AI and ML.
+              Meet the brilliant minds behind SMLRA's success. Our diverse team
+              of researchers, students, and faculty advisors work together to
+              push the boundaries of AI and ML.
             </p>
           </motion.div>
         </div>
       </section>
 
+      <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-bold">
+        Our <span className="text-gradient">Faculty</span>
+      </h1>
+
       {/* Team Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden card-hover group"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-blue-400 font-medium mb-1">{member.role}</p>
-                  <p className="text-slate-400 text-sm mb-3">{member.department}</p>
-                  <p className="text-slate-300 text-sm mb-4 leading-relaxed">{member.bio}</p>
-
-                  <div className="flex space-x-3">
-                    <Link href={member.social.github} className="text-slate-400 hover:text-blue-400 transition-colors">
-                      <Github className="h-5 w-5" />
-                    </Link>
-                    <Link href={member.social.linkedin} className="text-slate-400 hover:text-blue-400 transition-colors">
-                      <Linkedin className="h-5 w-5" />
-                    </Link>
-                    <Link
-                      href={`mailto:${member.social.email}`}
-                      className="text-slate-400 hover:text-blue-400 transition-colors"
-                    >
-                      <Mail className="h-5 w-5" />
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-wrap justify-center gap-8 py-12">
+        {faculty[0].members.map(
+          (member: {
+            name: string;
+            role: string;
+            imageUrl: string;
+            linkedinUrl: string;
+            facultyProfileUrl: string;
+            email: string;
+          }) => (
+            <Card
+              key={member.name}
+              className="w-96 h-96 flex flex-col items-center justify-center rounded-2xl shadow-lg bg-slate-900 p-6 transition hover:shadow-xl"
+            >
+              <Image
+                src={member.imageUrl}
+                alt={member.name}
+                width={220}
+                height={220}
+                className="rounded-full border-4 border-slate-800 shadow-md mb-4 object-cover"
+              />
+              <h3 className="text-xl font-semibold text-slate-100 text-center">
+                {member.name}
+              </h3>
+              <p className="text-slate-400 text-sm mb-4 text-center">
+                {member.role}
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-auto">
+                <Link
+                  href={member.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-slate-800 transition"
+                >
+                  <svg
+                    className="h-6 w-6 text-slate-400 hover:text-slate-200 transition-colors"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <title>LinkedIn</title>
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 
+                2.761 2.239 5 5 5h14c2.761 0 5-2.239 
+                5-5v-14c0-2.761-2.239-5-5-5zm-11 
+                19h-3v-10h3v10zm-1.5-11.268c-.966 
+                0-1.75-.784-1.75-1.75s.784-1.75 
+                1.75-1.75 1.75.784 1.75 1.75-.784 
+                1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 
+                0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 
+                1.379-1.563 2.838-1.563 3.036 0 
+                3.6 2.001 3.6 4.601v5.595z"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href={member.facultyProfileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-slate-800 transition"
+                >
+                  <Book className="h-6 w-6 text-slate-400 hover:text-slate-200 transition-colors" />
+                </Link>
+                <Link href={`mailto:${member.email}`}>
+                  <Mail className="h-6 w-6 text-slate-400 hover:text-slate-200 transition-colors" />
+                </Link>
+              </div>
+            </Card>
+          )
+        )}
+      </div>
 
       {/* Join Us Section */}
       <section className="py-20 bg-slate-900/30">
@@ -167,8 +121,9 @@ export default function TeamPage() {
               Join Our <span className="text-gradient">Community</span>
             </h2>
             <p className="text-xl text-slate-300 mb-8">
-              Interested in becoming part of our research community? We're always looking for passionate individuals who
-              want to make a difference in AI and ML.
+              Interested in becoming part of our research community? We're
+              always looking for passionate individuals who want to make a
+              difference in AI and ML.
             </p>
             <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect">
               Apply Now
@@ -177,5 +132,5 @@ export default function TeamPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
