@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Linkedin,
-  Instagram,
-  Youtube,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { Linkedin, Instagram, Youtube, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -16,14 +10,18 @@ export default function Footer() {
       className="bg-slate-900/50 border-t border-slate-800 relative overflow-hidden"
       role="contentinfo"
     >
-      <div className="absolute inset-0 opacity-10" />
+      <div className="inset-0 opacity-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* SMLRA Info */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-16">
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <Image src={"SMLRA.png"}alt="SMLRA Logo" width={40} height={40} />
+            <div className="flex items-center space-x-4">
+              <Image
+                src={"SMLRA.png"}
+                alt="SMLRA Logo"
+                width={40}
+                height={40}
+              />
               <div>
                 <h3 className="text-2xl font-bold text-gradient font-display">
                   SMLRA
@@ -51,81 +49,19 @@ export default function Footer() {
                   <br />
                   Department of Computer Science
                   <br />
-                  Mumbai, Maharashtra, India
+                  Mumbai, Maharashtra, India - 400077
                 </address>
               </Link>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold font-display">Research</h4>
-            <nav className="space-y-3">
-              <Link
-                href="/about"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                About Lab
-              </Link>
-              <Link
-                href="/team"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Research Team
-              </Link>
-              <Link
-                href="/events"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Events & Workshops
-              </Link>
-              <Link
-                href="/blog"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Publications
-              </Link>
-            </nav>
-          </div>
-
-          {/* Resources */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold font-display">Resources</h4>
-            <nav className="space-y-3">
-              <Link
-                href="/blog"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Research Blog
-              </Link>
-              <Link
-                href="#"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Datasets
-              </Link>
-              <Link
-                href="#"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Model Zoo
-              </Link>
-              <Link
-                href="#"
-                className="block text-slate-400 hover:text-blue-400 transition-colors text-sm focus-visible"
-              >
-                Documentation
-              </Link>
-            </nav>
-          </div>
-
           {/* Connect */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold font-display">Connect</h4>
+          <div className="space-y-6 ml-12">
+            <h4 className="text-2xl font-semibold font-display">Connect with us</h4>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="https://www.linkedin.com/company/smlra-kjsce/posts/?feedView=all"
-                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
+                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-[#2365b5]/100 focus-visible"
                 aria-label="Connect on LinkedIn"
                 target="_blank"
               >
@@ -133,7 +69,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://www.instagram.com/smlra_kjsce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
+                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-[#f60669]/100 focus-visible"
                 aria-label="Follow on Instagram"
                 target="_blank"
               >
@@ -141,7 +77,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="https://www.youtube.com/@smlra-kjsce6909"
-                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
+                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-[#f60002]/100 focus-visible"
                 aria-label="Subscribe to YouTube"
                 target="_blank"
               >
@@ -149,7 +85,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="mailto:smlra-kjsce@somaiya.edu"
-                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-blue-500/10 focus-visible"
+                className="text-slate-400 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-[#33a951]/100 focus-visible"
                 aria-label="Send us an email"
                 target="_blank"
               >
@@ -163,16 +99,30 @@ export default function Footer() {
                 <p className="font-mono">Vibhu: +91 9877747148</p>
               </div>
               <div className="space-y-1">
-                <p className="font-mono text-[16px] font-bold">Council Co Lead</p>
+                <p className="font-mono text-[16px] font-bold">
+                  Council Co Lead
+                </p>
                 <p className="font-mono">Sambhav: +91 7007231054</p>
                 <p className="font-mono">Aryan: +91 9004136721</p>
               </div>
             </div>
           </div>
+
+             {/* Map */}
+          <div className="space-y-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7927659956486!2d72.8973512749772!3d19.072846982131143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c70058b8f75b%3A0x30141bc68f2501ae!2sSMLRA%20-%20Somaiya%20Machine%20Learning%20Research%20Association!5e0!3m2!1sen!2sin!4v1735114240403!5m2!1sen!2sin"
+              width="360"
+              height="280"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-slate-800">
+        <div className="mt-12 pt-8 border-t border-slate-800 ">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-slate-400 text-sm">
               <p>
