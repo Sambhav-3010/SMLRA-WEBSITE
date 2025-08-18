@@ -1,4 +1,3 @@
-// app/events/[id]/page.tsx
 "use client"
 
 import { motion } from "framer-motion"
@@ -28,12 +27,12 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   const completionPercentage = event.capacity ? (event.registered / event.capacity) * 100 : 0
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20">
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <Link 
           href="/events" 
-          className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors"
+          className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors text-sm sm:text-base"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Events</span>
@@ -42,7 +41,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
       {/* Hero Section with Event Image */}
       <section className="relative">
-        <div className="relative h-96 overflow-hidden">
+        <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
           {Array.isArray(event.image) ? (
             <Image
               src={event.image[0] || "/placeholder.svg"}
@@ -63,15 +62,15 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
           
           {/* Status Badges */}
-          <div className="absolute top-6 left-6 flex space-x-2">
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+          <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
+            <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
               event.type === 'workshop' ? 'bg-purple-500/20 text-purple-400' :
               event.type === 'seminar' ? 'bg-green-500/20 text-green-400' :
               'bg-blue-500/20 text-blue-400'
             }`}>
               {event.type}
             </span>
-            <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+            <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
               isUpcoming ? 'bg-green-500/20 text-green-400' : 'bg-slate-500/20 text-slate-400'
             }`}>
               {isUpcoming ? 'Upcoming' : 'Completed'}
@@ -81,26 +80,28 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
       </section>
 
       {/* Event Details */}
-      <section className="py-12">
+      <section className="py-8 sm:py-10 lg:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             {/* Title and Actions */}
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
+            <div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:items-start lg:justify-between mb-6 sm:mb-8">
               <div className="flex-1">
-                <h1 className="text-4xl sm:text-5xl font-bold mb-4">{event.title}</h1>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+                  {event.title}
+                </h1>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 mt-4 lg:mt-0">
-                <button className="flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-lg transition-colors">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:mt-0 lg:ml-6">
+                <button className="flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors text-sm sm:text-base">
                   <Share2 className="h-4 w-4" />
                   <span>Share</span>
                 </button>
                 {isUpcoming && (
-                  <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
+                  <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
                     <span>Register Now</span>
                     <ExternalLink className="h-4 w-4" />
                   </button>
@@ -109,25 +110,13 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
             </div>
 
             {/* Event Meta Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
                 <div className="flex items-center space-x-3">
-                  <Calendar className="h-5 w-5 text-blue-400" />
-                  <div>
-                    <p className="text-sm text-slate-400">Date</p>
-                    <p className="font-semibold">{
-                      (() => {
-                        try {
-                          return new Date(event.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })
-                        } catch {
-                          return event.date // fallback to original date string
-                        }
-                      })()
-                    }</p>
+                  <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm text-slate-400">Date</p>
+                    <p className="font-semibold text-sm sm:text-base truncate">{event.date}</p>
                   </div>
                 </div>
               </div>
@@ -135,10 +124,10 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               {event.time && (
                 <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-green-400" />
-                    <div>
-                      <p className="text-sm text-slate-400">Time</p>
-                      <p className="font-semibold">{event.time}</p>
+                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-slate-400">Time</p>
+                      <p className="font-semibold text-sm sm:text-base truncate">{event.time}</p>
                     </div>
                   </div>
                 </div>
@@ -146,34 +135,22 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
               <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-purple-400" />
-                  <div>
-                    <p className="text-sm text-slate-400">Location</p>
-                    <p className="font-semibold">{event.location || 'TBA'}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                <div className="flex items-center space-x-3">
-                  <Users className="h-5 w-5 text-cyan-400" />
-                  <div>
-                    <p className="text-sm text-slate-400">Attendees</p>
-                    <p className="font-semibold">
-                      {isUpcoming ? `${event.registered}/${event.capacity}` : `${event.registered} attended`}
-                    </p>
+                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400 flex-shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm text-slate-400">Location</p>
+                    <p className="font-semibold text-sm sm:text-base truncate">{"KJSCE"}</p>
                   </div>
                 </div>
               </div>
 
               {/* Year field for older events */}
               {event.year && (
-                <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
+                <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4 sm:col-span-2 lg:col-span-1">
                   <div className="flex items-center space-x-3">
-                    <Calendar className="h-5 w-5 text-yellow-400" />
-                    <div>
-                      <p className="text-sm text-slate-400">Academic Year</p>
-                      <p className="font-semibold">{event.year}</p>
+                    <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm text-slate-400">Academic Year</p>
+                      <p className="font-semibold text-sm sm:text-base truncate">{event.year}</p>
                     </div>
                   </div>
                 </div>
@@ -182,41 +159,40 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
             {/* Registration Progress (for upcoming events) */}
             {isUpcoming && event.capacity && (
-              <div className="mb-8">
+              <div className="mb-6 sm:mb-8">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-slate-400">Registration Progress</span>
                   <span className="text-sm font-medium">{Math.round(completionPercentage)}% Full</span>
                 </div>
-                <div className="w-full bg-slate-700 rounded-full h-3">
+                <div className="w-full bg-slate-700 rounded-full h-2 sm:h-3">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${completionPercentage}%` }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="bg-gradient-to-r from-blue-500 to-cyan-500 h-3 rounded-full"
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 sm:h-3 rounded-full"
                   />
                 </div>
               </div>
             )}
 
             {/* Description */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">About This Event</h2>
-              <p className="text-slate-300 leading-relaxed text-lg">{event.description}</p>
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About This Event</h2>
+              <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">{event.description}</p>
             </div>
 
             {/* Additional Images (if multiple images) */}
             {Array.isArray(event.image) && event.image.length > 1 && (
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-4">Event Gallery</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Event Gallery</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {event.image.slice(1).map((img: string, idx: number) => (
-                    <div key={idx} className="relative h-48 rounded-lg overflow-hidden">
+                    <div key={idx} className="relative h-40 sm:h-48 rounded-lg overflow-hidden">
                       <Image
                         src={img || "/placeholder.svg"}
                         alt={`${event.title} - Image ${idx + 2}`}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
                       />
                     </div>
                   ))}
@@ -226,12 +202,12 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
             {/* Call to Action */}
             {isUpcoming && (
-              <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 rounded-xl p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Join Us?</h3>
-                <p className="text-slate-300 mb-6">
+              <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 rounded-xl p-6 sm:p-8 text-center">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">Ready to Join Us?</h3>
+                <p className="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
                   Don't miss out on this amazing opportunity to learn and connect with fellow enthusiasts.
                 </p>
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect">
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base">
                   Register Now
                 </button>
               </div>

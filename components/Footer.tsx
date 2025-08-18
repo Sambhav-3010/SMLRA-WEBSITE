@@ -4,6 +4,21 @@ import Link from "next/link";
 import { Linkedin, Instagram, Youtube, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
+function LazyMap() {
+  return (
+    <div className="w-full aspect-video lg:aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7927659956486!2d72.8973512749772!3d19.072846982131143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c70058b8f75b%3A0x30141bc68f2501ae!2sSMLRA%20-%20Somaiya%20Machine%20Learning%20Research%20Association!5e0!3m2!1sen!2sin!4v1735114240403!5m2!1sen!2sin"
+        className="w-full h-full"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="SMLRA Location Map"
+      />
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer
@@ -18,11 +33,12 @@ export default function Footer() {
           <div className="space-y-4 sm:space-y-6">
             <div className="flex items-center space-x-3 sm:space-x-4">
               <Image
-                src={"SMLRA.png"}
+                src="/SMLRA.png"
                 alt="SMLRA Logo"
-                width={32}
-                height={32}
-                className="sm:w-10 sm:h-10"
+                width={40}
+                height={40}
+                priority
+                className="rounded-full"
               />
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gradient font-display">
@@ -59,8 +75,10 @@ export default function Footer() {
 
           {/* Connect Section */}
           <div className="space-y-4 sm:space-y-6 text-left">
-            <h4 className="text-xl sm:text-2xl font-semibold font-display text-left">Connect with us</h4>
-            
+            <h4 className="text-xl sm:text-2xl font-semibold font-display text-left">
+              Connect with us
+            </h4>
+
             {/* Social Media Links */}
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-start">
               <Link
@@ -100,19 +118,31 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="text-sm text-slate-400 space-y-3 sm:space-y-4 text-left">
               <div>
-                <p className="font-mono text-blue-400 text-left">smlra-kjsce@somaiya.edu</p>
+                <p className="font-mono text-blue-400 text-left">
+                  smlra-kjsce@somaiya.edu
+                </p>
               </div>
-              
+
               <div className="space-y-2 text-left">
-                <p className="font-mono text-sm sm:text-base font-bold text-slate-300 text-left">Council Lead</p>
-                <p className="font-mono text-xs sm:text-sm text-left">Vibhu: +91 9877747148</p>
+                <p className="font-mono text-sm sm:text-base font-bold text-slate-300 text-left">
+                  Council Lead
+                </p>
+                <p className="font-mono text-xs sm:text-sm text-left">
+                  Vibhu: +91 9877747148
+                </p>
               </div>
-              
+
               <div className="space-y-2 text-left">
-                <p className="font-mono text-sm sm:text-base font-bold text-slate-300 text-left">Council Co Lead</p>
+                <p className="font-mono text-sm sm:text-base font-bold text-slate-300 text-left">
+                  Council Co Lead
+                </p>
                 <div className="space-y-1 text-left">
-                  <p className="font-mono text-xs sm:text-sm text-left">Sambhav: +91 7007231054</p>
-                  <p className="font-mono text-xs sm:text-sm text-left">Aryan: +91 9004136721</p>
+                  <p className="font-mono text-xs sm:text-sm text-left">
+                    Sambhav: +91 7007231054
+                  </p>
+                  <p className="font-mono text-xs sm:text-sm text-left">
+                    Aryan: +91 9004136721
+                  </p>
                 </div>
               </div>
             </div>
@@ -120,17 +150,10 @@ export default function Footer() {
 
           {/* Map Section */}
           <div className="space-y-4 sm:space-y-6 text-left">
-            <h4 className="text-xl sm:text-2xl font-semibold font-display lg:hidden text-left">Location</h4>
-            <div className="w-full aspect-video lg:aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7927659956486!2d72.8973512749772!3d19.072846982131143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c70058b8f75b%3A0x30141bc68f2501ae!2sSMLRA%20-%20Somaiya%20Machine%20Learning%20Research%20Association!5e0!3m2!1sen!2sin!4v1735114240403!5m2!1sen!2sin"
-                className="w-full h-full"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="SMLRA Location Map"
-              />
-            </div>
+            <h4 className="text-xl sm:text-2xl font-semibold font-display text-left">
+              Location
+            </h4>
+            <LazyMap />
           </div>
         </div>
 

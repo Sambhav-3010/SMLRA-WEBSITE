@@ -56,13 +56,13 @@
     "title": "Cyber ML-DL-101",
     "description": "Participants explored the intersection of cybersecurity and machine learning, understanding how AI techniques can be applied to detect threats, analyze security patterns, and enhance cyber defense mechanisms.",
     "image": [
-      "Cyber ML-DL/image010.jpg",
-      "Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.59.39 PM.jpeg",
-      "Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.59.39 PM(1).jpeg",
-      "Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM.jpeg",
-      "Cyber ML-DL/Website.jpeg",
-      "Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM(3).jpeg",
-      "Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM(2).jpeg"
+      "/Cyber ML-DL/image010.jpg",
+      "/Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.59.39 PM.jpeg",
+      "/Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.59.39 PM(1).jpeg",
+      "/Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM.jpeg",
+      "/Cyber ML-DL/Website.jpeg",
+      "/Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM(3).jpeg",
+      "/Cyber ML-DL/WhatsApp Image 2019-12-16 at 12.53.37 PM(2).jpeg"
     ],
     "year": "2019 - 20",
     "status": "completed",
@@ -76,13 +76,13 @@
     "title": "GANs and VAEs",
     "description": "Students delved into Generative Adversarial Networks and Variational Autoencoders, learning how these advanced deep learning architectures can create realistic synthetic data and generate creative content.",
     "image": [
-      "GANs and VAEs/IMG_20191003_184518228_HDR.jpg",
-      "GANs and VAEs/IMG_20191003_174050691.jpg",
-      "GANs and VAEs/IMG_20191003_181817.jpg",
-      "GANs and VAEs/IMG_20191003_184541060_HDR.jpg",
-      "GANs and VAEs/IMG_20191003_181015278_HDR.jpg",
-      "GANs and VAEs/IMG_20191003_182816.jpg",
-      "GANs and VAEs/IMG_20191003_184505.jpg"
+      "/GANs and VAEs/IMG_20191003_184518228_HDR.jpg",
+      "/GANs and VAEs/IMG_20191003_174050691.jpg",
+      "/GANs and VAEs/IMG_20191003_181817.jpg",
+      "/GANs and VAEs/IMG_20191003_184541060_HDR.jpg",
+      "/GANs and VAEs/IMG_20191003_181015278_HDR.jpg",
+      "/GANs and VAEs/IMG_20191003_182816.jpg",
+      "/GANs and VAEs/IMG_20191003_184505.jpg"
     ],
     "year": "2019 - 20",
     "status": "completed",
@@ -96,13 +96,13 @@
     "title": "DL in NLP-101",
     "description": "Participants explored deep learning applications in Natural Language Processing, understanding how neural networks can process, understand, and generate human language for various applications.",
     "image": [
-      "DL in NLP-101/IMG_20200307_161827.jpg",
-      "DL in NLP-101/IMG_20200307_112153.jpg",
-      "DL in NLP-101/IMG20200307102636.jpg",
-      "DL in NLP-101/IMG20200307151208.jpg",
-      "DL in NLP-101/IMG20200307102608.jpg",
-      "DL in NLP-101/IMG_20200307_102753.jpg",
-      "DL in NLP-101/IMG_20200307_165303.jpg"
+      "/DL in NLP-101/IMG_20200307_161827.jpg",
+      "/DL in NLP-101/IMG_20200307_112153.jpg",
+      "/DL in NLP-101/IMG20200307102636.jpg",
+      "/DL in NLP-101/IMG20200307151208.jpg",
+      "/DL in NLP-101/IMG20200307102608.jpg",
+      "/DL in NLP-101/IMG_20200307_102753.jpg",
+      "/DL in NLP-101/IMG_20200307_165303.jpg"
     ],
     "year": "2019 - 20",
     "status": "completed",
@@ -116,9 +116,9 @@
     "title": "ML-DL 101",
     "description": "Students gained comprehensive understanding of machine learning and deep learning fundamentals, covering essential algorithms, neural network architectures, and practical implementation techniques.",
     "image": [
-      "ML-DL 101/IMG_20190908_004713_715.jpg",
-      "ML-DL 101/Screenshot_20200308-113732.png",
-      "ML-DL 101/IMG_20190908_004713_713.jpg"
+      "/ML-DL 101/IMG_20190908_004713_715.jpg",
+      "/ML-DL 101/Screenshot_20200308-113732.png",
+      "/ML-DL 101/IMG_20190908_004713_713.jpg"
     ],
     "year": "2019 - 20",
     "status": "completed",
@@ -146,13 +146,13 @@
     "title": "ML 101",
     "description": "Students explored the fundamentals of machine learning, covering key concepts, algorithms, and practical applications to build a strong foundation in AI and data science.",
     "image": [
-      "ML101-2022-23/IMG_9626.HEIC",
-      "ML101-2022-23/IMG_9628.HEIC",
-      "ML101-2022-23/IMG-20221125-WA0001.jpg",
-      "ML101-2022-23/IMG_3881.HEIC",
-      "ML101-2022-23/IMG_3897.HEIC",
-      "ML101-2022-23/IMG_3874.HEIC",
-      "ML101-2022-23/IMG_3900.HEIC"
+      "/ML101-2022-23/IMG_9626.HEIC",
+      "/ML101-2022-23/IMG_9628.HEIC",
+      "/ML101-2022-23/IMG-20221125-WA0001.jpg",
+      "/ML101-2022-23/IMG_3881.HEIC",
+      "/ML101-2022-23/IMG_3897.HEIC",
+      "/ML101-2022-23/IMG_3874.HEIC",
+      "/ML101-2022-23/IMG_3900.HEIC"
     ],
     "year": "2022 - 23",
     "status": "completed",
@@ -166,7 +166,7 @@
     "title": "BTS of Generative AI",
     "description": "Students explored the behind-the-scenes workings of generative AI systems, understanding the technology, algorithms, and creative processes that power modern AI-generated content.",
     "image": [
-      "BTS of generative AI/Geometrical Generative Art Facebook Post  (2).png"
+      "/BTS of generative AI/Geometrical Generative Art Facebook Post  (2).png"
     ],
     "year": "2022 - 23",
     "status": "completed",
@@ -180,7 +180,7 @@
     "title": "PyTorch Kickstart",
     "description": "Participants gained hands-on experience with PyTorch framework, learning to build, train, and deploy deep learning models through practical exercises and real-world examples.",
     "image": [
-      "PyTorch Kickstart/Pytorch kickstart.png"
+      "/PyTorch Kickstart/Pytorch kickstart.png"
     ],
     "year": "2022 - 23",
     "status": "completed",
@@ -194,7 +194,7 @@
     "title": "ML 101",
     "description": "Students delved into machine learning fundamentals, covering essential concepts, algorithms, and practical applications to develop a comprehensive understanding of AI technologies.",
     "image": [
-      "ML101 2023-24/use ai in your work (3).png"
+      "/ML101 2023-24/use ai in your work (3).png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -208,7 +208,7 @@
     "title": "deep learning workshop",
     "description": "Participants engaged in hands-on deep learning exercises, exploring neural network architectures, training techniques, and advanced concepts in artificial intelligence.",
     "image": [
-      "DeepLearning Workshop/Tonight!.png"
+      "/DeepLearning Workshop/Tonight!.png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -222,7 +222,7 @@
     "title": "How to read research paper",
     "description": "Students learned effective strategies for reading and understanding academic research papers, developing skills to extract key insights and stay updated with the latest AI developments.",
     "image": [
-      "HowToReadResearchPaper/how to read a research paper (1).png"
+      "/HowToReadResearchPaper/how to read a research paper (1).png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -236,7 +236,7 @@
     "title": "RL Workshop",
     "description": "Participants explored reinforcement learning concepts and algorithms, understanding how AI agents learn through interaction with environments to optimize decision-making processes.",
     "image": [
-      "RL workshop/RL.png"
+      "/RL workshop/RL.png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -250,7 +250,7 @@
     "title": "AI speaker session",
     "description": "Students gained insights from industry experts on current AI trends, career opportunities, and practical applications, helping them understand the real-world impact of artificial intelligence.",
     "image": [
-      "AI speaker session/SPEAKER SESSION ON AI.png"
+      "/AI speaker session/SPEAKER SESSION ON AI.png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -264,7 +264,7 @@
     "title": "What's up with AI",
     "description": "Participants explored the latest developments and trends in artificial intelligence, understanding current breakthroughs, challenges, and future directions in the AI landscape.",
     "image": [
-      "what's up with AI/Blue Elegant Digital Marketing Agency Trifold Brochure.jpg"
+      "/what's up with AI/Blue Elegant Digital Marketing Agency Trifold Brochure.jpg"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -278,7 +278,7 @@
     "title": "Cracking the code of LLMs : Code revealed",
     "description": "Students delved into the technical implementation of Large Language Models, understanding the architecture, training processes, and practical applications of modern AI language systems.",
     "image": [
-      "cracking the code of LLMs/Website Development Services (1).png"
+      "/cracking the code of LLMs/Website Development Services (1).png"
     ],
     "year": "2023 - 24",
     "status": "completed",
@@ -292,7 +292,7 @@
     "title": "the AI Townhouse",
     "description": "Participants experienced an immersive AI learning environment, engaging with cutting-edge technologies, interactive demonstrations, and collaborative projects in artificial intelligence.",
     "image": [
-      "the AI townhouse/Fully immersive experience (1).png"
+      "/the AI townhouse/Fully immersive experience (1).png"
     ],
     "year": "2023 - 24",
     "status": "completed",

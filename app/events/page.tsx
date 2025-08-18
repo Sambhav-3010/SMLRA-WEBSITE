@@ -1,108 +1,57 @@
-// app/events/page.tsx - Updated with lazy loading and clickable cards
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Users, Clock, ExternalLink } from "lucide-react"
+import { Calendar, MapPin, Users, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useEffect, useMemo } from "react"
 import events from "@/lib/data/eventData.json"
-
-const ITEMS_PER_PAGE = 6
 
 const upcomingEvents = events.filter((event) => event.status === "upcoming")
 const pastEvents = events.filter((event) => event.status === "completed")
 
 export default function EventsPage() {
-  const [visiblePastEvents, setVisiblePastEvents] = useState(ITEMS_PER_PAGE)
-  const [isLoading, setIsLoading] = useState(false)
-
-  // Memoized arrays to avoid unnecessary re-filtering
-  const displayedPastEvents = useMemo(
-    () => pastEvents.slice(0, visiblePastEvents),
-    [visiblePastEvents]
-  )
-
-  const hasMoreEvents = visiblePastEvents < pastEvents.length
-
-  const loadMoreEvents = async () => {
-    if (isLoading || !hasMoreEvents) return
-
-    setIsLoading(true)
-    
-    // Simulate network delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 500))
-    
-    setVisiblePastEvents(prev => Math.min(prev + ITEMS_PER_PAGE, pastEvents.length))
-    setIsLoading(false)
-  }
-
-  // Intersection Observer for automatic loading when scrolling near bottom
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && hasMoreEvents && !isLoading) {
-          loadMoreEvents()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    const loadMoreTrigger = document.getElementById('load-more-trigger')
-    if (loadMoreTrigger) {
-      observer.observe(loadMoreTrigger)
-    }
-
-    return () => {
-      if (loadMoreTrigger) {
-        observer.unobserve(loadMoreTrigger)
-      }
-    }
-  }, [hasMoreEvents, isLoading])
-
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      {/* Hero */}
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.4 }}
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-4">
               Events & <span className="text-gradient">Workshops</span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Join our community events, workshops, and seminars to learn, network, and stay updated with the latest in
-              AI and ML research.
+            <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
+              Join our community events, workshops, and seminars to learn, network, and stay updated with the latest in AI and ML research.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Upcoming Events */}
+      {/* Upcoming */}
       {upcomingEvents.length > 0 && (
-        <section className="py-20">
+        <section className="py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-12"
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="mb-8 sm:mb-12"
             >
-              <h2 className="text-3xl font-bold text-center mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
                 Upcoming <span className="text-gradient">Events</span>
               </h2>
-              <p className="text-slate-300 text-center max-w-2xl mx-auto">
-                Don't miss out on these exciting opportunities to learn and connect
+              <p className="text-slate-300 text-center max-w-2xl mx-auto px-4 text-sm sm:text-base">
+                Don&apos;t miss out on these exciting opportunities to learn and connect
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-16">
               {upcomingEvents.map((event, index) => (
                 <EventCard key={event.id} event={event} index={index} isUpcoming={true} />
               ))}
@@ -111,86 +60,49 @@ export default function EventsPage() {
         </section>
       )}
 
-      {/* Past Events */}
-      <section className="py-20 bg-slate-900/30">
+      {/* Past */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-12"
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl font-bold text-center mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
               Past <span className="text-gradient">Events</span>
             </h2>
-            <p className="text-slate-300 text-center max-w-2xl mx-auto">
+            <p className="text-slate-300 text-center max-w-2xl mx-auto px-4 text-sm sm:text-base">
               Take a look at our successful events and workshops
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayedPastEvents.map((event, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {pastEvents.map((event, index) => (
               <EventCard key={event.id} event={event} index={index} isUpcoming={false} />
             ))}
           </div>
-
-          {/* Load More Trigger */}
-          {hasMoreEvents && (
-            <div id="load-more-trigger" className="mt-12 text-center">
-              <button
-                onClick={loadMoreEvents}
-                disabled={isLoading}
-                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 disabled:from-slate-600 disabled:to-slate-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 glow-effect disabled:cursor-not-allowed"
-              >
-                {isLoading ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Loading...
-                  </span>
-                ) : (
-                  `Load More Events (${pastEvents.length - visiblePastEvents} remaining)`
-                )}
-              </button>
-            </div>
-          )}
-
-          {/* Loading indicator for automatic loading */}
-          {isLoading && hasMoreEvents && (
-            <div className="mt-8 text-center">
-              <div className="inline-flex items-center text-slate-400">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Loading more events...
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
+      {/* CTA */}
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Want to Host an <span className="text-gradient">Event</span>?
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+              Want to propose an <span className="text-gradient">Event idea</span>?
             </h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Have an idea for a workshop, seminar, or research presentation? We'd love to hear from you and help make
-              it happen.
+            <p className="text-lg sm:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed">
+              Have an idea for a workshop, seminar, or research presentation? We&apos;d love to hear from you and help make it happen.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect">
-              Propose an Event
+            <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base" onClick={() => window.open("mailto:smlra-kjsce@somaiya.edu")}>
+              Send us an Email
             </button>
           </motion.div>
         </div>
@@ -199,20 +111,18 @@ export default function EventsPage() {
   )
 }
 
-// Separate EventCard component for better performance
+// Card
 function EventCard({ event, index, isUpcoming }: { 
   event: any, 
   index: number, 
   isUpcoming: boolean 
 }) {
-  const [imageLoaded, setImageLoaded] = useState(false)
-
   const formatDate = (dateString: string) => {
     try {
-      return new Date(dateString).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+      return new Date(dateString).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
       })
     } catch {
       return dateString
@@ -221,108 +131,103 @@ function EventCard({ event, index, isUpcoming }: {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className={`bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden card-hover group ${
-        isUpcoming ? 'lg:col-span-1' : ''
-      }`}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden card-hover group"
     >
       <Link href={`/events/${event.id}`} className="block">
-        <div className="relative h-48 overflow-hidden bg-slate-800">
-          {!imageLoaded && (
-            <div className="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center">
-              <div className="text-slate-600">Loading...</div>
-            </div>
-          )}
+        <div className="relative h-40 sm:h-48 overflow-hidden bg-slate-800">
           <Image
-            src={Array.isArray(event.image) ? event.image[0] || "/placeholder.svg" : event.image || "/placeholder.svg"}
+            src={
+              Array.isArray(event.image)
+                ? event.image[0] || "/placeholder.svg"
+                : event.image || "/placeholder.svg"
+            }
             alt={event.title}
             fill
-            className={`object-cover group-hover:scale-110 transition-all duration-300 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            loading="lazy"
-            onLoad={() => setImageLoaded(true)}
+            className="object-cover group-hover:scale-110 transition-all duration-300"
           />
-          <div className="absolute top-4 left-4">
-            <span className={`${
-              isUpcoming 
-                ? 'bg-green-500/20 text-green-400' 
-                : 'bg-purple-500/20 text-purple-400'
-            } px-3 py-1 rounded-full text-sm font-medium`}>
+
+          <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+            <span
+              className={`${
+                isUpcoming
+                  ? "bg-green-500/20 text-green-400"
+                  : "bg-purple-500/20 text-purple-400"
+              } px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium`}
+            >
               {event.type}
             </span>
           </div>
-          <div className="absolute top-4 right-4">
-            <span className={`${
-              isUpcoming
-                ? 'bg-blue-500/20 text-blue-400'
-                : 'bg-slate-500/20 text-slate-400'
-            } px-3 py-1 rounded-full text-sm font-medium`}>
-              {isUpcoming ? 'Upcoming' : 'Completed'}
+          <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+            <span
+              className={`${
+                isUpcoming
+                  ? "bg-blue-500/20 text-blue-400"
+                  : "bg-slate-500/20 text-slate-400"
+              } px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium`}
+            >
+              {isUpcoming ? "Upcoming" : "Completed"}
             </span>
           </div>
         </div>
 
-        <div className="p-6">
-          <h3 className={`font-semibold mb-3 group-hover:text-blue-400 transition-colors ${
-            isUpcoming ? 'text-xl' : 'text-lg'
-          }`}>
+        <div className="p-4 sm:p-6">
+          <h3
+            className={`font-semibold mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors leading-tight ${
+              isUpcoming ? "text-lg sm:text-xl" : "text-base sm:text-lg"
+            }`}
+          >
             {event.title}
           </h3>
 
-          <p className={`text-slate-300 mb-4 leading-relaxed line-clamp-3 ${
-            isUpcoming ? '' : 'text-sm'
-          }`}>
+          <p
+            className={`text-slate-300 mb-3 sm:mb-4 leading-relaxed line-clamp-3 ${
+              isUpcoming ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+            }`}
+          >
             {event.description}
           </p>
 
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center space-x-2 text-sm text-slate-400">
-              <Calendar className="h-4 w-4" />
-              <span>{formatDate(event.date)}</span>
+          <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400">
+              <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="truncate">{formatDate(event.date)}</span>
             </div>
             {event.time && isUpcoming && (
-              <div className="flex items-center space-x-2 text-sm text-slate-400">
-                <Clock className="h-4 w-4" />
-                <span>{event.time}</span>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400">
+                <Clock className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                <span className="truncate">{event.time}</span>
               </div>
             )}
             {isUpcoming && (
-              <div className="flex items-center space-x-2 text-sm text-slate-400">
-                <MapPin className="h-4 w-4" />
-                <span>{event.location || 'TBA'}</span>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400">
+                <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                <span className="truncate">{event.location || "TBA"}</span>
               </div>
             )}
-            <div className="flex items-center space-x-2 text-sm text-slate-400">
-              <Users className="h-4 w-4" />
-              <span>
-                {isUpcoming && event.capacity 
-                  ? `${event.registered}/${event.capacity} registered`
-                  : `${event.registered} attendees`
-                }
-              </span>
-            </div>
             {event.year && !isUpcoming && (
-              <div className="flex items-center space-x-2 text-sm text-slate-400">
-                <Calendar className="h-4 w-4" />
-                <span>Academic Year: {event.year}</span>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400">
+                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                <span className="truncate">Academic Year: {event.year}</span>
               </div>
             )}
           </div>
 
           <div className="flex items-center justify-between">
             {event.capacity && isUpcoming && (
-              <div className="w-full bg-slate-700 rounded-full h-2 mr-4">
+              <div className="w-full bg-slate-700 rounded-full h-1.5 sm:h-2 mr-3 sm:mr-4">
                 <div
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full transition-all duration-300"
-                  style={{ width: `${(event.registered / event.capacity) * 100}%` }}
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 h-1.5 sm:h-2 rounded-full transition-all duration-300"
+                  style={{
+                    width: `${(event.registered / event.capacity) * 100}%`,
+                  }}
                 ></div>
               </div>
             )}
-            <span className="text-blue-400 text-sm font-medium whitespace-nowrap">
+            <span className="text-blue-400 text-xs sm:text-sm font-medium whitespace-nowrap">
               View Details →
             </span>
           </div>
