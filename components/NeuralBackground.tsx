@@ -20,7 +20,6 @@ export default function CNNBackground() {
       0.1,
       1000
     );
-    console.log("isMobile", isMobile)
     isMobile ? camera.position.set(0, 0, 10) : camera.position.set(0, 0, 12);
     camera.lookAt(0, 0, 0);
 
