@@ -5,6 +5,7 @@ import { Calendar, MapPin, Users, Clock, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import { title } from "process"
 import events from "@/lib/data/eventData.json"
+//import prevEvents from "@/lib/data/prevEventdata.json";
 
 const upcomingEvents = events.filter((event) => event.status === "upcoming")
 const pastEvents = events.filter((event) => event.status === "completed")
