@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "title": "TFM: THE FIRST MOVE",
+    "description": "The session aimed to spark students' interest in AI and Machine Learning, while equipping them with the knowledge and steps to start their career in the field. The insights from industry professionals and alumni were expected to inspire students to actively engage in AI-related challenges and learning paths.",
+    "date": "2024-09-02",
+    "time": "4:30 PM - 6:30 PM",
+    "location": "Aryabhatta Auditorium, KJSCE",
+    "capacity": 100,
+    "registered": 100,
+    "image": ["/placeholder.svg?height=300&width=500"],
+    "type": "Guest Lecture",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "title": "ML101: Dive into AI-ML Basics",
+    "description": "Participants gained foundational knowledge of AI/ML concepts, understand the applications of key algorithms, and develop the confidence to implement basic machine learning projects independently.",
+    "date": "2024-10-23",
+    "time": "5:00 PM - 7:00 PM",
+    "location": "Einstein Hall (A-202), KJSCE",
+    "capacity": 25,
+    "registered": 25,
+    "image": ["/placeholder.svg?height=300&width=500"],
+    "type": "Workshop (2-day session)",
+    "status": "completed"
+  },
+  {
+    "id": 3,
+    "title": "From Code to Impact: Build, Train, and Deploy AI",
+    "description": "Participants gained hands-on experience in building and deploying AI solutions, enhancing their technical skills in AI development, deployment, and real-world application integration.",
+    "date": "2025-01-23",
+    "time": "5:00 PM - 7:00 PM",
+    "location": "Seminar Hall (B113), KJSCE",
+    "capacity": 59,
+    "registered": 59,
+    "image": ["/placeholder.svg?height=300&width=500"],
+    "type": "Workshop",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "title": "AI Unplugged",
+    "description": "Students gained clarity on industry expectations, pathways into the AI/ML field, and how to effectively build their portfolios. The session is expected to encourage more practical learning and informed career planning among participants.",
+    "date": "2025-04-06",
+    "time": "12:00 PM - 1:00 PM",
+    "location": "Google Meet (Online)",
+    "capacity": 77,
+    "registered": 77,
+    "image": ["/placeholder.svg?height=300&width=500"],
+    "type": "Speaker Session",
+    "status": "completed"
+  }
+]
