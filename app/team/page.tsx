@@ -61,7 +61,7 @@ const FacultySection = ({
 }: {
   faculty: { members: FacultyMember[] }[];
 }) => (
-  <section className="w-full px-4 sm:px-6 lg:px-8 py-16 relative">
+  <section className="w-full px-4 sm:px-6 lg:px-8 py-16 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
     <div className="max-w-6xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -223,43 +223,6 @@ const PastCouncilsContent = ({
   );
 };
 
-const PastCouncilsSection = ({ pastCouncils }: PastCouncilsProps) => {
-  const scrollAnchorRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-24 relative">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          ref={scrollAnchorRef} // Anchor for scrolling
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "100px" }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Past{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Councils
-            </span>
-          </h1>
-          <p className="text-slate-300 text-xl max-w-4xl mx-auto leading-relaxed">
-            Celebrating the brilliant minds who built the foundation of SMLRA's
-            success across the years.
-          </p>
-        </motion.div>
-
-        <Suspense fallback={<PastCouncilsLoading />}>
-          <PastCouncilsContent
-            pastCouncils={pastCouncils}
-            scrollAnchorRef={scrollAnchorRef}
-          />
-        </Suspense>
-      </div>
-    </section>
-  );
-};
-
 const JoinUsSection = () => (
   <section className="py-24 relative">
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -390,7 +353,7 @@ const TeamPageContent = () => {
       <CurrentTeamSection />
 
       {/* Past Teams Section with Suspense */}
-      <section className="py-24 relative">
+      <section className="py-24 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

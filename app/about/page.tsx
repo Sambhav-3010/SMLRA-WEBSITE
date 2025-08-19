@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story + Stats Section */}
-      <section className="py-24 relative">
+      <section className="py-24 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Story */}
@@ -177,7 +177,7 @@ export default function AboutPage() {
 
       {/* Mission Section */}
       <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20"></div>
+        <div className="absolute inset-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <motion.h2
@@ -234,7 +234,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Values Section */}
-      <section className="py-24">
+      <section className="py-24 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {values.map((value, idx) => (
