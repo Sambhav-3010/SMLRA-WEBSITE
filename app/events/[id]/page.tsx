@@ -52,9 +52,21 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   }
 
   return (
-    <div className="min-h-screen pt-16 sm:pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Background Effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
+        <div className="absolute inset-0 grid-bg opacity-5"></div>
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-1/4 w-48 h-48 bg-pink-500/8 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-40 left-1/4 w-56 h-56 bg-blue-500/8 rounded-full blur-2xl"></div>
+      </div>
+
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 relative z-10">
         <Link 
           href="/events" 
           className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors text-sm sm:text-base"
@@ -65,7 +77,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
       </div>
 
       {/* Hero Section with Event Image Carousel */}
-      <section className="relative">
+      <section className="relative z-10">
         <div className="flex justify-center px-4 sm:px-6 lg:px-8">
           <div className="relative w-full max-w-4xl h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden rounded-lg">
             <Image
@@ -121,15 +133,15 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
             
             {/* Status Badges */}
             <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 z-10">
-              <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-                event.type === 'workshop' ? 'bg-purple-500/20 text-purple-400' :
-                event.type === 'seminar' ? 'bg-green-500/20 text-green-400' :
-                'bg-blue-500/20 text-blue-400'
+              <span className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                event.type === 'workshop' ? 'bg-purple-500 text-purple-400' :
+                event.type === 'seminar' ? 'bg-green-500 text-green-400' :
+                'bg-blue-500 text-blue-400'
               }`}>
                 {event.type}
               </span>
-              <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-                isUpcoming ? 'bg-green-500/20 text-green-400' : 'bg-slate-500/20 text-slate-400'
+              <span className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                isUpcoming ? 'bg-green-500 text-green-400' : 'bg-slate-500 text-slate-400'
               }`}>
                 {isUpcoming ? 'Upcoming' : 'Completed'}
               </span>
@@ -139,7 +151,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
       </section>
 
       {/* Event Details */}
-      <section className="py-8 sm:py-10 lg:py-12">
+      <section className="py-8 sm:py-10 lg:py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

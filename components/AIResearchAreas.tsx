@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { Brain, Eye } from "lucide-react";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type ResearchArea = {
   title: string;
@@ -12,8 +13,7 @@ type ResearchArea = {
   illustration?: string;
   color: string;
   icon: React.ElementType;
-  projects: number;
-  accuracy: string;
+  collaborations: string[];
 };
 
 const researchAreas: ResearchArea[] = [
@@ -25,8 +25,7 @@ const researchAreas: ResearchArea[] = [
     illustration: "/1.jpg",
     color: "from-green-400 to-blue-400",
     icon: Brain,
-    projects: 12,
-    accuracy: "97.2% accuracy",
+    collaborations: ["Mumbai Police Department"],
   },
   {
     title: "AI Companions in Early Childhood Development",
@@ -36,8 +35,7 @@ const researchAreas: ResearchArea[] = [
     illustration: "/2.jpg",
     color: "from-purple-400 to-pink-400",
     icon: Eye,
-    projects: 8,
-    accuracy: "95.8% accuracy",
+    collaborations: [],
   },
 ];
 
@@ -154,6 +152,23 @@ export default function AIResearchAreas() {
                         ))}
                       </div>
                     </div>
+
+                    {/* Collaborations */}
+                    <div className="mt-auto">
+                      <div className="text-xs text-slate-500 mb-2 font-mono font-semibold tracking-wide">
+                        {area.collaborations.length > 0 ? "COLLABORATIONS:" : ""}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {area.collaborations.map((collab) => (
+                          <span
+                            key={collab}
+                            className="text-xs bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full font-mono border border-slate-700/50 hover:border-blue-500/50 transition-colors duration-300"
+                          >
+                            {collab}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.article>
@@ -171,13 +186,15 @@ export default function AIResearchAreas() {
           <p className="text-slate-400 mb-6 font-mono">
             Interested in collaborating on cutting-edge AI research?
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect focus-visible"
-          >
-            Join Our Research
-          </motion.button>
+          <Link href="">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect focus-visible"
+            >
+              Join Our Team
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

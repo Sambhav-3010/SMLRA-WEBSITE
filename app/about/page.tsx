@@ -1,20 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Lightbulb, Users, Award, Zap, Globe } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Heart,
+  Lightbulb,
+  Users,
+  Award,
+  Zap,
+  Globe,
+} from "lucide-react";
 
 const values = [
   {
     icon: Eye,
     title: "Vision",
-    description:
-      "To foster a thriving culture of Machine Learning and Deep Learning research at KJSSE by cultivating student-researcher collaboration, encouraging original inquiry, and building pathways to cutting-edge innovations in AI that drive Industry 4.0 and beyond.",
+    description: [
+      "To foster a thriving culture of Machine Learning and Deep Learning research at KJSSE by cultivating meaningful student-researcher collaboration and encouraging original scientific inquiry. Our mission is to create an environment where curiosity meets expertise, enabling breakthrough discoveries and innovative solutions.",
+      "We are committed to building clear pathways to cutting-edge innovations in artificial intelligence that drive Industry 4.0 and beyond. Through our comprehensive research initiatives, we aim to bridge the gap between academic excellence and real-world applications that shape the future of technology.",
+    ],
   },
   {
     icon: Heart,
     title: "Values",
-    description: "Collaboration • Innovation • Excellence • Curiosity • Community",
-    valuesList: ["Collaboration", "Innovation", "Excellence", "Curiosity", "Community"]
+    description:
+      "Collaboration • Innovation • Excellence • Curiosity • Community",
+    valuesList: [
+      "Collaboration",
+      "Innovation",
+      "Excellence",
+      "Curiosity",
+      "Community",
+    ],
   },
 ];
 
@@ -29,25 +47,25 @@ const highlights = [
   {
     icon: Users,
     title: "Collaborative Community",
-    description: "Building bridges between students and industry experts"
+    description: "Building bridges between students and industry experts",
   },
   {
     icon: Award,
     title: "Research Excellence",
-    description: "Fostering original inquiry and cutting-edge AI innovations"
+    description: "Fostering original inquiry and cutting-edge AI innovations",
   },
   {
     icon: Lightbulb,
     title: "Knowledge Sharing",
-    description: "Symposiums, workshops, and peer-to-peer learning"
-  }
+    description: "Symposiums, workshops, and peer-to-peer learning",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden h-screen flex items-center flex-col justify-center">
         <BackgroundDecorations />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -67,30 +85,10 @@ export default function AboutPage() {
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Dedicated student community of KJSSE with an aim to accelerate
               collaboration among students in AI research and development.
-              Discover what motivates our members and the importance of such
-              a community at our university.
+              Discover what motivates our members and the importance of such a
+              community at our university.
             </p>
           </motion.div>
-
-          {/* Highlights Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {highlights.map((highlight, index) => (
-              <motion.div
-                key={highlight.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/60 transition-all duration-300 hover:scale-105 hover:border-blue-500/30"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                  <highlight.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h3>
-                <p className="text-slate-400 text-sm">{highlight.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -107,14 +105,30 @@ export default function AboutPage() {
               className="space-y-8"
             >
               <h2 className="text-4xl sm:text-5xl font-bold mb-8">
-                Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Story</span>
+                Our{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Story
+                </span>
               </h2>
               <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                 <p>
-                  Founded in <span className="text-blue-400 font-semibold">2018</span> at KJSSE, the Somaiya Machine Learning Research Association (SMLRA) draws inspiration from research communities at <span className="text-cyan-400 font-semibold">MIT, Stanford, and IIT Bombay</span>.
+                  Founded in{" "}
+                  <span className="text-blue-400 font-semibold">2018</span> at
+                  KJSSE, the Somaiya Machine Learning Research Association
+                  (SMLRA) draws inspiration from research communities at{" "}
+                  <span className="text-cyan-400 font-semibold">
+                    MIT, Stanford, and IIT Bombay
+                  </span>
+                  .
                 </p>
                 <p>
-                  With the growing global impact of AI, Machine Learning, and Deep Learning, SMLRA fosters a research-driven ecosystem bridging students and researchers, encouraging <span className="text-purple-400 font-semibold">innovation and intellectual growth</span>.
+                  With the growing global impact of AI, Machine Learning, and
+                  Deep Learning, SMLRA fosters a research-driven ecosystem
+                  bridging students and researchers, encouraging{" "}
+                  <span className="text-purple-400 font-semibold">
+                    innovation and intellectual growth
+                  </span>
+                  .
                 </p>
               </div>
             </motion.div>
@@ -136,7 +150,9 @@ export default function AboutPage() {
                     <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-slate-400 font-medium">{stat.label}</div>
+                    <div className="text-slate-400 font-medium">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -152,25 +168,58 @@ export default function AboutPage() {
       {/* Mission Section */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-bold mb-8"
-          >
-            Our <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Mission</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-xl text-slate-300 max-w-5xl mx-auto leading-relaxed"
-          >
-            Our mission is to cultivate a research-focused AI community through symposiums, workshops, and competitions. By supporting student-led research and connecting them with domain experts, we build a collaborative network for peer-to-peer learning and impactful contributions to AI.
-          </motion.p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl sm:text-5xl font-bold mb-8"
+            >
+              Our{" "}
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Mission
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-xl text-slate-300 max-w-5xl mx-auto leading-relaxed"
+            >
+              Our mission is to cultivate a research-focused AI community
+              through symposiums, workshops, and competitions. By supporting
+              student-led research and connecting them with domain experts, we
+              build a collaborative network for peer-to-peer learning and
+              impactful contributions to AI.
+            </motion.p>
+          </div>
+
+          {/* Highlights Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+            {highlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/60 transition-all duration-300 hover:scale-105 hover:border-blue-500/30"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <highlight.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">
+                  {highlight.title}
+                </h3>
+                <p className="text-slate-400 text-sm">
+                  {highlight.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -192,12 +241,16 @@ export default function AboutPage() {
                     <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <value.icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-white">{value.title}</h3>
+                    <h3 className="text-3xl font-bold text-white">
+                      {value.title}
+                    </h3>
                   </div>
 
                   {value.title === "Values" ? (
                     <div className="space-y-4">
-                      <p className="text-slate-400 text-lg leading-relaxed mb-6">Our core values guide everything we do:</p>
+                      <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                        Our core values guide everything we do:
+                      </p>
                       <div className="grid grid-cols-1 gap-3">
                         {value.valuesList?.map((val, i) => (
                           <motion.div
@@ -209,13 +262,20 @@ export default function AboutPage() {
                             className="flex items-center space-x-3 bg-slate-800/30 rounded-lg p-3 border border-slate-700/30"
                           >
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
-                            <span className="text-slate-300 font-medium">{val}</span>
+                            <span className="text-slate-300 font-medium">
+                              {val}
+                            </span>
                           </motion.div>
                         ))}
                       </div>
                     </div>
                   ) : (
-                    <p className="text-slate-400 text-lg leading-relaxed">{value.description}</p>
+                    <p className="text-slate-400 text-lg leading-relaxed">
+                      {value.description[0]}
+                      <br />
+                      <br />
+                      {value.description[1]}
+                    </p>
                   )}
                 </div>
               </motion.div>
@@ -236,11 +296,14 @@ export default function AboutPage() {
           >
             <h3 className="text-3xl sm:text-4xl font-bold mb-6">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Innovate</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Innovate
+              </span>{" "}
               with Us?
             </h3>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Join a community of passionate researchers and innovators shaping the future of AI.
+              Join a community of passionate researchers and innovators shaping
+              the future of AI.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

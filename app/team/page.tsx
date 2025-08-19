@@ -361,9 +361,9 @@ const TeamPageContent = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
             >
-              Meet the brilliant minds behind SMLRA's success. Our diverse team
-              of researchers, students, and faculty advisors work together to
-              push the boundaries of AI and ML.
+              Meet the brilliant minds, dedicated researchers, and
+              visionary leaders who have been a part of SMLRA's
+              remarkable success and growth across the years. Together, they continue to push the boundaries of what's possible in the rapidly evolving field of AI and ML.
             </motion.p>
           </motion.div>
         </div>
