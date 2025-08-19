@@ -208,12 +208,6 @@ function EventCard({
   index: number;
   isUpcoming: boolean;
 }) {
-  const formatDate = (dateString: string) =>
-    new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
 
   return (
     <motion.div
@@ -281,7 +275,7 @@ function EventCard({
           <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
             <div className="flex items-center space-x-2 text-slate-400 text-sm">
               <Calendar className="h-4 w-4" />
-              <span>{formatDate(event.date)}</span>
+              <span>{event.date}</span>
             </div>
             {isUpcoming && event.time && (
               <div className="flex items-center space-x-2 text-slate-400 text-sm">
