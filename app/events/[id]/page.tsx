@@ -1,11 +1,10 @@
 "use client"
-
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Users, Clock, ArrowLeft, ExternalLink, Share2 } from "lucide-react"
+import { Calendar, MapPin, Users, Clock, ArrowLeft, ExternalLink, Share2, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { use } from "react"
+import { use, useState, useEffect } from "react"
 import events from "@/lib/data/eventData.json"
 
 interface EventDetailsPageProps {
@@ -18,6 +17,9 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   // Unwrap the params Promise using React.use()
   const { id } = use(params)
   const event = events.find(e => e.id === parseInt(id))
+  
+  // Carousel state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   if (!event) {
     notFound()
@@ -25,6 +27,29 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
   const isUpcoming = event.status === "upcoming"
   const completionPercentage = event.capacity ? (event.registered / event.capacity) * 100 : 0
+  
+  // Handle both single image and array of images
+  const eventImages = Array.isArray(event.image) ? event.image : [event.image]
+  const hasMultipleImages = eventImages.length > 1
+
+  // Auto-advance carousel
+  useEffect(() => {
+    if (!hasMultipleImages) return // Don't start timer for single images
+    
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % eventImages.length)
+    }, 3000) // Change image every 3 seconds
+
+    return () => clearInterval(interval) // Clear interval on component unmount
+  }, [eventImages.length, hasMultipleImages])
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % eventImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + eventImages.length) % eventImages.length)
+  }
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20">
@@ -39,42 +64,76 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
         </Link>
       </div>
 
-      {/* Hero Section with Event Image */}
+      {/* Hero Section with Event Image Carousel */}
       <section className="relative">
-        <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
-          {Array.isArray(event.image) ? (
+        <div className="flex justify-center px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full max-w-4xl h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden rounded-lg">
             <Image
-              src={event.image[0] || "/placeholder.svg"}
-              alt={event.title}
+              src={eventImages[currentImageIndex] || "/placeholder.svg"}
+              alt={`${event.title} - Image ${currentImageIndex + 1}`}
               fill
-              className="object-cover"
+              className="object-cover transition-opacity duration-500"
               priority
             />
-          ) : (
-            <Image
-              src={event.image || "/placeholder.svg"}
-              alt={event.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
-          
-          {/* Status Badges */}
-          <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
-            <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-              event.type === 'workshop' ? 'bg-purple-500/20 text-purple-400' :
-              event.type === 'seminar' ? 'bg-green-500/20 text-green-400' :
-              'bg-blue-500/20 text-blue-400'
-            }`}>
-              {event.type}
-            </span>
-            <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-              isUpcoming ? 'bg-green-500/20 text-green-400' : 'bg-slate-500/20 text-slate-400'
-            }`}>
-              {isUpcoming ? 'Upcoming' : 'Completed'}
-            </span>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent rounded-lg" />
+            
+            {/* Carousel Navigation */}
+            {hasMultipleImages && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+                </button>
+                
+                <button
+                  onClick={nextImage}
+                  className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                </button>
+
+                {/* Image Indicators */}
+                <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                  {eventImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex 
+                          ? 'bg-white' 
+                          : 'bg-white/50 hover:bg-white/70'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Image Counter */}
+                <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-black/50 text-white px-2 py-1 rounded text-xs sm:text-sm z-10">
+                  {currentImageIndex + 1} / {eventImages.length}
+                </div>
+              </>
+            )}
+            
+            {/* Status Badges */}
+            <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 z-10">
+              <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                event.type === 'workshop' ? 'bg-purple-700 text-purple-100' :
+                event.type === 'seminar' ? 'bg-green-700 text-green-100' :
+                'bg-blue-700 text-blue-100'
+              }`}>
+                {event.type}
+              </span>
+              <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                isUpcoming ? 'bg-emerald-700 text-emerald-100' : 'bg-slate-600 text-slate-100'
+              }`}>
+                {isUpcoming ? 'Upcoming' : 'Completed'}
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -96,10 +155,6 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:mt-0 lg:ml-6">
-                <button className="flex items-center justify-center space-x-2 bg-slate-800 hover:bg-slate-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors text-sm sm:text-base">
-                  <Share2 className="h-4 w-4" />
-                  <span>Share</span>
-                </button>
                 {isUpcoming && (
                   <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
                     <span>Register Now</span>
@@ -180,25 +235,6 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About This Event</h2>
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">{event.description}</p>
             </div>
-
-            {/* Additional Images (if multiple images) */}
-            {Array.isArray(event.image) && event.image.length > 1 && (
-              <div className="mb-6 sm:mb-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Event Gallery</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  {event.image.slice(1).map((img: string, idx: number) => (
-                    <div key={idx} className="relative h-40 sm:h-48 rounded-lg overflow-hidden">
-                      <Image
-                        src={img || "/placeholder.svg"}
-                        alt={`${event.title} - Image ${idx + 2}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Call to Action */}
             {isUpcoming && (

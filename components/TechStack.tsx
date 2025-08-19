@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-
+// import TensorProtocolCarousel from "./Carsouel"
 const technologies = [
   { name: "Python", logo: "/placeholder.svg?height=60&width=60", category: "Language" },
   { name: "PyTorch", logo: "/placeholder.svg?height=60&width=60", category: "Framework" },
@@ -20,6 +20,7 @@ const technologies = [
 
 export default function TechStack() {
   return (
+    // <TensorProtocolCarousel/>
     <section className="py-20 bg-slate-900/30 relative overflow-hidden">
       <div className="absolute inset-0 circuit-pattern opacity-20"></div>
 
