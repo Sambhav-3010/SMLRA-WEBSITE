@@ -1,86 +1,156 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Target, Eye, Heart, Lightbulb } from "lucide-react"
+import { motion } from "framer-motion";
+import { Target, Eye, Heart, Lightbulb, Users, Award, Zap, Globe } from "lucide-react";
 
 const values = [
-  {
-    icon: Target,
-    title: "Mission",
-    description:
-      "To advance AI/ML research and foster innovation through collaborative learning and practical applications.",
-  },
   {
     icon: Eye,
     title: "Vision",
     description:
-      "To be a leading research community that bridges the gap between academic research and industry applications.",
+      "To foster a thriving culture of Machine Learning and Deep Learning research at KJSSE by cultivating student-researcher collaboration, encouraging original inquiry, and building pathways to cutting-edge innovations in AI that drive Industry 4.0 and beyond.",
   },
   {
     icon: Heart,
     title: "Values",
-    description: "Excellence, collaboration, innovation, and ethical AI development guide everything we do.",
+    description: "Collaboration • Innovation • Excellence • Curiosity • Community",
+    valuesList: ["Collaboration", "Innovation", "Excellence", "Curiosity", "Community"]
+  },
+];
+
+const stats = [
+  { number: "2018", label: "Founded", icon: Target },
+  { number: "1000+", label: "Models Trained", icon: Zap },
+  { number: "4TB+", label: "Data Processed", icon: Globe },
+  { number: "6+", label: "Ongoing Research", icon: Lightbulb },
+];
+
+const highlights = [
+  {
+    icon: Users,
+    title: "Collaborative Community",
+    description: "Building bridges between students and industry experts"
+  },
+  {
+    icon: Award,
+    title: "Research Excellence",
+    description: "Fostering original inquiry and cutting-edge AI innovations"
   },
   {
     icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Pushing boundaries in machine learning research while maintaining practical relevance and social impact.",
-  },
-]
+    title: "Knowledge Sharing",
+    description: "Symposiums, workshops, and peer-to-peer learning"
+  }
+];
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
+          <div className="absolute inset-0 grid-bg opacity-5"></div>
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              About <span className="text-gradient">SMLRA</span>
-            </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              The Somaiya Machine Learning Research Association is a vibrant community of researchers, students, and
-              innovators dedicated to advancing the frontiers of artificial intelligence and machine learning.
-            </p>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mb-8"
+            >
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+                About{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  SMLRA
+                </span>
+              </h1>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
+            >
+              Dedicated student community of KJSSE with an aim to accelerate
+              collaboration among students in AI research and development. Read
+              on to find what motivates our members to be a part of our society
+              and the need for such a community in our university!
+            </motion.p>
+          </motion.div>
+
+          {/* Highlights Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          >
+            {highlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/60 transition-all duration-300 hover:scale-105 hover:border-blue-500/30"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <highlight.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">{highlight.title}</h3>
+                <p className="text-slate-400 text-sm">{highlight.description}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-slate-900/30">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="space-y-8"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                Our <span className="text-gradient">Story</span>
-              </h2>
-              <div className="space-y-4 text-slate-300">
-                <p>
-                  Founded in 2020, SMLRA emerged from a shared passion for artificial intelligence and its potential to
-                  solve complex real-world problems. What started as a small group of computer science students
-                  experimenting with neural networks has evolved into a cutting-edge AI research laboratory.
-                </p>
-                <p>
-                  Our lab specializes in deep learning, computer vision, natural language processing, and reinforcement
-                  learning. We've trained over 500 models, published 40+ research papers, and deployed AI solutions that
-                  impact thousands of users daily.
-                </p>
-                <p>
-                  Today, SMLRA stands as a premier AI research facility at Somaiya College of Engineering, where we push
-                  the boundaries of what's possible with artificial intelligence and machine learning.
-                </p>
+              <div>
+                <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+                  Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Story</span>
+                </h2>
+                <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
+                  <p>
+                    Founded in the academic year{" "}
+                    <span className="text-blue-400 font-semibold">2018</span> at K. J. Somaiya College of
+                    Engineering (Now K.J. Somaiya School Of Engineering), the
+                    Somaiya Machine Learning Research Association (SMLRA) was born
+                    out of the inspiration drawn from world-renowned research
+                    communities at{" "}
+                    <span className="text-cyan-400 font-semibold">MIT, Stanford, and IIT Bombay</span>.
+                  </p>
+                  <p>
+                    With the growing global impact of Artificial Intelligence,
+                    Machine Learning, and Deep Learning, SMLRA set out to build a
+                    research-driven ecosystem within KJSSE, one that bridges the gap
+                    between students and researchers, fostering{" "}
+                    <span className="text-purple-400 font-semibold">innovation and intellectual growth</span>.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -91,38 +161,42 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl p-8 border border-blue-500/20">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient">2020</div>
-                    <div className="text-slate-400">Founded</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient">500+</div>
-                    <div className="text-slate-400">Models Trained</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient">10TB+</div>
-                    <div className="text-slate-400">Data Processed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient">96.8%</div>
-                    <div className="text-slate-400">Avg Accuracy</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient">25+</div>
-                    <div className="text-slate-400">GPU Clusters</div>
-                  </div>
+              {/* Stats Grid */}
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 shadow-2xl">
+                <div className="grid grid-cols-2 gap-8">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="text-center group"
+                    >
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <stat.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-slate-400 text-sm font-medium">{stat.label}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-xl"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Mission Section */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,34 +204,149 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Our <span className="text-gradient">Foundation</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+              Our <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Mission</span>
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              The principles that guide our research and community
-            </p>
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xl text-slate-300 leading-relaxed">
+                Our mission is to cultivate a research-focused AI community. We
+                bolster knowledge through symposiums, workshops, and competitions,
+                moving beyond a purely product-oriented approach. By supporting
+                student-led research and connecting them with domain experts, we
+                build a collaborative network for peer-to-peer learning and
+                impactful contributions to AI.
+              </p>
+            </div>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Vision & Values Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 card-hover"
+                className="group"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
-                  <value.icon className="h-6 w-6 text-white" />
+                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 h-full hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:scale-[1.02]">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <value.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-white">{value.title}</h3>
+                  </div>
+                  
+                  {value.title === "Values" ? (
+                    <div className="space-y-4">
+                      <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                        Our core values guide everything we do:
+                      </p>
+                      <div className="grid grid-cols-1 gap-3">
+                        {value.valuesList?.map((val, i) => (
+                          <motion.div
+                            key={val}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-center space-x-3 bg-slate-800/30 rounded-lg p-3 border border-slate-700/30"
+                          >
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
+                            <span className="text-slate-300 font-medium">{val}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-slate-400 text-lg leading-relaxed">{value.description}</p>
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-slate-400">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Impact Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-blue-950/30 to-slate-900/50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+              Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Impact</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Transforming the landscape of AI research and education at KJSSE
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-slate-400 font-medium">{stat.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-24 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-3xl p-12 border border-blue-500/20 shadow-2xl"
+          >
+            <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+              Ready to{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Innovate
+              </span>{" "}
+              with Us?
+            </h3>
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+              Join a community of passionate researchers and innovators shaping the future of AI
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+            >
+              Get Involved
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
