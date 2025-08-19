@@ -8,9 +8,7 @@ import { use, useState, useEffect } from "react"
 import events from "@/lib/data/eventData.json"
 
 interface EventDetailsPageProps {
-  params: Promise<{
-    id: string
-  }>
+  params: { id: string }
 }
 
 export default function EventDetailsPage({ params }: EventDetailsPageProps) {
@@ -22,7 +20,11 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   if (!event) {
-    notFound()
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-950">
+        <div className="animate-spin h-12 w-12 border-b-2 border-blue-400 rounded-full"></div>
+      </div>
+    )
   }
 
   const isUpcoming = event.status === "upcoming"
@@ -52,13 +54,13 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   }
 
   return (
-    <div className="min-h-screen pt-16 sm:pt-20">
+    <div className="min-h-screen pt-16 sm:pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Background */}
+      <BackgroundEffects />
+
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-        <Link 
-          href="/events" 
-          className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors text-sm sm:text-base"
-        >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative z-10">
+        <Link href="/events" className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors text-sm sm:text-base">
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Events</span>
         </Link>
@@ -139,7 +141,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
       </section>
 
       {/* Event Details */}
-      <section className="py-8 sm:py-10 lg:py-12">
+      <section className="py-8 sm:py-10 lg:py-12 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -164,53 +166,15 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               </div>
             </div>
 
-            {/* Event Meta Information */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-              <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                <div className="flex items-center space-x-3">
-                  <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400 flex-shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-slate-400">Date</p>
-                    <p className="font-semibold text-sm sm:text-base truncate">{event.date}</p>
-                  </div>
-                </div>
-              </div>
-
-              {event.time && (
-                <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                  <div className="flex items-center space-x-3">
-                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <p className="text-xs sm:text-sm text-slate-400">Time</p>
-                      <p className="font-semibold text-sm sm:text-base truncate">{event.time}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400 flex-shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-slate-400">Location</p>
-                    <p className="font-semibold text-sm sm:text-base truncate">{"KJSCE"}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Year field for older events */}
-              {event.year && (
-                <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-4 sm:col-span-2 lg:col-span-1">
-                  <div className="flex items-center space-x-3">
-                    <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <p className="text-xs sm:text-sm text-slate-400">Academic Year</p>
-                      <p className="font-semibold text-sm sm:text-base truncate">{event.year}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+function EventMeta({ event, isUpcoming, completionPercentage }: { event: any; isUpcoming: boolean; completionPercentage: number }) {
+  return (
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <MetaCard icon={<Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400" />} label="Date" value={event.date} />
+        {event.time && <MetaCard icon={<Clock className="h-4 w-4 sm:h-5 sm:w-5 text-green-400" />} label="Time" value={event.time} />}
+        <MetaCard icon={<MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" />} label="Location" value={event.location || "KJSCE"} />
+        {event.year && <MetaCard icon={<Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400" />} label="Academic Year" value={event.year} />}
+      </div>
 
             {/* Registration Progress (for upcoming events) */}
             {isUpcoming && event.capacity && (
@@ -236,21 +200,15 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">{event.description}</p>
             </div>
 
-            {/* Call to Action */}
-            {isUpcoming && (
-              <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 rounded-xl p-6 sm:p-8 text-center">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">Ready to Join Us?</h3>
-                <p className="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                  Don't miss out on this amazing opportunity to learn and connect with fellow enthusiasts.
-                </p>
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base">
-                  Register Now
-                </button>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      </section>
+function EventCTA() {
+  return (
+    <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 rounded-xl p-6 sm:p-8 text-center">
+      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">Ready to Join Us?</h3>
+      <p className="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">Don't miss out on this amazing opportunity to learn and connect with fellow enthusiasts.</p>
+      <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base">
+        Register Now
+      </button>
     </div>
   )
 }
+

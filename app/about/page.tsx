@@ -48,15 +48,7 @@ export default function AboutPage() {
     <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
-          <div className="absolute inset-0 grid-bg opacity-5"></div>
-          {/* Floating Elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-        </div>
+        <BackgroundDecorations />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -65,46 +57,30 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-8"
-            >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-                About{" "}
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  SMLRA
-                </span>
-              </h1>
-            </motion.div>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
-            >
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+              About{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                SMLRA
+              </span>
+            </h1>
+
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
               Dedicated student community of KJSSE with an aim to accelerate
-              collaboration among students in AI research and development. Read
-              on to find what motivates our members to be a part of our society
-              and the need for such a community in our university!
-            </motion.p>
+              collaboration among students in AI research and development.
+              Discover what motivates our members and the importance of such
+              a community at our university.
+            </p>
           </motion.div>
 
           {/* Highlights Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {highlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/60 transition-all duration-300 hover:scale-105 hover:border-blue-500/30"
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
@@ -114,14 +90,15 @@ export default function AboutPage() {
                 <p className="text-slate-400 text-sm">{highlight.description}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Story + Stats Section */}
       <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Story */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -129,31 +106,20 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div>
-                <h2 className="text-4xl sm:text-5xl font-bold mb-8">
-                  Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Story</span>
-                </h2>
-                <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
-                  <p>
-                    Founded in the academic year{" "}
-                    <span className="text-blue-400 font-semibold">2018</span> at K. J. Somaiya College of
-                    Engineering (Now K.J. Somaiya School Of Engineering), the
-                    Somaiya Machine Learning Research Association (SMLRA) was born
-                    out of the inspiration drawn from world-renowned research
-                    communities at{" "}
-                    <span className="text-cyan-400 font-semibold">MIT, Stanford, and IIT Bombay</span>.
-                  </p>
-                  <p>
-                    With the growing global impact of Artificial Intelligence,
-                    Machine Learning, and Deep Learning, SMLRA set out to build a
-                    research-driven ecosystem within KJSSE, one that bridges the gap
-                    between students and researchers, fostering{" "}
-                    <span className="text-purple-400 font-semibold">innovation and intellectual growth</span>.
-                  </p>
-                </div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8">
+                Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Story</span>
+              </h2>
+              <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
+                <p>
+                  Founded in <span className="text-blue-400 font-semibold">2018</span> at KJSSE, the Somaiya Machine Learning Research Association (SMLRA) draws inspiration from research communities at <span className="text-cyan-400 font-semibold">MIT, Stanford, and IIT Bombay</span>.
+                </p>
+                <p>
+                  With the growing global impact of AI, Machine Learning, and Deep Learning, SMLRA fosters a research-driven ecosystem bridging students and researchers, encouraging <span className="text-purple-400 font-semibold">innovation and intellectual growth</span>.
+                </p>
               </div>
             </motion.div>
 
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -161,28 +127,18 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              {/* Stats Grid */}
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 shadow-2xl">
-                <div className="grid grid-cols-2 gap-8">
-                  {stats.map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="text-center group"
-                    >
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <stat.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                        {stat.number}
-                      </div>
-                      <div className="text-slate-400 text-sm font-medium">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 shadow-2xl grid grid-cols-2 gap-8">
+                {stats.map((stat, idx) => (
+                  <div key={stat.label} className="text-center group">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <stat.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-slate-400 font-medium">{stat.label}</div>
+                  </div>
+                ))}
               </div>
 
               {/* Decorative Elements */}
@@ -196,28 +152,25 @@ export default function AboutPage() {
       {/* Mission Section */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-4xl sm:text-5xl font-bold mb-8"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Mission</span>
-            </h2>
-            <div className="max-w-5xl mx-auto">
-              <p className="text-xl text-slate-300 leading-relaxed">
-                Our mission is to cultivate a research-focused AI community. We
-                bolster knowledge through symposiums, workshops, and competitions,
-                moving beyond a purely product-oriented approach. By supporting
-                student-led research and connecting them with domain experts, we
-                build a collaborative network for peer-to-peer learning and
-                impactful contributions to AI.
-              </p>
-            </div>
-          </motion.div>
+            Our <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Mission</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-xl text-slate-300 max-w-5xl mx-auto leading-relaxed"
+          >
+            Our mission is to cultivate a research-focused AI community through symposiums, workshops, and competitions. By supporting student-led research and connecting them with domain experts, we build a collaborative network for peer-to-peer learning and impactful contributions to AI.
+          </motion.p>
         </div>
       </section>
 
@@ -225,12 +178,12 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {values.map((value, index) => (
+            {values.map((value, idx) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8, delay: idx * 0.2 }}
                 viewport={{ once: true }}
                 className="group"
               >
@@ -241,12 +194,10 @@ export default function AboutPage() {
                     </div>
                     <h3 className="text-3xl font-bold text-white">{value.title}</h3>
                   </div>
-                  
+
                   {value.title === "Values" ? (
                     <div className="space-y-4">
-                      <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                        Our core values guide everything we do:
-                      </p>
+                      <p className="text-slate-400 text-lg leading-relaxed mb-6">Our core values guide everything we do:</p>
                       <div className="grid grid-cols-1 gap-3">
                         {value.valuesList?.map((val, i) => (
                           <motion.div
@@ -273,51 +224,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-blue-950/30 to-slate-900/50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-8">
-              Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Impact</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Transforming the landscape of AI research and education at KJSSE
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
-              >
-                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-slate-400 font-medium">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
+      {/* Call to Action */}
       <section className="py-24 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -329,13 +236,11 @@ export default function AboutPage() {
           >
             <h3 className="text-3xl sm:text-4xl font-bold mb-6">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Innovate
-              </span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Innovate</span>{" "}
               with Us?
             </h3>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Join a community of passionate researchers and innovators shaping the future of AI
+              Join a community of passionate researchers and innovators shaping the future of AI.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -347,6 +252,18 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+    </div>
+  );
+}
+
+function BackgroundDecorations() {
+  return (
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
+      <div className="absolute inset-0 grid-bg opacity-5"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
     </div>
   );
 }
