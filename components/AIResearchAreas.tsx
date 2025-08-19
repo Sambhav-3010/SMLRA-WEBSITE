@@ -46,7 +46,7 @@ export default function AIResearchAreas() {
   return (
     <section
       ref={ref}
-      className="py-24 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
       id="research-areas"
     >
       <div className="absolute inset-0 data-flow opacity-20" />
@@ -58,10 +58,10 @@ export default function AIResearchAreas() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 font-display"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 font-display leading-tight"
             animate={
               isInView
                 ? { backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }
@@ -75,12 +75,12 @@ export default function AIResearchAreas() {
           >
             <span className="text-gradient">Research</span> Domains
           </motion.h2>
-          <p className="text-xl sm:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
             Exploring cutting-edge AI technologies across multiple domains with
             state-of-the-art results
           </p>
           <motion.div
-            className="mt-6 font-mono text-sm text-slate-400 flex flex-wrap justify-center gap-4"
+            className="mt-4 sm:mt-6 font-mono text-xs sm:text-sm text-slate-400 flex flex-wrap justify-center gap-2 sm:gap-4 px-4"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5 }}
@@ -97,19 +97,19 @@ export default function AIResearchAreas() {
         </motion.header>
 
         {/* Research Cards */}
-        <div className="flex justify-center items-center gap-8 flex-row w-full md:flex-col">
-          <div className="flex flex-row gap-8 w-full max-w-3xl mx-auto justify-center items-stretch">
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {researchAreas.map((area, index) => (
               <motion.article
                 key={area.title}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group interactive-card flex-1 min-w-0"
+                className="group interactive-card w-full"
               >
                 <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden card-hover-intense group-hover:border-blue-500/50 transition-all duration-500 h-full flex flex-col">
                   {/* Illustration */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 md:h-52 lg:h-48 overflow-hidden">
                     <Image
                       src={area.illustration || "/placeholder.svg"}
                       alt={`${area.title} research illustration`}
@@ -117,21 +117,21 @@ export default function AIResearchAreas() {
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                       <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-r ${area.color} flex items-center justify-center shadow-lg`}
+                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r ${area.color} flex items-center justify-center shadow-lg`}
                       >
-                        <area.icon className="h-6 w-6 text-white" />
+                        <area.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-4 flex-1 flex flex-col">
+                  <div className="p-4 sm:p-5 md:p-6 space-y-3 sm:space-y-4 flex-1 flex flex-col">
                     <header>
-                      <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300 font-display">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300 font-display leading-tight">
                         {area.title}
                       </h3>
-                      <p className="text-slate-400 text-sm leading-relaxed">
+                      <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
                         {area.description}
                       </p>
                     </header>
@@ -141,11 +141,11 @@ export default function AIResearchAreas() {
                       <div className="text-xs text-slate-500 mb-2 font-mono font-semibold tracking-wide">
                         TECH STACK:
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {area.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="text-xs bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full font-mono border border-slate-700/50 hover:border-blue-500/50 transition-colors duration-300"
+                            className="text-xs bg-slate-800/70 text-slate-300 px-2 sm:px-3 py-1 rounded-full font-mono border border-slate-700/50 hover:border-blue-500/50 transition-colors duration-300"
                           >
                             {tech}
                           </span>
@@ -154,21 +154,23 @@ export default function AIResearchAreas() {
                     </div>
 
                     {/* Collaborations */}
-                    <div className="mt-auto">
-                      <div className="text-xs text-slate-500 mb-2 font-mono font-semibold tracking-wide">
-                        {area.collaborations.length > 0 ? "COLLABORATIONS:" : ""}
+                    {area.collaborations.length > 0 && (
+                      <div className="mt-auto">
+                        <div className="text-xs text-slate-500 mb-2 font-mono font-semibold tracking-wide">
+                          COLLABORATIONS:
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                          {area.collaborations.map((collab) => (
+                            <span
+                              key={collab}
+                              className="text-xs bg-slate-800/70 text-slate-300 px-2 sm:px-3 py-1 rounded-full font-mono border border-slate-700/50 hover:border-blue-500/50 transition-colors duration-300"
+                            >
+                              {collab}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {area.collaborations.map((collab) => (
-                          <span
-                            key={collab}
-                            className="text-xs bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full font-mono border border-slate-700/50 hover:border-blue-500/50 transition-colors duration-300"
-                          >
-                            {collab}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </motion.article>
@@ -181,16 +183,16 @@ export default function AIResearchAreas() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1, duration: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16 px-4"
         >
-          <p className="text-slate-400 mb-6 font-mono">
+          <p className="text-slate-400 mb-4 sm:mb-6 font-mono text-sm sm:text-base">
             Interested in collaborating on cutting-edge AI research?
           </p>
           <Link href="">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 glow-effect focus-visible"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect focus-visible text-sm sm:text-base"
             >
               Join Our Team
             </motion.button>
