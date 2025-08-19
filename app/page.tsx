@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import FeaturedSection from "@/components/FeaturedSection";
 import QuoteSection from "@/components/QuoteSection";
 import AIResearchAreas from "@/components/AIResearchAreas";
 import TechStack from "@/components/TechStack";
@@ -26,7 +25,6 @@ export default function Home() {
           <QuoteSection />
           <AIResearchAreas />
           <TechStack />
-          <FeaturedSection />
         </main>
       </div>
     </div>
