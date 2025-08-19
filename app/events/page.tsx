@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Users, Clock } from "lucide-react"
+import { Calendar, MapPin, Users, Clock, Sparkles, Trophy, BookOpen } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import events from "@/lib/data/eventData.json"
@@ -11,47 +11,74 @@ const pastEvents = events.filter((event) => event.status === "completed")
 
 export default function EventsPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Background Effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
+        <div className="absolute inset-0 grid-bg opacity-5"></div>
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-1/4 w-48 h-48 bg-pink-500/8 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-40 left-1/4 w-56 h-56 bg-blue-500/8 rounded-full blur-2xl"></div>
+      </div>
+
       {/* Hero */}
-      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden h-screen flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-8 sm:mb-12 lg:mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-4">
-              Events & <span className="text-gradient">Workshops</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-4">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mb-8"
+            >
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+                Events &{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  Workshops
+                </span>
+              </h1>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed"
+            >
               Join our community events, workshops, and seminars to learn, network, and stay updated with the latest in AI and ML research.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Upcoming */}
       {upcomingEvents.length > 0 && (
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-24 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="mb-8 sm:mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
-                Upcoming <span className="text-gradient">Events</span>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+                Upcoming <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Events</span>
               </h2>
-              <p className="text-slate-300 text-center max-w-2xl mx-auto px-4 text-sm sm:text-base">
+              <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
                 Don&apos;t miss out on these exciting opportunities to learn and connect
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               {upcomingEvents.map((event, index) => (
                 <EventCard key={event.id} event={event} index={index} isUpcoming={true} />
               ))}
@@ -60,25 +87,26 @@ export default function EventsPage() {
         </section>
       )}
 
-      {/* Past */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-slate-900/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Past Events */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/50 via-blue-950/30 to-slate-900/50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="mb-8 sm:mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">
-              Past <span className="text-gradient">Events</span>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              Past <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Events</span>
             </h2>
-            <p className="text-slate-300 text-center max-w-2xl mx-auto px-4 text-sm sm:text-base">
+            <p className="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
               Take a look at our successful events and workshops
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {pastEvents.map((event, index) => (
               <EventCard key={event.id} event={event} index={index} isUpcoming={false} />
             ))}
@@ -87,23 +115,35 @@ export default function EventsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
+            className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-3xl p-12 border border-blue-500/20 shadow-2xl"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
-              Want to propose an <span className="text-gradient">Event idea</span>?
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+              <Sparkles className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              Want to propose an{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Event idea
+              </span>?
             </h2>
-            <p className="text-lg sm:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Have an idea for a workshop, seminar, or research presentation? We&apos;d love to hear from you and help make it happen.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base" onClick={() => window.open("mailto:smlra-kjsce@somaiya.edu")}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+              onClick={() => window.open("mailto:smlra-kjsce@somaiya.edu")}
+            >
               Send us an Email
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -111,7 +151,7 @@ export default function EventsPage() {
   )
 }
 
-// Card
+// Card component (unchanged from original)
 function EventCard({ event, index, isUpcoming }: { 
   event: any, 
   index: number, 
