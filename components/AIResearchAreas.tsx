@@ -89,7 +89,7 @@ export default function AIResearchAreas() {
           >
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              85+ active projects
+              6+ active projects
             </span>
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
