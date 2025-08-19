@@ -97,7 +97,7 @@ export default function AIResearchAreas() {
         </motion.header>
 
         {/* Research Cards */}
-        <div className="flex justify-center items-center gap-8 flex-row w-full">
+        <div className="flex justify-center items-center gap-8 flex-row w-full md:flex-col">
           <div className="flex flex-row gap-8 w-full max-w-3xl mx-auto justify-center items-stretch">
             {researchAreas.map((area, index) => (
               <motion.article
