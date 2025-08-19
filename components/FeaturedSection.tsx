@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, Users, BookOpen, Award } from "lucide-react"
+import { Calendar, Users, Award, Star } from "lucide-react"
 import Link from "next/link"
 
 const features = [
@@ -14,15 +14,15 @@ const features = [
   },
   {
     icon: Users,
-    title: "Research Teams",
+    title: "Our Teams",
     description: "Collaborate with passionate researchers and innovators",
     href: "/team",
     color: "from-purple-500 to-pink-500",
   },
   {
-    icon: BookOpen,
-    title: "Publications",
-    description: "Explore our latest research papers and technical articles",
+    icon: Star,
+    title: "Founders",
+    description: "Connect with the innovators who started it all",
     href: "/blog",
     color: "from-green-500 to-teal-500",
   },

@@ -12,7 +12,7 @@ const navItems = [
   { name: "About", href: "/about", ariaLabel: "Learn about SMLRA" },
   { name: "Team", href: "/team", ariaLabel: "Meet our research team" },
   { name: "Blog", href: "/blog", ariaLabel: "Read our research blog" },
-  { name: "Events", href: "/events", ariaLabel: "View upcoming events" },
+  // { name: "Events", href: "/events", ariaLabel: "View upcoming events" },
 ];
 
 export default function Navbar() {

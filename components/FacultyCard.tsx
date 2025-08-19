@@ -38,7 +38,7 @@ export default function FacultyCard({
       <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 h-full">
         <div className="flex flex-col lg:flex-row h-full lg:h-96">
           {/* Image - top on mobile/tablet, left on desktop */}
-          <div className="relative w-full lg:w-2/5 h-64 lg:h-full flex-shrink-0">
+          <div className="relative w-full lg:w-[48%] h-64 lg:h-full flex-shrink-0">
             <Image
               src={imageUrl || "/placeholder.svg"}
               alt={name}

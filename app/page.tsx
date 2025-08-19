@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import FeaturedSection from "@/components/FeaturedSection";
-import EventSection from "@/components/EventSection";
 import QuoteSection from "@/components/QuoteSection";
 import AIResearchAreas from "@/components/AIResearchAreas";
 import TechStack from "@/components/TechStack";
@@ -27,7 +26,6 @@ export default function Home() {
             <InteractiveNeuralNetwork />
           </div>
         </section> */}
-        <EventSection />
         <TechStack />
         <FeaturedSection />
       </main>
