@@ -134,9 +134,9 @@
         {
           "name": "Arnav Waghdhare",
           "role": "Research Associate",
-          "imageUrl": "assets/logo.png",
-          "githubUrl": "#",
-          "linkedinUrl": "#",
+          "imageUrl": "https://res.cloudinary.com/ddoyhlqqe/image/upload/v1755602632/Arnav_Wagdhare_nlofwz.png",
+          "githubUrl": "https://github.com/Arnav0405",
+          "linkedinUrl": "https://www.linkedin.com/in/arnav-waghdhare-a6888b2aa/",
           "instagramUrl": "#"
         },
         {
@@ -222,26 +222,26 @@
         {
           "name": "Shubham Indulkar",
           "role": "Creative Team",
-          "imageUrl": "assets/logo.png",
+          "imageUrl": "https://res.cloudinary.com/ddoyhlqqe/image/upload/v1755602853/Shubham_ybc8mg.png",
           "githubUrl": "#",
-          "linkedinUrl": "#",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/shubham-indulkar-7804561b3/",
+          "instagramUrl": "https://www.instagram.com/_shubh.13/"
         },
         {
           "name": "Avanika Kulkarni",
           "role": "Creative Team",
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/lfpundspq7vq68kcygdj",
           "githubUrl": "#",
-          "linkedinUrl": "#",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/avanika-kulkarni-3495b1315/",
+          "instagramUrl": "https://www.instagram.com/avan1ka/"
         },
         {
           "name": "Parth Sharma",
           "role": "Creative Team",
-          "imageUrl": "assets/logo.png",
+          "imageUrl": "https://res.cloudinary.com/ddoyhlqqe/image/upload/v1755602663/Parth_k3datx.png",
           "githubUrl": "#",
-          "linkedinUrl": "#",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/parth-sharma-16469a293/",
+          "instagramUrl": "https://www.instagram.com/parth_s29/"
         },
         {
           "name": "Abdullah Qureshi",
@@ -349,8 +349,8 @@
           "role": "Lead Mentor",
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
-          "linkedinUrl": "https://www.instagram.com/shubham17varma/",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/shubham17varma/",
+          "instagramUrl": "https://www.instagram.com/shubham17varma/"
         },
         {
           "name": "Himanshu Patil",
@@ -474,8 +474,8 @@
           "role": "Community Mentor",
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
-          "linkedinUrl": "https://www.instagram.com/shubham17varma/",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/shubham17varma/",
+          "instagramUrl": "https://www.instagram.com/shubham17varma/"
         },
         {
           "name": "Himanshu Patil",
@@ -575,8 +575,8 @@
           "role": "AI Promoter",
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/edate0dtbxgsmvs0qrul",
           "githubUrl": "https://github.com/shubham17varma",
-          "linkedinUrl": "https://www.instagram.com/shubham17varma/",
-          "instagramUrl": "#"
+          "linkedinUrl": "https://www.linkedin.com/in/shubham17varma/",
+          "instagramUrl": "https://www.instagram.com/shubham17varma/"
         }
       ]
     },
