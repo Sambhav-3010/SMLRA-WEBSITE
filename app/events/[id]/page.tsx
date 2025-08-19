@@ -1,55 +1,80 @@
-"use client"
-import { motion } from "framer-motion"
-import { Calendar, MapPin, Users, Clock, ArrowLeft, ExternalLink, Share2, ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { use, useState, useEffect } from "react"
-import events from "@/lib/data/eventData.json"
+"use client";
+import { motion } from "framer-motion";
+import {
+  Calendar,
+  MapPin,
+  Check,
+  Clock,
+  ArrowLeft,
+  ExternalLink,
+  Share2,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { use, useState, useEffect } from "react";
+import events from "@/lib/data/eventData.json";
 
 interface EventDetailsPageProps {
   params: Promise<{
-    id: string
-  }>
+    id: string;
+  }>;
 }
 
 export default function EventDetailsPage({ params }: EventDetailsPageProps) {
   // Unwrap the params Promise using React.use()
-  const { id } = use(params)
-  const event = events.find(e => e.id === parseInt(id))
-  
+  const { id } = use(params);
+  const event = events.find((e) => e.id === parseInt(id));
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      })
+      .catch((err) => console.error("Failed to copy link:", err));
+  };
+
   // Carousel state
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!event) {
-    notFound()
+    notFound();
   }
 
-  const isUpcoming = event.status === "upcoming"
-  const completionPercentage = event.capacity ? (event.registered / event.capacity) * 100 : 0
-  
+  const isUpcoming = event.status === "upcoming";
+  const completionPercentage = event.capacity
+    ? (event.registered / event.capacity) * 100
+    : 0;
+
   // Handle both single image and array of images
-  const eventImages = Array.isArray(event.image) ? event.image : [event.image]
-  const hasMultipleImages = eventImages.length > 1
+  const eventImages = Array.isArray(event.image) ? event.image : [event.image];
+  const hasMultipleImages = eventImages.length > 1;
 
   // Auto-advance carousel
   useEffect(() => {
-    if (!hasMultipleImages) return // Don't start timer for single images
-    
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % eventImages.length)
-    }, 3000) // Change image every 3 seconds
+    if (!hasMultipleImages) return; // Don't start timer for single images
 
-    return () => clearInterval(interval) // Clear interval on component unmount
-  }, [eventImages.length, hasMultipleImages])
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % eventImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [eventImages.length, hasMultipleImages]);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % eventImages.length)
-  }
+    setCurrentImageIndex((prev) => (prev + 1) % eventImages.length);
+  };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + eventImages.length) % eventImages.length)
-  }
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + eventImages.length) % eventImages.length
+    );
+  };
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -67,8 +92,8 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 relative z-10">
-        <Link 
-          href="/events" 
+        <Link
+          href="/events"
           className="inline-flex items-center space-x-2 text-slate-400 hover:text-white transition-colors text-sm sm:text-base"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -88,7 +113,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent rounded-lg" />
-            
+
             {/* Carousel Navigation */}
             {hasMultipleImages && (
               <>
@@ -99,7 +124,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                 >
                   <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
                 </button>
-                
+
                 <button
                   onClick={nextImage}
                   className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
@@ -115,9 +140,9 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex 
-                          ? 'bg-white' 
-                          : 'bg-white/50 hover:bg-white/70'
+                        index === currentImageIndex
+                          ? "bg-white"
+                          : "bg-white/50 hover:bg-white/70"
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -130,22 +155,46 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                 </div>
               </>
             )}
-            
+
             {/* Status Badges */}
             <div className="absolute top-3 sm:top-4 lg:top-6 left-3 sm:left-4 lg:left-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 z-10">
-              <span className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-                event.type === 'workshop' ? 'bg-purple-500 text-purple-400' :
-                event.type === 'seminar' ? 'bg-green-500 text-green-400' :
-                'bg-blue-500 text-blue-400'
-              }`}>
+              <span
+                className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                  event.type === "workshop"
+                    ? "bg-purple-500 text-purple-400"
+                    : event.type === "seminar"
+                    ? "bg-green-500 text-green-400"
+                    : "bg-blue-500 text-blue-400"
+                }`}
+              >
                 {event.type}
               </span>
-              <span className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
-                isUpcoming ? 'bg-green-500 text-green-400' : 'bg-slate-500 text-slate-400'
-              }`}>
-                {isUpcoming ? 'Upcoming' : 'Completed'}
+              <span
+                className={`text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium inline-block ${
+                  isUpcoming
+                    ? "bg-green-500 text-green-400"
+                    : "bg-slate-500 text-slate-400"
+                }`}
+              >
+                {isUpcoming ? "Upcoming" : "Completed"}
               </span>
             </div>
+            <span className="absolute top-3 sm:top-4 lg:top-6 right-3 sm:right-4 lg:right-6 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 z-10 items-center justify-center">
+              <button
+                onClick={handleCopyLink}
+                className="flex items-center px-2 sm:px-3 py-1 bg-purple-600 text-white transition-colors text-xs sm:text-sm rounded-full"
+              >
+                {copied ? (
+                  <>
+                    Copied <span className="ml-2"><Check className="h-4 w-4" /></span>
+                  </>
+                ) : (
+                  <>
+                    Share <Share2 className="h-4 w-4 ml-2" />
+                  </>
+                )}
+              </button>
+            </span>
           </div>
         </div>
       </section>
@@ -165,7 +214,7 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                   {event.title}
                 </h1>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:mt-0 lg:ml-6">
                 {isUpcoming && (
                   <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base">
@@ -183,7 +232,9 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                   <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400 flex-shrink-0" />
                   <div className="min-w-0">
                     <p className="text-xs sm:text-sm text-slate-400">Date</p>
-                    <p className="font-semibold text-sm sm:text-base truncate">{event.date}</p>
+                    <p className="font-semibold text-sm sm:text-base truncate">
+                      {event.date}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -194,7 +245,9 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                     <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
                     <div className="min-w-0">
                       <p className="text-xs sm:text-sm text-slate-400">Time</p>
-                      <p className="font-semibold text-sm sm:text-base truncate">{event.time}</p>
+                      <p className="font-semibold text-sm sm:text-base truncate">
+                        {event.time}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -204,8 +257,12 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400 flex-shrink-0" />
                   <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-slate-400">Location</p>
-                    <p className="font-semibold text-sm sm:text-base truncate">{"KJSCE"}</p>
+                    <p className="text-xs sm:text-sm text-slate-400">
+                      Location
+                    </p>
+                    <p className="font-semibold text-sm sm:text-base truncate">
+                      {"KJSCE"}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -216,8 +273,12 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
                   <div className="flex items-center space-x-3">
                     <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 flex-shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-xs sm:text-sm text-slate-400">Academic Year</p>
-                      <p className="font-semibold text-sm sm:text-base truncate">{event.year}</p>
+                      <p className="text-xs sm:text-sm text-slate-400">
+                        Academic Year
+                      </p>
+                      <p className="font-semibold text-sm sm:text-base truncate">
+                        {event.year}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -228,8 +289,12 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
             {isUpcoming && event.capacity && (
               <div className="mb-6 sm:mb-8">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-slate-400">Registration Progress</span>
-                  <span className="text-sm font-medium">{Math.round(completionPercentage)}% Full</span>
+                  <span className="text-sm text-slate-400">
+                    Registration Progress
+                  </span>
+                  <span className="text-sm font-medium">
+                    {Math.round(completionPercentage)}% Full
+                  </span>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-2 sm:h-3">
                   <motion.div
@@ -244,16 +309,23 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
 
             {/* Description */}
             <div className="mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">About This Event</h2>
-              <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">{event.description}</p>
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+                About This Event
+              </h2>
+              <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                {event.description}
+              </p>
             </div>
 
             {/* Call to Action */}
             {isUpcoming && (
               <div className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 rounded-xl p-6 sm:p-8 text-center">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">Ready to Join Us?</h3>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">
+                  Ready to Join Us?
+                </h3>
                 <p className="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                  Don't miss out on this amazing opportunity to learn and connect with fellow enthusiasts.
+                  Don't miss out on this amazing opportunity to learn and
+                  connect with fellow enthusiasts.
                 </p>
                 <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 glow-effect text-sm sm:text-base">
                   Register Now
@@ -264,5 +336,5 @@ export default function EventDetailsPage({ params }: EventDetailsPageProps) {
         </div>
       </section>
     </div>
-  )
+  );
 }
