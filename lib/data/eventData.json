@@ -8,7 +8,12 @@
     "location": "Aryabhatta Auditorium, KJSCE",
     "capacity": 100,
     "registered": 100,
-    "image": ["/placeholder.svg?height=300&width=500"],
+    "image": [
+      "/TFM_2024/tfm1.jpg",
+      "/TFM_2024/tfm2.jpg",
+      "/TFM_2024/tfm3.jpg",
+      "/TFM_2024/tfm4.jpg"
+    ],
     "type": "Guest Lecture",
     "status": "completed"
   },
@@ -21,7 +26,12 @@
     "location": "Einstein Hall (A-202), KJSCE",
     "capacity": 25,
     "registered": 25,
-    "image": ["/placeholder.svg?height=300&width=500"],
+    "image": [
+      "/ML101 Dive into AIML Basics 24/ml101-1.png",
+      "/ML101 Dive into AIML Basics 24/ml101-2.png",
+      "/ML101 Dive into AIML Basics 24/ml101-3.png",
+      "/ML101 Dive into AIML Basics 24/ml101-4.png"
+    ],
     "type": "Workshop (2-day session)",
     "status": "completed"
   },
@@ -34,7 +44,13 @@
     "location": "Seminar Hall (B113), KJSCE",
     "capacity": 59,
     "registered": 59,
-    "image": ["/placeholder.svg?height=300&width=500"],
+    "image": [
+      "/From-Code-to-Impact/codeimpact-1.png",
+      "/From-Code-to-Impact/codeimpact-2.jpg",
+      "/From-Code-to-Impact/codeimpact-3.jpg",
+      "/From-Code-to-Impact/codeimpact-4.jpg",
+      "/From-Code-to-Impact/codeimpact-5.jpg"
+    ],
     "type": "Workshop",
     "status": "completed"
   },
@@ -47,7 +63,10 @@
     "location": "Google Meet (Online)",
     "capacity": 77,
     "registered": 77,
-    "image": ["/placeholder.svg?height=300&width=500"],
+    "image": [
+      "/AI Unplugged/aiunplugged-1.png",
+      "/AI Unplugged/aiunplugged-2.png"
+    ],
     "type": "Speaker Session",
     "status": "completed"
   },
