@@ -9,7 +9,7 @@
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/fwy3x9y9uagxj67caiu9",
           "linkedinUrl": "https://www.linkedin.com/in/vaibhav-vasani-460a4162/",
           "facultyProfileUrl": "https://kjsce.somaiya.edu/en/view-member/160999/",
-          "email" : "vaibhav.vasani@somaiya.edu"
+          "email": "vaibhav.vasani@somaiya.edu"
         },
         {
           "name": "Prof. Swati Mali",
@@ -17,12 +17,132 @@
           "imageUrl": "https://res.cloudinary.com/ddwdquab5/image/upload/f_auto,q_auto/v1/SMLRA%20Website/mhn9yzwgi2rb5hy6uotx",
           "linkedinUrl": "https://www.linkedin.com/in/swati-mali-4948b453/",
           "facultyProfileUrl": "https://kjsce.somaiya.edu/en/view-member/160065/",
-          "email" : "swatimali@somaiya.edu"
+          "email": "swatimali@somaiya.edu"
         }
       ]
     }
   ],
-  "currentTeam": [],
+  "currentTeam": {
+    "Community Team": [
+      {
+        "name": "Vibhu Gupta",
+        "position": "Community Lead",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Sambhav Mani Tripathi",
+        "position": "Community Co-Lead",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Aryan Raut",
+        "position": "Community Co-Lead",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Research Team": [
+      {
+        "name": "Ayush Goyal",
+        "position": "Research Lead",
+        "department": "TY IT",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Vedant Muchlambe",
+        "position": "Research Associate",
+        "department": "SY RAI",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Piyush Mishra",
+        "position": "Research Associate",
+        "department": "SY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Tech Team": [
+      {
+        "name": "Manik Prakash",
+        "position": "Tech Associate",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Operations Team": [
+      {
+        "name": "Swayam Vernekar",
+        "position": "Operations Lead",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Atharva Chougule",
+        "position": "Operations Associate",
+        "department": "SY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Aryan Churasia",
+        "position": "Operations Associate",
+        "department": "SY IT",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Creative Team": [
+      {
+        "name": "Avanika Kulkarni",
+        "position": "Creative Lead",
+        "department": "TY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Apoorva Rajpurohit",
+        "position": "Creative Associate",
+        "department": "SY IT",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Symposium Team": [
+      {
+        "name": "Aditya Pawar",
+        "position": "Symposium Associate",
+        "department": "SY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      },
+      {
+        "name": "Ranbeer Dhanawat",
+        "position": "Symposium Associate",
+        "department": "SY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ],
+    "Marketing Team": [
+      {
+        "name": "Satvik Damdhar",
+        "position": "Marketing Lead",
+        "department": "SY Comps",
+        "imageUrl": "#",
+        "linktreeUrl": "#"
+      }
+    ]
+  },
   "pastCouncils": [
     {
       "year": "Council for 2024-25",

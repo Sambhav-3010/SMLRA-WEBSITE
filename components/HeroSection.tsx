@@ -28,7 +28,7 @@ export default function HeroSection() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="-z-1000 opacity-25 absolute inset-0 h-[">
+      <div className="-z-1000 opacity-25 absolute inset-0">
         <CNNBackground />
       </div>
       {/* Floating AI Icons with Parallax */}
