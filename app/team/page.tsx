@@ -128,11 +128,11 @@ const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: Cur
           className="text-center mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Current
             </span>{" "}
             Council{" "}
-            <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
               2025-2026
             </span>
           </h1>
@@ -222,7 +222,6 @@ const PastCouncilsContent = ({
 
   return (
     <div className="mt-16 px-4 space-y-6">
-      <h3 className="text-2xl font-bold text-white mb-6">Past Councils</h3>
       {pastCouncils.map((council) => (
         <div key={council.year}>
           <button
