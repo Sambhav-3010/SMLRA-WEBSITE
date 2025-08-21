@@ -3,6 +3,7 @@
 import { useState, Suspense, lazy, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Instagram, Linkedin, ExternalLink } from "lucide-react";
+import CurrentTeamCard from "@/components/CurrentTeamCard";
 
 // Lazy load heavy components
 const FacultyCard = lazy(() => import("@/components/FacultyCard"));
@@ -43,7 +44,6 @@ type FacultyMember = {
   email: string;
 };
 
-// Loading skeletons
 const FacultyCardSkeleton = () => (
   <div className="bg-slate-800/50 rounded-xl p-6 animate-pulse">
     <div className="flex items-center space-x-4">
@@ -62,22 +62,6 @@ const PastCouncilCardSkeleton = () => (
     <div className="h-4 bg-slate-700 rounded w-3/4 mx-auto mb-2"></div>
     <div className="h-3 bg-slate-700 rounded w-1/2 mx-auto"></div>
   </div>
-);
-
-// Current Team Member Card Component - Using PastCouncilCard style
-const CurrentTeamCard = ({ member, index }: { member: CurrentTeamMember; index: number }) => (
-  <Suspense fallback={<PastCouncilCardSkeleton />}>
-    <PastCouncilCard
-      name={member.name}
-      role={member.position}
-      imageUrl={member.imageUrl || "/placeholder.svg"}
-      githubUrl="#"
-      linkedinUrl={member.linktreeUrl !== "#" ? member.linktreeUrl : "#"}
-      instagramUrl="#"
-      index={index}
-      className="w-full max-w-sm mx-auto"
-    />
-  </Suspense>
 );
 
 const FacultySection = ({
@@ -130,13 +114,13 @@ const FacultySection = ({
 
 const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: CurrentTeamMember[] } }) => {
   const teamColors = {
-    "Community Lead": "from-green-400 to-emerald-400",
-    "Community Co Lead": "from-green-500 to-emerald-500",
+    "Community Lead": "from-emerald-400 to-teal-400",
+    "Community Co-Lead": "from-rose-400 to-pink-400",
     "Research Team": "from-blue-400 to-cyan-400",
     "Tech Team": "from-purple-400 to-violet-400",
-    "Operations Team": "from-orange-400 to-red-400",
-    "Creative Team": "from-pink-400 to-rose-400",
-    "Symposium Team": "from-yellow-400 to-amber-400",
+    "Operations Team": "from-orange-400 to-amber-400",
+    "Creative Team": "from-fuchsia-400 to-purple-400",
+    "Symposium Team": "from-yellow-400 to-lime-400",
     "Marketing Team": "from-indigo-400 to-blue-400"
   };
 
@@ -154,7 +138,10 @@ const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: Cur
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Current
             </span>{" "}
-            Council
+            Council{" "}
+            <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+              2025-2026
+            </span>
           </h1>
           <p className="text-slate-300 text-xl max-w-4xl mx-auto leading-relaxed">
             Meet the dedicated students leading SMLRA this year and driving our mission forward with passion and innovation.
@@ -174,12 +161,11 @@ const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: Cur
             >
               <div className="text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-2">
-                  <span className={`bg-gradient-to-r ${teamColors[teamName as keyof typeof teamColors] || 'from-blue-400 to-cyan-400'} bg-clip-text text-transparent`}>
+                  <span className={`bg-gradient-to-r ${teamColors[teamName as keyof typeof teamColors]} bg-clip-text text-transparent text-2xl md:text-3xl lg:text-5xl`}>
                     {teamName}
-                  </span>{" "}
-                  <span className="text-slate-300">2025-26</span>
+                  </span>
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
+                <div className={`w-40 h-1 bg-gradient-to-r ${teamColors[teamName as keyof typeof teamColors]} mx-auto rounded-full`}></div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 md:gap-8">
