@@ -56,14 +56,6 @@ const FacultyCardSkeleton = () => (
   </div>
 );
 
-const PastCouncilCardSkeleton = () => (
-  <div className="bg-slate-800/50 rounded-xl p-4 animate-pulse">
-    <div className="w-20 h-20 bg-slate-700 rounded-full mx-auto mb-4"></div>
-    <div className="h-4 bg-slate-700 rounded w-3/4 mx-auto mb-2"></div>
-    <div className="h-3 bg-slate-700 rounded w-1/2 mx-auto"></div>
-  </div>
-);
-
 const FacultySection = ({
   faculty,
 }: {
@@ -114,15 +106,16 @@ const FacultySection = ({
 
 const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: CurrentTeamMember[] } }) => {
   const teamColors = {
-    "Community Lead": "from-emerald-400 to-teal-400",
-    "Community Co-Lead": "from-rose-400 to-pink-400",
-    "Research Team": "from-blue-400 to-cyan-400",
-    "Tech Team": "from-purple-400 to-violet-400",
-    "Operations Team": "from-orange-400 to-amber-400",
-    "Creative Team": "from-fuchsia-400 to-purple-400",
-    "Symposium Team": "from-yellow-400 to-lime-400",
-    "Marketing Team": "from-indigo-400 to-blue-400"
-  };
+  "Community Lead": "from-emerald-500 to-teal-500",
+  "Community Co-Lead": "from-rose-500 to-red-500",
+  "Research Team": "from-teal-500 to-cyan-500",
+  "Tech Team": "from-purple-500 to-violet-500",
+  "Operations Team": "from-orange-500 to-amber-500",
+  "Creative Team": "from-fuchsia-500 to-purple-500",
+  "Symposium Team": "from-yellow-500 to-lime-500",
+  "Marketing Team": "from-indigo-500 to-blue-500"
+};
+
 
   return (
     <section className="py-24 relative">
@@ -171,7 +164,7 @@ const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: Cur
               <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                 {members.map((member, index) => (
                   <div key={member.name} className="w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] max-w-sm">
-                    <CurrentTeamCard member={member} index={index} />
+                    <CurrentTeamCard member={member} index={index} color={teamColors[teamName as keyof typeof teamColors]} />
                   </div>
                 ))}
               </div>
