@@ -195,7 +195,7 @@ export default function HeroSection() {
               className="group bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 text-white px-10 py-5 rounded-full font-semibold transition-all duration-500 flex items-center space-x-3 glow-effect card-hover-intense focus-visible"
               aria-label="Explore our AI research and projects"
             >
-              <span className="text-lg">Explore Research</span>
+              <span className="text-lg">About SMLRA</span>
             </Link>
 
             <Link
@@ -203,7 +203,7 @@ export default function HeroSection() {
               className="group border-2 border-blue-500/50 hover:border-blue-400 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 hover:text-blue-200 px-10 py-5 rounded-full font-semibold transition-all duration-500 flex items-center space-x-3 focus-visible"
               aria-label="Meet our AI research team"
             >
-              <span className="text-lg">Meet Researchers</span>
+              <span className="text-lg">Meet Out Team</span>
             </Link>
           </motion.div>
         </motion.div>
