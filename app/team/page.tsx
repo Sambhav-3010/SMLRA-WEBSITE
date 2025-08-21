@@ -230,7 +230,7 @@ const PastCouncilsContent = ({
             className="w-full flex items-center justify-between p-4 bg-[#1E293B] rounded-lg text-white hover:bg-[#2D3748] transition-colors duration-300"
           >
             <span className="text-xl font-semibold">
-              Council {council.year}
+              {council.year}
             </span>
             <ChevronDown
               className={`transform transition-transform duration-300 ${
