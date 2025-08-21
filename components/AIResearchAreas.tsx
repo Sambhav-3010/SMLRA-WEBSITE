@@ -25,7 +25,7 @@ const researchAreas: ResearchArea[] = [
     illustration: "/1.jpg",
     color: "from-green-400 to-blue-400",
     icon: Brain,
-    collaborations: ["Mumbai Police Department"],
+    collaborations: [],
   },
   {
     title: "AI Companions in Early Childhood Development",
@@ -49,8 +49,6 @@ export default function AIResearchAreas() {
       className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
       id="research-areas"
     >
-      <div className="absolute inset-0 data-flow opacity-20" />
-      <div className="absolute inset-0 holographic opacity-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -98,7 +96,7 @@ export default function AIResearchAreas() {
 
         {/* Research Cards */}
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {researchAreas.map((area, index) => (
               <motion.article
                 key={area.title}
@@ -178,7 +176,7 @@ export default function AIResearchAreas() {
           </div>
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -197,7 +195,7 @@ export default function AIResearchAreas() {
               Join Our Team
             </motion.button>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

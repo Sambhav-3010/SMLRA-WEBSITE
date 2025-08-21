@@ -21,7 +21,7 @@ export default function Home() {
       {/* Content with relative positioning to appear above background */}
       <div className="relative z-10">
         <HeroSection />
-        <main id="main-content">
+        <main id="main-content" className="bg-gradient-to-r from-blue-900/10 to-cyan-900/10">
           <QuoteSection />
           <AIResearchAreas />
           <TechStack />

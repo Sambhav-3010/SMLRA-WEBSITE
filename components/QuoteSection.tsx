@@ -6,7 +6,7 @@ import { Quote } from "lucide-react"
 export default function QuoteSection() {
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-cyan-900/10"></div>
+      <div className="absolute inset-0"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div

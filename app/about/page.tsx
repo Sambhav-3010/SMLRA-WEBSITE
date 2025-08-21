@@ -318,6 +318,7 @@ export default function AboutPage() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => window.location.href = "https://chat.whatsapp.com/IdSfBMJE9XoLamPnx2gLqz?mode=ac_t"}
               className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             >
               Get Involved
