@@ -269,39 +269,6 @@ const PastCouncilsContent = ({
   );
 };
 
-const JoinUsSection = () => (
-  <section className="py-24 relative">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, margin: "100px" }}
-        className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-3xl p-12 border border-blue-500/20 shadow-2xl"
-      >
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-          Join Our{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Community
-          </span>
-        </h2>
-        <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-          Interested in becoming part of our research community? We're always
-          looking for passionate individuals who want to make a difference in AI
-          and ML.
-        </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-        >
-          Apply Now
-        </motion.button>
-      </motion.div>
-    </div>
-  </section>
-);
-
 // Main component with data loading suspense
 const TeamPageContent = () => {
   const [allTeamsData, setAllTeamsData] = useState<any>(null);
@@ -429,9 +396,6 @@ const TeamPageContent = () => {
           </Suspense>
         </div>
       </section>
-
-      {/* Join Us Section */}
-      <JoinUsSection />
     </div>
   );
 };
