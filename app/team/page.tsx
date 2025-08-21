@@ -61,7 +61,7 @@ const FacultySection = ({
 }: {
   faculty: { members: FacultyMember[] }[];
 }) => (
-  <section className="w-full px-4 sm:px-6 lg:px-8 py-16 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
+  <section className="w-full px-4 sm:px-6 lg:px-8 py-16 relative">
     <div className="max-w-6xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -343,7 +343,7 @@ const TeamPageContent = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden h-screen flex justify-center items-center">
+      <section className="relative overflow-hidden flex justify-center items-center py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -400,7 +400,7 @@ const TeamPageContent = () => {
       <CurrentTeamSection currentTeam={currentTeam} />
 
       {/* Past Teams Section with Suspense - Dropdown remains */}
-      <section className="py-24 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

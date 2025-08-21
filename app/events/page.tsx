@@ -64,7 +64,7 @@ export default function EventsPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="py-24 flex items-center justify-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
