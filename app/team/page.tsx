@@ -2,11 +2,19 @@
 
 import { useState, Suspense, lazy, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown, Instagram, Linkedin, ExternalLink } from "lucide-react";
 
 // Lazy load heavy components
 const FacultyCard = lazy(() => import("@/components/FacultyCard"));
 const PastCouncilCard = lazy(() => import("@/components/CouncilMembers"));
+
+type CurrentTeamMember = {
+  name: string;
+  position: string;
+  department: string;
+  imageUrl: string;
+  linktreeUrl: string;
+};
 
 type PastCouncilMember = {
   name: string;
@@ -54,6 +62,22 @@ const PastCouncilCardSkeleton = () => (
     <div className="h-4 bg-slate-700 rounded w-3/4 mx-auto mb-2"></div>
     <div className="h-3 bg-slate-700 rounded w-1/2 mx-auto"></div>
   </div>
+);
+
+// Current Team Member Card Component - Using PastCouncilCard style
+const CurrentTeamCard = ({ member, index }: { member: CurrentTeamMember; index: number }) => (
+  <Suspense fallback={<PastCouncilCardSkeleton />}>
+    <PastCouncilCard
+      name={member.name}
+      role={member.position}
+      imageUrl={member.imageUrl || "/placeholder.svg"}
+      githubUrl="#"
+      linkedinUrl={member.linktreeUrl !== "#" ? member.linktreeUrl : "#"}
+      instagramUrl="#"
+      index={index}
+      className="w-full max-w-sm mx-auto"
+    />
+  </Suspense>
 );
 
 const FacultySection = ({
@@ -104,30 +128,74 @@ const FacultySection = ({
   </section>
 );
 
-const CurrentTeamSection = () => (
-  <section className="py-24 relative">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Current
-          </span>{" "}
-          Council
-        </h1>
-        <p className="text-slate-300 text-xl max-w-4xl mx-auto leading-relaxed">
-          Meet the dedicated students leading SMLRA this year and driving our
-          mission forward.
-        </p>
-      </motion.div>
-    </div>
-  </section>
-);
+const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: CurrentTeamMember[] } }) => {
+  const teamColors = {
+    "Community Lead": "from-green-400 to-emerald-400",
+    "Community Co Lead": "from-green-500 to-emerald-500",
+    "Research Team": "from-blue-400 to-cyan-400",
+    "Tech Team": "from-purple-400 to-violet-400",
+    "Operations Team": "from-orange-400 to-red-400",
+    "Creative Team": "from-pink-400 to-rose-400",
+    "Symposium Team": "from-yellow-400 to-amber-400",
+    "Marketing Team": "from-indigo-400 to-blue-400"
+  };
+
+  return (
+    <section className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Current
+            </span>{" "}
+            Council
+          </h1>
+          <p className="text-slate-300 text-xl max-w-4xl mx-auto leading-relaxed">
+            Meet the dedicated students leading SMLRA this year and driving our mission forward with passion and innovation.
+          </p>
+        </motion.div>
+
+        {/* Department-wise Teams */}
+        <div className="space-y-20">
+          {Object.entries(currentTeam).map(([teamName, members], teamIndex) => (
+            <motion.div
+              key={teamName}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: teamIndex * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="space-y-8"
+            >
+              <div className="text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+                  <span className={`bg-gradient-to-r ${teamColors[teamName as keyof typeof teamColors] || 'from-blue-400 to-cyan-400'} bg-clip-text text-transparent`}>
+                    {teamName}
+                  </span>{" "}
+                  <span className="text-slate-300">2025-26</span>
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+                {members.map((member, index) => (
+                  <div key={member.name} className="w-[calc(100%-1rem)] sm:w-[calc(50%-1rem)] md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] max-w-sm">
+                    <CurrentTeamCard member={member} index={index} />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const PastCouncilsLoading = () => (
   <div className="space-y-10">
@@ -349,10 +417,10 @@ const TeamPageContent = () => {
         <FacultySection faculty={faculty} />
       </Suspense>
 
-      {/* Current Team Section */}
-      <CurrentTeamSection />
+      {/* Current Team Section - Now displays all teams directly */}
+      <CurrentTeamSection currentTeam={currentTeam} />
 
-      {/* Past Teams Section with Suspense */}
+      {/* Past Teams Section with Suspense - Dropdown remains */}
       <section className="py-24 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -361,6 +429,7 @@ const TeamPageContent = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: "100px" }}
             className="text-center mb-16"
+            ref={scrollAnchorRef}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Past{" "}
