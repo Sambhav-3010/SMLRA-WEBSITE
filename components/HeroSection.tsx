@@ -109,46 +109,32 @@ export default function HeroSection() {
             className="max-w-5xl mx-auto space-y-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
+            transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           >
             <p className="text-xl sm:text-3xl text-slate-300 leading-relaxed font-light">
               Pioneering the future of{" "}
-              <motion.span
-                className="text-gradient-purple font-semibold"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              >
+              <span className="text-gradient-purple font-semibold">
                 Artificial Intelligence
-              </motion.span>{" "}
+              </span>{" "}
               and{" "}
-              <motion.span
-                className="text-gradient-green font-semibold"
-                animate={{ opacity: [1, 0.7, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  delay: 1,
-                }}
-              >
+              <span className="text-gradient-green font-semibold">
                 Machine Learning
-              </motion.span>
+              </span>
             </p>
-            <motion.p
-              className="text-lg text-slate-400 font-mono"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-            >
+
+            <p className="text-lg text-slate-400 font-mono">
               {">"} Training neural networks that reshape tomorrow
-            </motion.p>
+            </p>
           </motion.div>
 
           {/* Enhanced Code Snippet */}
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
             className="max-w-3xl mx-auto code-block-enhanced p-6 text-left interactive-card"
           >
+            {/* Top bar with traffic lights */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex space-x-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -156,57 +142,45 @@ export default function HeroSection() {
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
               </div>
             </div>
-            <div className="font-mono text-sm leading-relaxed">
-              <span className="code-keyword">import</span>{" "}
-              <span className="code-variable">tensorflow</span>{" "}
-              <span className="code-keyword">as</span>{" "}
-              <span className="code-variable">tf</span>
-              <br />
-              <span className="code-keyword">from</span>{" "}
-              <span className="code-string">transformers</span>{" "}
-              <span className="code-keyword">import</span>{" "}
-              <span className="code-function">pipeline</span>
-              <br />
-              <span className="code-keyword">from</span>{" "}
-              <span className="code-string">smlra.models</span>{" "}
-              <span className="code-keyword">import</span>{" "}
-              <span className="code-function">AdvancedTransformer</span>
-              <br />
-              <br />
-              <span className="code-comment">
-                # Building next-generation AI models
-              </span>
-              <br />
-              <span className="code-keyword">class</span>{" "}
-              <span className="code-function">SMLRAModel</span>
-              <span className="code-operator">(</span>
-              <span className="code-function">tf.Module</span>
-              <span className="code-operator">)</span>
-              <span className="code-operator">:</span>
-              <br />
-              &nbsp;&nbsp;<span className="code-keyword">def</span>{" "}
-              <span className="code-function">forward</span>
-              <span className="code-operator">(</span>
-              <span className="code-keyword">self</span>
-              <span className="code-operator">,</span>{" "}
-              <span className="code-variable">x</span>
-              <span className="code-operator">)</span>
-              <span className="code-operator">:</span>
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <span className="code-keyword">return</span>{" "}
-              <span className="code-keyword">self</span>
-              <span className="code-operator">.</span>
-              <span className="code-function">innovation</span>
-              <span className="code-operator">(</span>
-              <span className="code-variable">x</span>
-              <span className="code-operator">)</span>
-              <br />
-              <br />
-              <span className="code-comment">
-                # Accuracy: 96.8% | Inference: &lt;50ms
-              </span>
-            </div>
+
+            {/* Optimized code block for LCP */}
+            <pre className="font-mono text-sm leading-relaxed overflow-x-auto">
+              <code>
+                <span className="code-keyword">import</span>{" "}
+                <span className="code-variable">tensorflow</span>{" "}
+                <span className="code-keyword">as</span>{" "}
+                <span className="code-variable">tf</span>
+                {"\n"}
+                <span className="code-keyword">from</span>{" "}
+                <span className="code-string">transformers</span>{" "}
+                <span className="code-keyword">import</span>{" "}
+                <span className="code-function">pipeline</span>
+                {"\n"}
+                <span className="code-keyword">from</span>{" "}
+                <span className="code-string">smlra.models</span>{" "}
+                <span className="code-keyword">import</span>{" "}
+                <span className="code-function">AdvancedTransformer</span>
+                {"\n\n"}
+                <span className="code-comment">
+                  # Building next-generation AI models
+                </span>
+                {"\n"}
+                <span className="code-keyword">class</span>{" "}
+                <span className="code-function">SMLRAModel</span>(
+                <span className="code-function">tf.Module</span>):
+                {"\n"} <span className="code-keyword">def</span>{" "}
+                <span className="code-function">forward</span>(
+                <span className="code-keyword">self</span>,{" "}
+                <span className="code-variable">x</span>):
+                {"\n"} <span className="code-keyword">return</span>{" "}
+                <span className="code-keyword">self</span>.
+                <span className="code-function">innovation</span>(
+                <span className="code-variable">x</span>){"\n\n"}
+                <span className="code-comment">
+                  # Accuracy: 96.8% | Inference: &lt;50ms
+                </span>
+              </code>
+            </pre>
           </motion.div>
 
           {/* Enhanced CTA Buttons */}
