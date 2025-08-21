@@ -65,7 +65,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section */}
-      <section className="py-24 relative overflow-hidden h-screen flex items-center flex-col justify-center">
+      <section className="py-24 relative overflow-hidden flex items-center flex-col justify-center">
         {/* Background Effects */}
         <div className="fixed inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story + Stats Section */}
-      <section className="py-24 relative bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Story */}
@@ -234,7 +234,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Values Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-950/20 via-slate-900/40 to-cyan-950/20">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {values.map((value, idx) => (

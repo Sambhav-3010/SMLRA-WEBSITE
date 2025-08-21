@@ -17,12 +17,14 @@ type CurrentTeamCardProps = {
   member: CurrentTeamMember;
   index: number;
   className?: string;
+  color?: string;
 };
 
 export default function CurrentTeamCard({
   member,
   index = 0,
   className = "",
+  color = "from-blue-400 to-purple-400"
 }: CurrentTeamCardProps) {
   return (
     <motion.div
@@ -53,7 +55,7 @@ export default function CurrentTeamCard({
 
           {/* Content at the bottom */}
           <div className="p-4 sm:p-5 flex flex-col flex-grow">
-            <div className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 w-fit">
+            <div className={`inline-block bg-gradient-to-r ${color} text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium mb-3 w-fit`}>
               {member.position}
             </div>
 
@@ -71,7 +73,7 @@ export default function CurrentTeamCard({
                   href={member.linktreeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-gradient-to-r from-green-600 to-green-500 text-white px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 hover:from-green-700 hover:to-green-600 hover:shadow-lg hover:shadow-green-500/25"
+                  className={`flex items-center space-x-2 bg-gradient-to-r ${color} text-white px-4 py-2 rounded-full text-xs font-medium transition-all duration-300`}
                 >
                   <ExternalLink className="h-3 w-3" />
                   <span>Linktree</span>
