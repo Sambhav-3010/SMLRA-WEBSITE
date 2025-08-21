@@ -23,14 +23,16 @@
     }
   ],
   "currentTeam": {
-    "Community Team": [
+    "Community Lead": [
       {
         "name": "Vibhu Gupta",
         "position": "Community Lead",
         "department": "TY Comps",
-        "imageUrl": "#",
-        "linktreeUrl": "#"
-      },
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799970/vibhu_dmisoj.webp",
+        "linktreeUrl": "https://linktr.ee/vibhugupta"
+      }
+    ],
+    "Community Co-Lead": [
       {
         "name": "Sambhav Mani Tripathi",
         "position": "Community Co-Lead",
@@ -51,21 +53,21 @@
         "name": "Ayush Goyal",
         "position": "Research Lead",
         "department": "TY IT",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799964/ayush_goyal_xjrmxm.jpg",
         "linktreeUrl": "#"
       },
       {
         "name": "Vedant Muchlambe",
         "position": "Research Associate",
         "department": "SY RAI",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799969/vedant_vobl7g.jpg",
         "linktreeUrl": "#"
       },
       {
         "name": "Piyush Mishra",
         "position": "Research Associate",
         "department": "SY Comps",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799965/piyush_mishra_iydtjh.png",
         "linktreeUrl": "#"
       }
     ],
@@ -83,21 +85,21 @@
         "name": "Swayam Vernekar",
         "position": "Operations Lead",
         "department": "TY Comps",
-        "imageUrl": "#",
-        "linktreeUrl": "#"
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799968/swayam_thtpd7.jpg",
+        "linktreeUrl": "https://linktr.ee/swayam.vernekar"
       },
       {
         "name": "Atharva Chougule",
         "position": "Operations Associate",
         "department": "SY Comps",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799963/atharva_umsi3x.jpg",
         "linktreeUrl": "#"
       },
       {
         "name": "Aryan Churasia",
         "position": "Operations Associate",
         "department": "SY IT",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799963/aryan_chaurasia_nqibww.jpg",
         "linktreeUrl": "#"
       }
     ],
@@ -113,7 +115,7 @@
         "name": "Apoorva Rajpurohit",
         "position": "Creative Associate",
         "department": "SY IT",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799962/apoorva_ed6ucm.jpg",
         "linktreeUrl": "#"
       }
     ],
@@ -122,15 +124,15 @@
         "name": "Aditya Pawar",
         "position": "Symposium Associate",
         "department": "SY Comps",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799960/aditya_pawar_o8ckf9.jpg",
         "linktreeUrl": "#"
       },
       {
         "name": "Ranbeer Dhanawat",
         "position": "Symposium Associate",
         "department": "SY Comps",
-        "imageUrl": "#",
-        "linktreeUrl": "#"
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/ranbeer_bo5rxc.jpg",
+        "linktreeUrl": "https://linktr.ee/Ranbeer.D"
       }
     ],
     "Marketing Team": [
@@ -138,7 +140,7 @@
         "name": "Satvik Damdhar",
         "position": "Marketing Lead",
         "department": "SY Comps",
-        "imageUrl": "#",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/SatvikDamdhar_jutjm1.jpg",
         "linktreeUrl": "#"
       }
     ]
