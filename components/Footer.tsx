@@ -134,7 +134,7 @@ export default function Footer() {
 
               <div className="space-y-2 text-left">
                 <p className="font-mono text-sm sm:text-base font-bold text-slate-300 text-left">
-                  Community Co Lead
+                  Community Co-Lead
                 </p>
                 <div className="space-y-1 text-left">
                   <p className="font-mono text-xs sm:text-sm text-left">
