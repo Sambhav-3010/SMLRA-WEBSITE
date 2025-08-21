@@ -63,7 +63,7 @@ export default function Footer() {
               >
                 <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mt-0.5 flex-shrink-0" />
                 <address className="not-italic">
-                  Somaiya College of Engineering
+                  KJ Somaiya School of Engineering
                   <br />
                   Department of Computer Science
                   <br />
