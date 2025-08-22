@@ -203,7 +203,7 @@ export default function HeroSection() {
               className="group border-2 border-blue-500/50 hover:border-blue-400 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 hover:text-blue-200 px-10 py-5 rounded-full font-semibold transition-all duration-500 flex items-center space-x-3 focus-visible"
               aria-label="Meet our AI research team"
             >
-              <span className="text-lg">Meet Out Team</span>
+              <span className="text-lg">Meet Our Team</span>
             </Link>
           </motion.div>
         </motion.div>
