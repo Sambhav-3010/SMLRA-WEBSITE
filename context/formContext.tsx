@@ -1,12 +1,12 @@
 "use client"
 import React, { createContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
-
+import { useContext } from "react";
 export interface FormData {
   firstName: string;
   lastName: string;
   email: string;
   rollNo: string;
-  year: string;
+  year: '1st' | '2nd' | '3rd' | '';
   branch: string;
   phone: string;
   resume: string;
@@ -56,6 +56,14 @@ const FormProvider: React.FC<FormProviderProps> = ({ children }) => {
       {children}
     </FormContext.Provider>
   );
+};
+
+export const useFormContext = () => {
+  const context = useContext(FormContext);
+  if (!context) {
+    throw new Error("useFormContext must be used within a FormProvider");
+  }
+  return context;
 };
 
 export default FormProvider;
