@@ -293,7 +293,7 @@ export default function RegisterPage() {
                       </Button>
                     )}
 
-                    <div className="flex-1 flex justify-center lg:justify-end">
+                    <div className="flex-1 flex justify-end">
                       {currentStep < 5 ? (
                         <Button
                           onClick={nextStep}
