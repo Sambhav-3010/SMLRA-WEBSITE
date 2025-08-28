@@ -29,8 +29,8 @@ export default function PersonalInfoStep({ onValidationChange }: PersonalInfoSte
   return (
     <div className="space-y-6">
       <div className="text-center mb-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">Personal Information</h3>
-        <p className="text-gray-600">Please provide your basic personal details</p>
+        <h3 className="text-xl font-semibold text-white mb-2">Personal Information</h3>
+        <p className="text-white">Please provide your basic personal details</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -29,10 +29,8 @@ export default function RegisterPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   
-  // Fixed: Use correct destructuring from context
   const { formData } = useContext(FormContext)!
 
-  // Initialize validation map once
   useEffect(() => {
     const initialValidation: { [key: number]: boolean } = {}
     for (let i = 1; i <= 5; i++) {
@@ -41,10 +39,8 @@ export default function RegisterPage() {
     setStepValidation(initialValidation)
   }, [])
 
-  // Stable updater for validation state (identity won't change)
   const handleStepValidation = useCallback((step: number, isValid: boolean) => {
     setStepValidation(prev => {
-      // Avoid updating state unnecessarily
       if (prev[step] === isValid) return prev
       return {
         ...prev,
@@ -53,8 +49,6 @@ export default function RegisterPage() {
     })
   }, [])
 
-  // Stable callback for the *current* step that children can call
-  // This callback will change identity only when currentStep changes
   const handleCurrentStepValidation = useCallback(
     (isValid: boolean) => {
       handleStepValidation(currentStep, isValid)
@@ -63,7 +57,6 @@ export default function RegisterPage() {
   )
 
   const nextStep = () => {
-    // only move forward if current step is valid
     if (currentStep < steps.length && stepValidation[currentStep]) {
       setCurrentStep(prev => prev + 1)
       setCompletedSteps(prev => (prev.includes(currentStep) ? prev : [...prev, currentStep]))
@@ -73,12 +66,11 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitError(null); // Clear previous errors
+    setSubmitError(null);
     
     try {
       console.log('Submitting form data:', formData);
       
-      // Fixed: Use correct API endpoint
       const response = await fetch('/api/formSubmission', {
         method: 'POST',
         headers: {
@@ -95,7 +87,7 @@ export default function RegisterPage() {
       }
 
       setIsSubmitted(true)
-      setCurrentStep(6) // Go to success step
+      setCurrentStep(6)
       
     } catch (error: any) {
       console.error('Submission error:', error)
@@ -110,7 +102,6 @@ export default function RegisterPage() {
   }
 
   const goToStep = (step: number) => {
-    // allow going to success, first step, or to any step that is unlocked (previous completed)
     if (step === 6 || completedSteps.includes(step - 1) || step === 1) {
       setCurrentStep(step)
     }
@@ -120,11 +111,10 @@ export default function RegisterPage() {
 
   return (
     <>
-      {/* Background Effects - Enhanced responsiveness */}
+      {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-purple-500/5"></div>
         <div className="absolute inset-0 grid-bg opacity-5"></div>
-        {/* Floating Elements - Better responsive positioning */}
         <div className="absolute top-4 sm:top-10 lg:top-20 left-2 sm:left-4 lg:left-10 w-12 sm:w-16 lg:w-32 h-12 sm:h-16 lg:h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-4 sm:bottom-10 lg:bottom-20 right-2 sm:right-4 lg:right-10 w-16 sm:w-20 lg:w-40 h-16 sm:h-20 lg:h-40 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-48 lg:w-96 h-32 sm:h-48 lg:h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -134,7 +124,7 @@ export default function RegisterPage() {
 
       <div className="min-h-screen py-4 sm:py-6 lg:py-12 px-2 sm:px-4 pt-20 sm:pt-4">
         <div className="max-w-5xl mx-auto">
-          {/* Mobile: Ultra-minimal header */}
+          {/* Mobile Header */}
           <div className="sm:hidden text-center mb-4 mt-4">
             <div className="flex items-center justify-center space-x-2 mb-3">
               <h1 className="text-base font-bold text-white">Join SMLRA</h1>
@@ -144,9 +134,8 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Desktop/Tablet: Full header with progress */}
+          {/* Desktop Header */}
           <div className="hidden sm:block">
-            {/* Header */}
             <div className="text-center mb-6 lg:mb-8">
               <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mt-8 lg:mt-20 mb-2 px-2">
                 Join SMLRA
@@ -221,43 +210,34 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Form Container - Clean mobile design */}
+          {/* Form Container */}
           <Card className="shadow-xl mx-1 sm:mx-2 lg:mx-0 border-0 sm:border overflow-hidden">
-            {/* Mobile: No header, just content */}
-            <div className="sm:hidden">
-              {/* No CardHeader on mobile to avoid duplication */}
-            </div>
+            <div className="sm:hidden"></div>
             
-            {/* Desktop/Tablet: Show header */}
             <CardHeader className="hidden sm:block pb-4 lg:pb-6 bg-gradient-to-r from-gray-50 to-white">
               <CardTitle className="text-xl lg:text-2xl xl:text-3xl text-center px-4">
-                {/* Tablet: Step number + title */}
                 <span className="lg:hidden">
                   Step {currentStep}: {steps[currentStep - 1].shortTitle || steps[currentStep - 1].title}
                 </span>
-                {/* Desktop: Full title */}
                 <span className="hidden lg:block">
                   Step {currentStep}: {steps[currentStep - 1].title}
                 </span>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-3 sm:p-4 lg:p-6 xl:p-8">
-              {/* Error Display - Enhanced responsive styling */}
               {submitError && (
                 <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
                   <p className="text-red-600 text-sm sm:text-base">{submitError}</p>
                 </div>
               )}
 
-              {/* Step Content - Responsive container */}
               <div className="min-h-[300px] sm:min-h-[350px] lg:min-h-[400px]">
                 <CurrentStepComponent onValidationChange={handleCurrentStepValidation} />
               </div>
 
-              {/* Navigation Buttons - Enhanced responsive layout */}
               {currentStep !== 6 && (
                 <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
-                  {/* Mobile: Stacked buttons */}
+                  {/* Mobile Buttons */}
                   <div className="flex flex-col space-y-3 sm:hidden">
                     <div className="order-1">
                       {currentStep < 5 ? (
@@ -286,30 +266,32 @@ export default function RegisterPage() {
                         </Button>
                       )}
                     </div>
-                    <div className="order-2">
+                    {currentStep > 1 && (
+                      <div className="order-2">
+                        <Button
+                          variant="outline"
+                          onClick={prevStep}
+                          className="w-full h-11 text-base border-2 hover:bg-gray-50 transition-all duration-200"
+                        >
+                          <ChevronLeft className="w-5 h-5 mr-2" />
+                          <span>Previous</span>
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Tablet & Desktop Buttons */}
+                  <div className="hidden sm:flex justify-between items-center space-x-4">
+                    {currentStep > 1 && (
                       <Button
                         variant="outline"
                         onClick={prevStep}
-                        disabled={currentStep === 1}
-                        className="w-full h-11 text-base border-2 hover:bg-gray-50 transition-all duration-200"
+                        className="flex items-center space-x-2 h-11 lg:h-12 px-6 lg:px-8 text-sm lg:text-base border-2 hover:bg-gray-50 transition-all duration-200"
                       >
-                        <ChevronLeft className="w-5 h-5 mr-2" />
+                        <ChevronLeft className="w-4 lg:w-5 h-4 lg:h-5" />
                         <span>Previous</span>
                       </Button>
-                    </div>
-                  </div>
-
-                  {/* Tablet and Desktop: Side by side buttons */}
-                  <div className="hidden sm:flex justify-between items-center space-x-4">
-                    <Button
-                      variant="outline"
-                      onClick={prevStep}
-                      disabled={currentStep === 1}
-                      className="flex items-center space-x-2 h-11 lg:h-12 px-6 lg:px-8 text-sm lg:text-base border-2 hover:bg-gray-50 transition-all duration-200"
-                    >
-                      <ChevronLeft className="w-4 lg:w-5 h-4 lg:h-5" />
-                      <span>Previous</span>
-                    </Button>
+                    )}
 
                     <div className="flex-1 flex justify-center lg:justify-end">
                       {currentStep < 5 ? (
