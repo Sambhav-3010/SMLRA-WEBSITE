@@ -13,7 +13,6 @@ interface ReviewStepProps {
 
 export default function ReviewStep({ onValidationChange }: ReviewStepProps) {
   const { formData } = useContext(FormContext)!
-  console.log(formData)
 
   const requiredFields: (keyof FormData)[] = [
     'firstName', 'lastName', 'email', 'rollNo', 'year', 'branch', 

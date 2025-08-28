@@ -1,4 +1,4 @@
-// app/api/form-submission/route.ts
+
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '../../../lib/mongoose';
 import FormSubmission from '../../../models/formSubmission';
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
       email: email,
       rollNo: rollNo,
       // Ensure year is properly set
-      year: body.year || undefined
+      year: body.year || ' '
     };
 
     // Create new form submission
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: false,
       message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Something went wrong'
+      error: 'Something went wrong'
     }, { status: 500 });
   }
 }

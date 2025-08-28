@@ -27,7 +27,7 @@ export default function AcademicInfoStep({ onValidationChange }: AcademicInfoSte
 
   const requiredFields: (keyof typeof formData)[] = ['rollNo', 'year', 'branch']
 
-  const years = ['1st Year', '2nd Year', '3rd Year', '4th Year']
+  const years = ['1st', '2nd', '3rd']
   const branches = [
     'Computer Science Engineering',
     'Information Technology',

@@ -30,7 +30,7 @@ export default function RegisterPage() {
   const [submitError, setSubmitError] = useState<string | null>(null)
   
   // Fixed: Use correct destructuring from context
-  const { formData } = useContext(FormContext)
+  const { formData } = useContext(FormContext)!
 
   // Initialize validation map once
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function RegisterPage() {
       console.log('Submitting form data:', formData);
       
       // Fixed: Use correct API endpoint
-      const response = await fetch('/api/form-submission', {
+      const response = await fetch('/api/formSubmission', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
