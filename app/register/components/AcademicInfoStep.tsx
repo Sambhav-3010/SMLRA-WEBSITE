@@ -29,14 +29,17 @@ export default function AcademicInfoStep({ onValidationChange }: AcademicInfoSte
 
   const years = ['1st', '2nd', '3rd']
   const branches = [
-    'Computer Science Engineering',
-    'Information Technology',
-    'Electronics & Communication',
-    'Mechanical Engineering',
-    'Civil Engineering',
-    'Electrical Engineering',
-    'Chemical Engineering',
-    'Biotechnology',
+    'CE',
+    'IT',
+    'EXTC',
+    'ME',
+    'RAI',
+    'EXCP',
+    'AIDS',
+    'CCE',
+    'VLSI',
+    'VLSI',
+    'CSBS',
     'Other'
   ]
 
