@@ -1,11 +1,1 @@
-smlra-main-website
-
-
-
-
-
-
-
-
-
-
+This is the council website from the year SMLRA 2025-26
