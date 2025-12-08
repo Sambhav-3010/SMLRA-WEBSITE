@@ -13,7 +13,6 @@ const navItems = [
   { name: "Team", href: "/team", ariaLabel: "Meet our research team" },
   // { name: "Blog", href: "/blog", ariaLabel: "Read our research blog" },
   { name: "Events", href: "/events", ariaLabel: "View upcoming events" },
-  { name : "Register" , href:"/register", ariaLabel:"Join us"}
 ];
 
 export default function Navbar() {
