@@ -113,7 +113,8 @@ const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: Cur
   "Operations Team": "from-orange-500 to-amber-500",
   "Creative Team": "from-fuchsia-500 to-purple-500",
   "Symposium Team": "from-yellow-500 to-lime-500",
-  "Marketing Team": "from-indigo-500 to-blue-500"
+    "Marketing Team": "from-indigo-500 to-blue-500",
+  "FY Rep":"from-yellow-500 to-lime-500"
 };
 
 

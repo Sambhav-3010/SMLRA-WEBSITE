@@ -69,15 +69,50 @@
         "department": "SY Comps",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799965/piyush_mishra_iydtjh.png",
         "linktreeUrl": "https://linktr.ee/piyushmishra776"
+      },
+      {
+        "name": "Harshal Mehta",
+        "position": "Research Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905882/Harshal_Mehta_v91oj0.jpg",
+        "linktreeUrl": "https://linktr.ee/harshalmehta"
+      },
+      {
+        "name": "Shiva Bhosale",
+        "position": "Research Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905882/shiva_image_hntum3.jpg",
+        "linktreeUrl": "https://linktr.ee/bhshiva"
+      },
+      {
+        "name": "Aditya Pawar",
+        "position": "Research Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799960/aditya_pawar_o8ckf9.jpg",
+        "linktreeUrl": "https://linktr.ee/Bored_Pawar"
       }
     ],
     "Tech Team": [
       {
         "name": "Manik Prakash",
-        "position": "Tech Associate",
+        "position": "Tech Head",
         "department": "TY Comps",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1756399433/me_iievoa.jpg",
         "linktreeUrl": "https://linktr.ee/manik.prakash"
+      },
+      {
+        "name": "Arnav Saroj",
+        "position": "Tech Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dl8xtn1us/image/upload/v1765213946/copy1_upqs2v.jpg",
+        "linktreeUrl": "https://linktr.ee/arnav_saroj"
+      },
+      {
+        "name": "Suhaas Nandulamattam",
+        "position": "Tech Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905892/SuhaasNandulamattam_r1xqs2.jpg",
+        "linktreeUrl": "https://linktr.ee/suhaas11161000"
       }
     ],
     "Operations Team": [
@@ -101,6 +136,20 @@
         "department": "SY IT",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799963/aryan_chaurasia_nqibww.jpg",
         "linktreeUrl": "https://linktr.ee/aryan.chaurasia"
+      },
+      {
+        "name": "Kshitij Kumar",
+        "position": "Operations Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905877/Kshitij_p702xx.png",
+        "linktreeUrl": "https://linktr.ee/kshitijkumar1"
+      },
+      {
+        "name": "Rakshak Shetty",
+        "position": "Operations Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905875/Rakshak_Shetty_qxzscf.jpg",
+        "linktreeUrl": "https://linktr.ee/rakshak.shetty"
       }
     ],
     "Creative Team": [
@@ -117,31 +166,180 @@
         "department": "SY IT",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799962/apoorva_ed6ucm.jpg",
         "linktreeUrl": "https://linktr.ee/apoorva_brrr"
+      },
+      {
+        "name": "Parth More",
+        "position": "Creative Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905877/ParthMore_e0xyuu.jpg",
+        "linktreeUrl": "https://linktr.ee/ParthM0re"
+      },
+      {
+        "name": "Prathamesh Narkhede",
+        "position": "Creative Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905881/Prathamesh_jbwvcu.jpg",
+        "linktreeUrl": "https://linktr.ee/PrathameshN"
       }
     ],
     "Symposium Team": [
-      {
-        "name": "Aditya Pawar",
-        "position": "Symposium Associate",
-        "department": "SY Comps",
-        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799960/aditya_pawar_o8ckf9.jpg",
-        "linktreeUrl": "https://linktr.ee/Bored_Pawar"
-      },
       {
         "name": "Ranbeer Dhanawat",
         "position": "Symposium Associate",
         "department": "SY Comps",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/ranbeer_bo5rxc.jpg",
         "linktreeUrl": "https://linktr.ee/Ranbeer.D"
+      },
+      {
+        "name": "Chirayu Chandiramani",
+        "position": "Symposium Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905887/Chirayu_Chandiramani_xqbeev.jpg",
+        "linktreeUrl": "https://linktr.ee/chandiramanichirayu"
       }
     ],
     "Marketing Team": [
       {
         "name": "Satvik Damdhar",
-        "position": "Marketing Lead",
+        "position": "Marketing Head",
         "department": "SY IT",
         "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/SatvikDamdhar_jutjm1.jpg",
         "linktreeUrl": "https://linktr.ee/satvikdamdhar"
+      },
+      {
+        "name": "Abhiraj Kochale",
+        "position": "Marketing Associate",
+        "department": "SY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905877/Abhiraj_Kochale_kpdbw2.jpg",
+        "linktreeUrl": "https://linktr.ee/abhiraj_kochale"
+      }
+    ],
+    "FY Rep": [
+      {
+        "name": "Anoushka Varerkar",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905899/avani_palimar_kugbyx.png",
+        "linktreeUrl": "https://linktr.ee/avani.palimar"
+      },
+      {
+        "name": "Arav Arun",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905875/arav_hwewlc.heic.png",
+        "linktreeUrl": "https://linktr.ee/AravArun"
+      },
+      {
+        "name": "Aryan Pardeshi",
+        "position": "FY Rep",
+        "department": "FY IT",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905878/AryanPardeshi_ngdirw.jpg",
+        "linktreeUrl": "https://linktr.ee/Aryan_Pardeshi1"
+      },
+      {
+        "name": "Ayaan Modak",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905883/Ayaan_Modak_2_behqkt.jpg",
+        "linktreeUrl": "https://linktr.ee/ayaan_modakr"
+      },
+      {
+        "name": "Avani Palimar",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905899/avani_palimar_kugbyx.png",
+        "linktreeUrl": "https://linktr.ee/avani.palimar"
+      },
+      {
+        "name": "Ayush Anasane",
+        "position": "FY Rep",
+        "department": "FY IT",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/SatvikDamdhar_jutjm1.jpg",
+        "linktreeUrl": "https://linktr.ee/AyushAnasane"
+      },
+      {
+        "name": "Avani Saxena",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905881/Avani_Saxena_fjcea2.jpg",
+        "linktreeUrl": "https://linktr.ee/avani_saxena"
+      },
+      {
+        "name": "Devansh Goradia",
+        "position": "FY Rep",
+        "department": "FY AIDS",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905876/Devansh_Goradia_pc3vdh.png",
+        "linktreeUrl": "https://linktr.ee/devanshgoradia"
+      },
+      {
+        "name": "Kashvi Gupta",
+        "position": "FY Rep",
+        "department": "FY AIDS",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905874/Kashvi_gupta_dsqugj.jpg",
+        "linktreeUrl": "https://linktr.ee/kashvigupta"
+      },
+      {
+        "name": "Kushagra Srivastava",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905876/KushagraSrivastava_xdgfxv.jpg",
+        "linktreeUrl": "https://linktr.ee/KushagraSrivastavaAI"
+      },
+      {
+        "name": "Mahek Ahuja",
+        "position": "FY Rep",
+        "department": "FY AIDS",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905874/Mahek_Ahuja_dnoewd.jpg",
+        "linktreeUrl": "https://linktr.ee/mahekahuja"
+      },
+      {
+        "name": "Pranjali Vaidya",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905877/Pranjali_Vaidya_rm3gsv.jpg",
+        "linktreeUrl": "https://linktr.ee/pranjali.vaidya"
+      },
+      {
+        "name": "Ram Kankeshwar",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dy58vxb0b/image/upload/v1755799966/SatvikDamdhar_jutjm1.jpg",
+        "linktreeUrl": "https://linktr.ee/ram.kankeshwar"
+      },
+      {
+        "name": "Rehaan Patil",
+        "position": "FY Rep",
+        "department": "SY IT",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905878/Rehaan_Patil_mc1mkv.jpg",
+        "linktreeUrl": "https://linktr.ee/Rehaan083"
+      },
+      {
+        "name": "Samridhi Pandey",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905879/Samridhi_pandey_domvnq.jpg",
+        "linktreeUrl": "https://linktr.ee/Samridhi_Pandey"
+      },
+      {
+        "name": "Sayed Mikaeel",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905881/Sayed_Mikaeel_ouk8o4.jpg",
+        "linktreeUrl": "https://linktr.ee/m1kaeel"
+      },
+      {
+        "name": "Surabhi Goel",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905876/Surabhi_Goel_hn4tv6.jpg",
+        "linktreeUrl": "https://linktr.ee/surabhigoel26"
+      },
+      {
+        "name": "Tejas Salunke",
+        "position": "FY Rep",
+        "department": "FY Comps",
+        "imageUrl": "https://res.cloudinary.com/dgwimdsao/image/upload/v1764905892/Tejas_salunke__vkmsmy.jpg",
+        "linktreeUrl": "https://linktr.ee/TKUN3110"
       }
     ]
   },
