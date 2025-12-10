@@ -106,18 +106,17 @@ const FacultySection = ({
 
 const CurrentTeamSection = ({ currentTeam }: { currentTeam: { [key: string]: CurrentTeamMember[] } }) => {
   const teamColors = {
-  "Community Lead": "from-emerald-500 to-teal-500",
-  "Community Co-Lead": "from-rose-500 to-red-500",
-  "Research Team": "from-teal-500 to-cyan-500",
-  "Tech Team": "from-purple-500 to-violet-500",
+    "Community Lead": "from-emerald-500 to-teal-500",
+    "Community Co-Lead": "from-rose-500 to-red-500",
+    "Research Team": "from-teal-500 to-cyan-500",
+    "Tech Team": "from-purple-500 to-violet-500",
     "Operations Team": "from-orange-500 to-amber-500",
-  "Research Operations Team":"from-orange-500 to-purple-500",
-  "Creative Team": "from-fuchsia-500 to-purple-500",
-  "Symposium Team": "from-yellow-500 to-lime-500",
+    "Research Operations Team":"from-orange-500 to-purple-500",
+    "Creative Team": "from-fuchsia-500 to-purple-500",
+    "Symposium Team": "from-yellow-500 to-lime-500",
     "Marketing Team": "from-indigo-500 to-blue-500",
-  "FY Rep":"from-yellow-500 to-lime-500"
-};
-
+    "FY Rep":"from-yellow-500 to-lime-500"
+  };
 
   return (
     <section className="py-24 relative">
@@ -209,17 +208,6 @@ const PastCouncilsContent = ({
       ...prev,
       [year]: !prev[year],
     }));
-
-    // Scroll to Past Councils heading
-    requestAnimationFrame(() => {
-      if (scrollAnchorRef.current) {
-        const top =
-          scrollAnchorRef.current.getBoundingClientRect().top +
-          window.scrollY -
-          100;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    });
   };
 
   return (
