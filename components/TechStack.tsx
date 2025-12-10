@@ -86,7 +86,7 @@ const techLogos = [
   {
     node: <SiGooglegemini />,
     title: "Google Gemini",
-    href: "https://www.google.com/advanced/gemini"
+    href: "https://gemini.google.com/app"
   },
   {
     node: <SiClaude />,

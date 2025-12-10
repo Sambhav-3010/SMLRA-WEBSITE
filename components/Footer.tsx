@@ -159,32 +159,12 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-800">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+          <div className="flex flex-col sm:flex-row justify-center items-start sm:items-center space-y-4 sm:space-y-0">
             <div className="text-slate-400 text-xs sm:text-sm text-left">
               <p>
                 &copy; 2025 SMLRA - Somaiya Machine Learning Research
                 Association. All rights reserved.
               </p>
-            </div>
-            <div className="flex flex-wrap justify-start sm:justify-end items-center gap-4 sm:gap-6 text-xs sm:text-sm">
-              <Link
-                href="/privacy"
-                className="text-slate-400 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-slate-400 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/accessibility"
-                className="text-slate-400 hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1"
-              >
-                Accessibility
-              </Link>
             </div>
           </div>
         </div>
